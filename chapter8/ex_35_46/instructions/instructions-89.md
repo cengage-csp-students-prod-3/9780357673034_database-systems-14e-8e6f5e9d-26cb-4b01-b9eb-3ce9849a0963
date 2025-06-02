@@ -1,0 +1,2 @@
+## Problem 45
+Create a trigger named `trg_pic_hours` that automatically updates the `PILOT` table when a new `CREW` row is added and the `CREW` table uses a Pilot `CREW_JOB` entry. Use the `CHARTER` table’s `CHAR_HOURS_FLOWN` to update the `PILOT` table’s `PIL_PIC_HRS` only when the `CREW` table uses a Pilot `CREW_JOB` entry.

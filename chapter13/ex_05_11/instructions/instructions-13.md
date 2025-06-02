@@ -1,0 +1,9 @@
+## Problem 7
+
+What is the SQL command to list the total sales by region and customer, with subtotals by region and a grand total for all sales? _Figure P13.7_ shows the abbreviated result of the query.
+
+<p align='center'>
+<img src='../assets/Figure-P13.7.png' width='95%' alt='The S Q L Plus window, shows problem 7 result. There are three columns, register underscore I D, customer underscore code and total sales with 15 rows, selected. The data are as follows. Row 1: register underscore I D 1; customer underscore code, 10012; total sales, 287.91. Row 2: register underscore I D 1; customer underscore code, 10013; total sales, 64.32. Row 3: register underscore I D 1; customer underscore code, blank; total sales, 352.23. Row 4: register underscore I D 2; customer underscore code, 10014; total sales, 494.71. Row 5: register underscore I D 2; customer underscore code, 10019; total sales, 39.95. Row 6: register underscore I D 2; customer underscore code, blank; total sales, 534.66. Row 7: register underscore I D 3; customer underscore code, 10010; total sales, 180.26. Row 8: register underscore I D 3; customer underscore code, 10011; total sales, 130.89. Row 9: register underscore I D 3; customer underscore code, 10015; total sales, 325.82. Row 10: register underscore I D 3; customer underscore code, 10016; total sales, 179.22. Row 11: register underscore I D 3; customer underscore code, blank; total sales, 816.19. Row 12: register underscore I D 4; customer underscore code, 10017; total sales, 419.66. Row 13: register underscore I D 4; customer underscore code, 10018; total sales, 129.32. Row 14: register underscore I D 4; customer underscore code, blank; total sales, 548.98. The grand total of all sales is 2252.06.' />
+</p>
+
+<p style="font-style: italic" align="center">Figure P13.7</p>

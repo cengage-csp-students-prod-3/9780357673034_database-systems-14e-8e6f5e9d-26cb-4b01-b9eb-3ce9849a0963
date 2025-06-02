@@ -1,0 +1,25 @@
+{
+  "name": "MindTap",
+  "image": "ghcr.io/internal-csp-hes-engineering/container-images:sqlcodespace",
+  "customizations": {
+    "vscode": {
+      "extensions": ["cengage.cengage-companion"]
+    },
+    "settings": {
+      "extensions.ignoreRecommendations": true,
+      "extensions.showRecommendationsOnlyOnDemand": true,
+      "git.openRepositoryInParentFolders": false
+    }
+  },
+
+  "forwardPorts": [3005],
+  "portsAttributes": {
+    "3005": {
+      "label": "cengage-companion",
+      "onAutoForward": "silent"
+    }
+  },
+  // Install the MySQL server and start the service
+  "postCreateCommand": "sudo service mysql start && sudo mysql -u root -e \"ALTER USER 'root'@'localhost' IDENTIFIED WITH 'mysql_native_password' BY 'root';\"",
+  "postStartCommand": "sudo service mysql start"
+}

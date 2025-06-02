@@ -1,0 +1,2 @@
+## Problem 46
+Create a trigger named `trg_cust_balance` that automatically updates the `CUSTOMER` table’s `CUS_BALANCE` when a new `CHARTER` row is added. Use the `CHARTER` table’s `CHAR_TOT_CHG` as the update source. (Assume that all charter charges are charged to the customer balance.)

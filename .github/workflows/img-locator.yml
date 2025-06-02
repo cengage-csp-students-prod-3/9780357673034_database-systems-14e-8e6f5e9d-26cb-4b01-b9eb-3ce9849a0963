@@ -1,0 +1,53 @@
+# Screenreader Proofreader
+name: <img> Locator
+
+# Trigger the event when the repo is starred (as close to a manual run as possible with the current API)
+on:
+  workflow_dispatch:
+
+jobs:
+  # This job contains a job called "scan"
+  scan:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Search the directory for files that contain "https://cdn"
+      # This would indicate that the file contains an embedded figure which needs alt-text
+      # - name: Total figure count
+      #   run: grep -R "https://storage" * | wc -l
+
+      # - name: List of files which contain figures
+      #   run: grep -Rl "https://storage" *
+
+      # Step to count total number of <img> tags
+      - name: Count total number of <img> tags
+        run: |
+          count=$(grep -Ro '<img' * | wc -l)
+          echo "Total <img> tags found: $count"
+
+      # Displays all <img> tags with path
+      # - name: Check for <img tags
+      #   run: grep -R "<img" *
+
+      - name: List of files which contain <img> tags
+        run: grep -Rl "<img" *
+
+      # Step to find <img> tags and extract required information
+      - name: Extract file paths and src from <img> tags and save to CSV
+        run: |
+          echo "File Path,Image URL" > images.csv
+          grep -Rh "<img" * | sed -nE "s/.*src='(https?:[^']+).*/\1/p" >> images.csv
+          cat images.csv
+
+
+      - name: Upload CSV file as an artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: database-systems-14e-images-csv
+          path: images.csv
+          retention-days: 1

@@ -1,0 +1,7 @@
+## Problem 94
+Write a query to display the patron ID, full name (first and last), and patron type for all patrons. Sort the results by patron type and then by last name and first name. Ensure that all sorting is case insensitive (*Figure P7.94*). (50 rows)
+
+<p align='center'>
+<img src='../assets/Figure-P7.94.png' width='95%' alt='Results for listing patrons with full names, displayed in columns, patron underscore I D, name and patron type. There are 9 rows in the table; the values are as follows. Row 1: patron underscore I D, 1165; name; Cedric Baldwin; patron type, Faculty. Row 2: patron underscore I D, 1170; name; Corry Barry; patron type, Faculty. Row 3: patron underscore I D, 1160; name; Robert Carter; patron type, Faculty. Row 4: patron underscore I D, 1183; name; Helena Hughes; patron type, Faculty. Row 5: patron underscore I D, 1161; name; Kelsey Koch; patron type, Faculty. Row 6: patron underscore I D, 1167; name; Alan Martin; patron type, Faculty. Row 7: patron underscore I D, 1166; name; Vera Alvarado; patron type, Student. Row 8: patron underscore I D, 1202; name; Holly Anthony; patron type, Student. Row 9: patron underscore I D, 1180; name; Nadine Blair; patron type, Student.' />
+</p>
+<p style="font-style: italic" align="center">Figure 7.94</p>

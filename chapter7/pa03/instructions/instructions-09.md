@@ -1,0 +1,3 @@
+## Task 5:
+
+The InstantRide Management team considers creating a new team for Car Maintenance. The new team needs to find/list the cars that are used more than average with the usage count. Collect the information of all rides and consolidate over the Car IDs. You need to create a three level SQL statement. Firstly, you need to **COUNT** the number of rows in `TRAVELS` and **GROUP_BY** the `CAR_ID` field. Then you need to calculate the **AVG** of the data to find the average usage of the cars. Finally, you need to return **CAR_ID** and the `TRAVELS` count (as the **Usages** column) filtered to only values greater than the calculated average.

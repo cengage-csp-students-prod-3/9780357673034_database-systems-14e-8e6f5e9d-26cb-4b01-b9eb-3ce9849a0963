@@ -1,0 +1,3 @@
+## Task 1:
+
+The InstantRide Management team founded a new team for car maintenance. The new team is responsible for the small maintenance operations for the cars in the InstantRide system. The main idea is to take actions faster and minimize the time spent for the maintenance. Therefore, the Car Maintenance team wants to store **MAINTENANCE_TYPE_ID** `char(5)`) and a **MAINTENANCE_TYPE_DESCRIPTION** `varchar(30)`) in the database. Using `MAINTENANCE_TYPE_ID` as the `PRIMARY KEY`, create a new table, **MAINTENANCE_TYPES** and send the table description with the column names and types to the Car Maintenance team.

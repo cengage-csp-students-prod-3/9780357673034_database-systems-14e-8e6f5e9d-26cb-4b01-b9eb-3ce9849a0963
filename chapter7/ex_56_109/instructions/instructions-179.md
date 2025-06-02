@@ -1,0 +1,7 @@
+## Problem 90
+Write a query to display the author last name, author first name, and book number for each book written by that author. Sort the results by author last name, first name, and then book number (*Figure P7.90*). (25 rows)
+
+<p align='center'>
+<img src='../assets/Figure-P7.90.png' width='95%' alt='Result for display of books written by author is displayed in 3 columns; author underscore L name, author underscore F name and book underscore number. There are 8 rows in the table; the values are as follows. Row 1: author underscore L name, Aggerwal; author underscore F name, Manish; book underscore number, 5242. Row 2: author underscore L name, Beatney; author underscore F name, Rachel; book underscore number, 5240. Row 3: author underscore L name, Bruer; author underscore F name, Hugo; book underscore number, 5243. Row 4: author underscore L name, Bruer; author underscore F name, Hugo; book underscore number, 5246. Row 5: author underscore L name, Chiang; author underscore F name, Xia; book underscore number, 5244. Row 6: author underscore L name, Chiang; author underscore F name, Xia; book underscore number, 5249. Row 7: author underscore L name, Chiang; author underscore F name, Xia; book underscore number, 5252.Row 8: author underscore L name, Durante; author underscore F name, Reba; book underscore number, 5242.' />
+</p>
+<p style="font-style: italic" align="center">Figure 7.90</p>
