@@ -4,6 +4,6 @@ SELECT
 FROM 
     EMPLOYEE
 WHERE 
-    EMP_LNAME = 'Smith'
-OR  EMP_LNAME = 'Smithfield';
+    EMP_LNAME LIKE 'Smith%';
+
 
