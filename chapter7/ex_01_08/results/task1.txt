@@ -1,0 +1,21 @@
+
+Status: FAILED!
+Check: 1
+Test: Problem 1
+Reason: Expected:
++---------+------------+-----------+-------------+
+| EMP_NUM | EMP_LNAME  | EMP_FNAME | EMP_INITIAL |
++---------+------------+-----------+-------------+
+|   106   | Smithfield |  William  |    NULL     |
+|   109   |   Smith    |   Larry   |      W      |
+|   112   |  Smithson  |  Darlene  |      M      |
++---------+------------+-----------+-------------+
+Found:
++---------+------------+-----------+-------------+
+| EMP_NUM | EMP_LNAME  | EMP_FNAME | EMP_INITIAL |
++---------+------------+-----------+-------------+
+|   106   | Smithfield |  William  |    NULL     |
+|   109   |   Smith    |   Larry   |      W      |
++---------+------------+-----------+-------------+
+Error : AssertionError - 
+Timestamp: 2025-06-03 02:05:50.601459
