@@ -1,21 +1,6 @@
 
-Status: FAILED!
+Status: PASSED!
 Check: 1
 Test: Check if any drivers have given zero rides
-Reason: Expected:
-+-----------+-------------------+------------------+
-| DRIVER_ID | DRIVER_FIRST_NAME | DRIVER_LAST_NAME |
-+-----------+-------------------+------------------+
-|   2004    |        Ece        |      Yilmaz      |
-+-----------+-------------------+------------------+
-Found:
-+-----------+-------------------+------------------+
-| DRIVER_ID | DRIVER_FIRST_NAME | DRIVER_LAST_NAME |
-+-----------+-------------------+------------------+
-|   2001    |      Willie       |      Butler      |
-|   2002    |      Justin       |      Howard      |
-|   2003    |      Anthony      |      Walker      |
-|   2004    |        Ece        |      Yilmaz      |
-+-----------+-------------------+------------------+
-Error : AssertionError - 
-Timestamp: 2025-06-04 19:03:12.871855
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-04 19:54:34.454541
