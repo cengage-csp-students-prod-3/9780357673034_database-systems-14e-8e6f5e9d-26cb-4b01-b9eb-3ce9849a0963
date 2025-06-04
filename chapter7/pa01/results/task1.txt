@@ -1,0 +1,7 @@
+
+Status: FAILED!
+Check: 1
+Test: Query all the driver data from the `DRIVERS` table
+Reason: The following error is preventing tests from completing: 1146 (42S02): Table 'InstantRide.DRIVERS' doesn't exist
+Error : ProgrammingError - 1146 (42S02): Table 'InstantRide.DRIVERS' doesn't exist
+Timestamp: 2025-06-04 00:42:56.838848
