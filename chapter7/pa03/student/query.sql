@@ -2,11 +2,6 @@
 SELECT
     *
 FROM
-    STAY
+    TRAVELS T, DRIVERS D
 WHERE
-    ChannelID IN (SELECT
-            ChannelID
-        FROM
-            CHANNEL
-        WHERE
-            ChannelCommission > 0.1);
+    D.DRIVER_RATING < 4;
