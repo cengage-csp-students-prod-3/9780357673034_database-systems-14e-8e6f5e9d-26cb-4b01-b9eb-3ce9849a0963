@@ -1,0 +1,82 @@
+
+Status: FAILED!
+Check: 1
+Test: Check for duplicate driver accounts
+Reason: Expected:
++---------+-----------------+----------------+--------------------+
+| USER_ID | USER_FIRST_NAME | USER_LAST_NAME |     USER_EMAIL     |
++---------+-----------------+----------------+--------------------+
+|  3003   |     Nursin      |     Yilmaz     |  n.atak@gmail.com  |
+|  3008   |     Nursin      |     Yilmaz     | n.yilmaz@xmail.com |
++---------+-----------------+----------------+--------------------+
+Found:
++-----------------+----------------+
+| USER_FIRST_NAME | USER_LAST_NAME |
++-----------------+----------------+
+|      Jack       |      Hill      |
+|      Jack       |      Hill      |
+|      Jack       |      Hill      |
+|      Jack       |      Hill      |
+|      Jack       |      Hill      |
+|      Jack       |      Hill      |
+|      Jack       |      Hill      |
+|      Jack       |      Hill      |
+|      Ryan       |    Collins     |
+|      Ryan       |    Collins     |
+|      Ryan       |    Collins     |
+|      Ryan       |    Collins     |
+|      Ryan       |    Collins     |
+|      Ryan       |    Collins     |
+|      Ryan       |    Collins     |
+|      Ryan       |    Collins     |
+|     Nursin      |     Yilmaz     |
+|     Nursin      |     Yilmaz     |
+|     Nursin      |     Yilmaz     |
+|     Nursin      |     Yilmaz     |
+|     Nursin      |     Yilmaz     |
+|     Nursin      |     Yilmaz     |
+|     Nursin      |     Yilmaz     |
+|     Nursin      |     Yilmaz     |
+|      Sarah      |     Price      |
+|      Sarah      |     Price      |
+|      Sarah      |     Price      |
+|      Sarah      |     Price      |
+|      Sarah      |     Price      |
+|      Sarah      |     Price      |
+|      Sarah      |     Price      |
+|      Sarah      |     Price      |
+|      Bobby      |    Griffin     |
+|      Bobby      |    Griffin     |
+|      Bobby      |    Griffin     |
+|      Bobby      |    Griffin     |
+|      Bobby      |    Griffin     |
+|      Bobby      |    Griffin     |
+|      Bobby      |    Griffin     |
+|      Bobby      |    Griffin     |
+|      Randy      |     Clark      |
+|      Randy      |     Clark      |
+|      Randy      |     Clark      |
+|      Randy      |     Clark      |
+|      Randy      |     Clark      |
+|      Randy      |     Clark      |
+|      Randy      |     Clark      |
+|      Randy      |     Clark      |
+|      Jose       |     Thomas     |
+|      Jose       |     Thomas     |
+|      Jose       |     Thomas     |
+|      Jose       |     Thomas     |
+|      Jose       |     Thomas     |
+|      Jose       |     Thomas     |
+|      Jose       |     Thomas     |
+|      Jose       |     Thomas     |
+|     Nursin      |     Yilmaz     |
+|     Nursin      |     Yilmaz     |
+|     Nursin      |     Yilmaz     |
+|     Nursin      |     Yilmaz     |
+|     Nursin      |     Yilmaz     |
+|     Nursin      |     Yilmaz     |
+|     Nursin      |     Yilmaz     |
+|     Nursin      |     Yilmaz     |
++-----------------+----------------+
+Error : AssertionError - 
+Timestamp: 2025-06-04 04:33:44.384925
