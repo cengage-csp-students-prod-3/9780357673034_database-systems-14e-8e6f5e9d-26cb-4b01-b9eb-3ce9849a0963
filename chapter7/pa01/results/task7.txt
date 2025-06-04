@@ -1,18 +1,6 @@
 
-Status: FAILED!
+Status: PASSED!
 Check: 1
 Test: Calculate the total amount of discounts given
-Reason: Expected:
-+-----------+-----------------+
-| TRAVEL_ID | DISCOUNT_AMOUNT |
-+-----------+-----------------+
-|   5004    |      3.96       |
-|   5006    |      1.46       |
-|   5007    |      0.62       |
-|   5008    |      6.28       |
-|   5010    |      5.12       |
-+-----------+-----------------+
-Found:
-
-Error : AssertionError - 
-Timestamp: 2025-06-04 03:00:56.738464
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-04 03:07:28.854054
