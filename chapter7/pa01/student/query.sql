@@ -1,2 +1,0 @@
-SELECT
-T.TRAVEL_ID, 
