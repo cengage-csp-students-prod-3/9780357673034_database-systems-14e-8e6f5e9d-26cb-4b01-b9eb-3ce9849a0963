@@ -1,0 +1,7 @@
+
+Status: FAILED!
+Check: 1
+Test: Query all drivers by their driver rating in descending order
+Reason: The following error is preventing tests from completing: Incorrect parameter count in the call to native function 'TIMEDIFF'
+Error : MySQLInterfaceError - Incorrect parameter count in the call to native function 'TIMEDIFF'
+Timestamp: 2025-06-04 01:47:10.360586
