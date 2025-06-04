@@ -1,0 +1,6 @@
+
+Status: PASSED!
+Check: 1
+Test: Query all drivers with and without travel data
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-04 03:58:26.134060
