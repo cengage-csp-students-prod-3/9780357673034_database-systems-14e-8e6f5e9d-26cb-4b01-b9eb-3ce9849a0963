@@ -1,0 +1,20 @@
+
+Status: FAILED!
+Check: 1
+Test: Calculate the average discount for each car
+Reason: Expected:
++--------+-----------------+
+| CAR_ID | DISCOUNT_AMOUNT |
++--------+-----------------+
+|  1002  |      3.51       |
+|  1004  |      0.62       |
+|  1003  |      6.28       |
++--------+-----------------+
+Found:
++-----------+-------------------+------------------+
+| DRIVER_ID | DRIVER_FIRST_NAME | DRIVER_LAST_NAME |
++-----------+-------------------+------------------+
+|   2004    |        Ece        |      Yilmaz      |
++-----------+-------------------+------------------+
+Error : AssertionError - 
+Timestamp: 2025-06-04 20:14:34.108146
