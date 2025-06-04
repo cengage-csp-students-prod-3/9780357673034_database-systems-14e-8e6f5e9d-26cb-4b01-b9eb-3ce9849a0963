@@ -1,5 +1,8 @@
 -- Write your query below and then click "Run Query" to execute it. To save multiple queries, click the "+" icon on the left.
-
+SELECT
+*
+FROM
+DRIVERS;
 
 SELECT 
 DATE_FORMAT(DRIVER_START_DATE, "%Y-%m-%d") AS DRIVER_START_DATE
@@ -13,11 +16,3 @@ SELECT
  WHERE DRIVER_RATING > 4
  ORDER BY DRIVER_RATING DESC;
 
-
-
- SELECT 
- U.USERUSER_ID, TIMEDIFF(T.TRAVEL_END_TIME- T.TRAVEL_START_TIME)
- FROM 
- TRAVELS T, USERS U
- WHERE
- T.USER_ID = U.USER_ID;
