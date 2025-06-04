@@ -1,0 +1,7 @@
+
+Status: FAILED!
+Check: 1
+Test: Find all travels where an above average discount was applied
+Reason: The following error is preventing tests from completing: 1065 (42000): Query was empty
+Error : ProgrammingError - 1065 (42000): Query was empty
+Timestamp: 2025-06-04 23:33:26.965135
