@@ -1,0 +1,66 @@
+
+Status: FAILED!
+Check: 1
+Test: Calculate each user's price and discount information
+Reason: Expected:
++-----------+-------------------+------------------+--------------+-----------------+
+| TRAVEL_ID | DRIVER_FIRST_NAME | DRIVER_LAST_NAME | TRAVEL_PRICE | TRAVEL_DISCOUNT |
++-----------+-------------------+------------------+--------------+-----------------+
+|   5001    |      Willie       |      Butler      |    15.44     |      NULL       |
+|   5002    |      Willie       |      Butler      |    20.56     |      NULL       |
+|   5003    |      Justin       |      Howard      |    12.32     |      NULL       |
+|   5004    |      Anthony      |      Walker      |    30.49     |      0.13       |
+|   5005    |      Willie       |      Butler      |    11.15     |      NULL       |
+|   5006    |      Anthony      |      Walker      |    14.61     |      0.10       |
+|   5007    |      Justin       |      Howard      |     4.41     |      0.14       |
+|   5008    |      Willie       |      Butler      |    25.12     |      0.25       |
+|   5009    |      Willie       |      Butler      |    13.55     |      NULL       |
+|   5010    |      Anthony      |      Walker      |    25.62     |      0.20       |
++-----------+-------------------+------------------+--------------+-----------------+
+Found:
++-----------+-------------------+------------------+--------------+-----------------+
+| TRAVEL_ID | DRIVER_FIRST_NAME | DRIVER_LAST_NAME | TRAVEL_PRICE | TRAVEL_DISCOUNT |
++-----------+-------------------+------------------+--------------+-----------------+
+|   5010    |      Willie       |      Butler      |    25.62     |      0.20       |
+|   5009    |      Willie       |      Butler      |    13.55     |      NULL       |
+|   5008    |      Willie       |      Butler      |    25.12     |      0.25       |
+|   5007    |      Willie       |      Butler      |     4.41     |      0.14       |
+|   5006    |      Willie       |      Butler      |    14.61     |      0.10       |
+|   5005    |      Willie       |      Butler      |    11.15     |      NULL       |
+|   5004    |      Willie       |      Butler      |    30.49     |      0.13       |
+|   5003    |      Willie       |      Butler      |    12.32     |      NULL       |
+|   5002    |      Willie       |      Butler      |    20.56     |      NULL       |
+|   5001    |      Willie       |      Butler      |    15.44     |      NULL       |
+|   5010    |      Justin       |      Howard      |    25.62     |      0.20       |
+|   5009    |      Justin       |      Howard      |    13.55     |      NULL       |
+|   5008    |      Justin       |      Howard      |    25.12     |      0.25       |
+|   5007    |      Justin       |      Howard      |     4.41     |      0.14       |
+|   5006    |      Justin       |      Howard      |    14.61     |      0.10       |
+|   5005    |      Justin       |      Howard      |    11.15     |      NULL       |
+|   5004    |      Justin       |      Howard      |    30.49     |      0.13       |
+|   5003    |      Justin       |      Howard      |    12.32     |      NULL       |
+|   5002    |      Justin       |      Howard      |    20.56     |      NULL       |
+|   5001    |      Justin       |      Howard      |    15.44     |      NULL       |
+|   5010    |      Anthony      |      Walker      |    25.62     |      0.20       |
+|   5009    |      Anthony      |      Walker      |    13.55     |      NULL       |
+|   5008    |      Anthony      |      Walker      |    25.12     |      0.25       |
+|   5007    |      Anthony      |      Walker      |     4.41     |      0.14       |
+|   5006    |      Anthony      |      Walker      |    14.61     |      0.10       |
+|   5005    |      Anthony      |      Walker      |    11.15     |      NULL       |
+|   5004    |      Anthony      |      Walker      |    30.49     |      0.13       |
+|   5003    |      Anthony      |      Walker      |    12.32     |      NULL       |
+|   5002    |      Anthony      |      Walker      |    20.56     |      NULL       |
+|   5001    |      Anthony      |      Walker      |    15.44     |      NULL       |
+|   5010    |        Ece        |      Yilmaz      |    25.62     |      0.20       |
+|   5009    |        Ece        |      Yilmaz      |    13.55     |      NULL       |
+|   5008    |        Ece        |      Yilmaz      |    25.12     |      0.25       |
+|   5007    |        Ece        |      Yilmaz      |     4.41     |      0.14       |
+|   5006    |        Ece        |      Yilmaz      |    14.61     |      0.10       |
+|   5005    |        Ece        |      Yilmaz      |    11.15     |      NULL       |
+|   5004    |        Ece        |      Yilmaz      |    30.49     |      0.13       |
+|   5003    |        Ece        |      Yilmaz      |    12.32     |      NULL       |
+|   5002    |        Ece        |      Yilmaz      |    20.56     |      NULL       |
+|   5001    |        Ece        |      Yilmaz      |    15.44     |      NULL       |
++-----------+-------------------+------------------+--------------+-----------------+
+Error : AssertionError - 
+Timestamp: 2025-06-04 04:15:19.464773
