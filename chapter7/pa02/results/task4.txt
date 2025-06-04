@@ -1,0 +1,6 @@
+
+Status: PASSED!
+Check: 1
+Test: Create groups of drivers according to their ratings
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-04 04:28:55.182259
