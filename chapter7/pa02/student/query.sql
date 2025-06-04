@@ -1,1 +1,9 @@
--- Write your query below and then click "Run Query" to execute it. To save multiple queries, click the "+" icon on the left.
+SELECT
+D.DRIVER_FIRST_NAME, 
+D.DRIVER_LAST_NAME, 
+D.DRIVER_DRIVING_LICENSE_ID, 
+T.TRAVEL_START_TIME  , 
+T.TRAVEL_END_TIME
+FROM DRIVERS D
+LEFT JOIN TRAVELS T ON T.DRIVER_ID = D.DRIVER_ID
+ORDER BY D.DRIVER_LAST_NAME;
