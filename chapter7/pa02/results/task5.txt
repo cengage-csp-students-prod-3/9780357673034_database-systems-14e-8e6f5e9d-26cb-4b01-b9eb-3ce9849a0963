@@ -1,20 +1,6 @@
 
-Status: FAILED!
+Status: PASSED!
 Check: 1
 Test: Check for duplicate driver accounts
-Reason: Expected:
-+---------+-----------------+----------------+--------------------+
-| USER_ID | USER_FIRST_NAME | USER_LAST_NAME |     USER_EMAIL     |
-+---------+-----------------+----------------+--------------------+
-|  3003   |     Nursin      |     Yilmaz     |  n.atak@gmail.com  |
-|  3008   |     Nursin      |     Yilmaz     | n.yilmaz@xmail.com |
-+---------+-----------------+----------------+--------------------+
-Found:
-+----------+-----------+----------+--------------------+----------+--------------------+
-| USERID_1 | FIRSTNAME | LASTNAME |      EMAIL_1       | USERID_2 |      EMAIL_2       |
-+----------+-----------+----------+--------------------+----------+--------------------+
-|   3008   |  Nursin   |  Yilmaz  | n.yilmaz@xmail.com |   3003   |  n.atak@gmail.com  |
-|   3003   |  Nursin   |  Yilmaz  |  n.atak@gmail.com  |   3008   | n.yilmaz@xmail.com |
-+----------+-----------+----------+--------------------+----------+--------------------+
-Error : AssertionError - 
-Timestamp: 2025-06-04 04:47:47.314220
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-04 04:49:15.735205
