@@ -1,0 +1,7 @@
+
+Status: FAILED!
+Check: 1
+Test: Query monthly summaries for each user
+Reason: The following error is preventing tests from completing: 1054 (42S22): Unknown column 'LAST_TRAVEL_MONTH' in 'field list'
+Error : ProgrammingError - 1054 (42S22): Unknown column 'LAST_TRAVEL_MONTH' in 'field list'
+Timestamp: 2025-06-04 02:23:33.658413
