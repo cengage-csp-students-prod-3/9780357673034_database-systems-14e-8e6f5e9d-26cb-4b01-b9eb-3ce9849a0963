@@ -1,0 +1,23 @@
+
+Status: FAILED!
+Check: 1
+Test: Calculate the number of cars each driver uses
+Reason: Expected:
++-----------+------+
+| DRIVER_ID | CARS |
++-----------+------+
+|   2001    |  5   |
+|   2003    |  3   |
+|   2002    |  2   |
++-----------+------+
+Found:
++--------+---------------+
+| CAR_ID | COUNT(CAR_ID) |
++--------+---------------+
+|  1003  |       5       |
+|  1001  |       1       |
+|  1002  |       3       |
+|  1004  |       1       |
++--------+---------------+
+Error : AssertionError - 
+Timestamp: 2025-06-05 02:30:37.966508
