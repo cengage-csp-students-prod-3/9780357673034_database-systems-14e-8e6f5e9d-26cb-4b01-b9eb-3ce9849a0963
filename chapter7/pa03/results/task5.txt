@@ -1,0 +1,6 @@
+
+Status: PASSED!
+Check: 1
+Test: Query all cars used more than the average
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-05 02:03:59.126478
