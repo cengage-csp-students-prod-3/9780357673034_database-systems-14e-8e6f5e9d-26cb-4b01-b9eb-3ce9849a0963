@@ -1,7 +1,27 @@
--- Write your query below and then click "Run Query" to execute it. To save multiple queries, click the "+" icon on the left.()
 SELECT
-*
+    TUSAGES.CAR_ID,
+    TUSAGES.Usages
 FROM
-TRAVELS T
+    ( -- Level 1: Calculate the usage count for each CAR_ID
+        SELECT
+            CAR_ID,
+            COUNT(TRAVEL_ID) AS Usages
+        FROM
+            TRAVELS
+        GROUP BY
+            CAR_ID
+    ) AS TUSAGES
 WHERE
-T.TRAVEL_DISCOUNT > (SELECT AVG(T.TRAVEL_DISCOUNT) FROM TRAVELS T WHERE T.TRAVEL_DISCOUNT IS NOT NULL);
+    TUSAGES.Usages > ( -- Level 2: Calculate the average of all individual car usage counts
+        SELECT
+            AVG(CarUsageCounts.Usages)
+        FROM
+            ( -- This subquery gets the individual usage counts for averaging
+                SELECT
+                    COUNT(TRAVEL_ID) AS Usages
+                FROM
+                    TRAVELS
+                GROUP BY
+                    CAR_ID
+            ) AS CarUsageCounts
+    );
