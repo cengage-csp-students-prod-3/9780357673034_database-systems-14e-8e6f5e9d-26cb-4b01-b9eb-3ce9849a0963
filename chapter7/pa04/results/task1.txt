@@ -1,22 +1,6 @@
 
-Status: FAILED!
+Status: PASSED!
 Check: 1
 Test: Calculate the number of cars each driver uses
-Reason: Expected:
-+-----------+------+
-| DRIVER_ID | CARS |
-+-----------+------+
-|   2001    |  5   |
-|   2003    |  3   |
-|   2002    |  2   |
-+-----------+------+
-Found:
-+-----------+------+
-| DRIVER_ID | CARS |
-+-----------+------+
-|   2001    |  5   |
-|   2002    |  2   |
-|   2003    |  3   |
-+-----------+------+
-Error : AssertionError - 
-Timestamp: 2025-06-05 02:32:06.617572
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-05 15:04:43.228983
