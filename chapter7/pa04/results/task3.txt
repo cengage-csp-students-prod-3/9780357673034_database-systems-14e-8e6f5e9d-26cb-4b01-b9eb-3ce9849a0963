@@ -1,0 +1,6 @@
+
+Status: PASSED!
+Check: 1
+Test: Query all the distinct start locations
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-05 18:25:07.792312
