@@ -1,27 +1,6 @@
 
-Status: FAILED!
+Status: PASSED!
 Check: 1
 Test: Query all travels given by drivers in the month of October
-Reason: Expected:
-+-----------+-----+-------+
-| DRIVER_ID | DAY | RIDES |
-+-----------+-----+-------+
-|   2001    |  1  |   2   |
-|   2002    |  1  |   1   |
-|   2003    |  2  |   1   |
-|   2001    |  2  |   1   |
-|   2003    |  3  |   2   |
-|   2002    |  3  |   1   |
-|   2001    |  3  |   2   |
-+-----------+-----+-------+
-Found:
-+-----------+---------+
-| DRIVER_ID | COUNTED |
-+-----------+---------+
-|   2001    |    5    |
-|   2002    |    2    |
-|   2003    |    3    |
-|   NULL    |    0    |
-+-----------+---------+
-Error : AssertionError - 
-Timestamp: 2025-06-05 20:29:20.515846
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-05 20:58:55.929206
