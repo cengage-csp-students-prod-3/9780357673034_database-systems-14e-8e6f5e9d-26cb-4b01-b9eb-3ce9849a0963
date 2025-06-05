@@ -1,0 +1,14 @@
+
+Status: FAILED!
+Check: 1
+Test: Query the average, maximum, and total number of rides users have taken
+Reason: Expected:
++---------+---------+-------+
+| AVERAGE | MAXIMUM | TOTAL |
++---------+---------+-------+
+| 1.6667  |    2    |  10   |
++---------+---------+-------+
+Found:
+
+Error : AssertionError - 
+Timestamp: 2025-06-05 18:51:03.537379
