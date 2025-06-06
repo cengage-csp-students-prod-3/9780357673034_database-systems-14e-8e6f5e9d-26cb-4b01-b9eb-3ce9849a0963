@@ -1,7 +1,9 @@
+DROP DATABASE Ch07_SaleCo;
+GO;
 CREATE DATABASE Ch07_SaleCo;
 USE Ch07_SaleCo;
 
-BEGIN;
+
 
     DROP TABLE IF EXISTS Ch07_SaleCoLINE;
     DROP TABLE IF EXISTS INVOICE;
@@ -315,6 +317,3 @@ BEGIN;
     VALUES(115, 'Mrs.', 'Saranda'   , 'Hermine', 'R' , '1997-07-25', '2018-04-23', 3, '615', '324-5505');
     INSERT INTO EMP
     VALUES(116, 'Mr.' , 'Smith'     , 'George' , 'A' , '1990-11-08', '2013-12-10', 8, '615', '890-2984');
-
-
-    COMMIT;
