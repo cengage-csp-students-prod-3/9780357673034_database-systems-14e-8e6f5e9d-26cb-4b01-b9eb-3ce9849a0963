@@ -1,7 +1,8 @@
+
 SELECT
 C.CUS_CODE, 
 C.CUS_BALANCE,
-SUM(ROUND(L.LINE_PRICE * L.LINE_UNITS,2)) AS "Total Purchases", COUNT(L.LINE_NUMBER) AS "Number of Purchases"
+SUM(ROUND(L.LINE_PRICE * L.LINE_UNITS,2)) AS "Total Purchases", COUNT(L.LINE_NUMBER) AS "Number of Purchases", ROUND(AVG(L.LINE_PRICE * L.LINE_UNITS), 2) AS "Average Purchase Amount"
 FROM
 CUSTOMER C 
 JOIN
