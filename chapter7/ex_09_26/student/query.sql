@@ -1,1 +1,18 @@
--- Write your query below and then click "Run Query" to execute it. To save multiple queries, click the "+" icon on the left.
+SELECT
+C.CUS_CODE, I.INV_NUMBER, I.INV_DATE, P.P_DESCRIPT, L.LINE_UNITS, L.LINE_PRICE
+FROM
+CUSTOMER C 
+JOIN
+INVOICE I
+ON
+C.CUS_CODE = I.CUS_CODE
+JOIN
+Ch07_SaleCoLINE L
+ON 
+L.INV_NUMBER = I.INV_NUMBER
+JOIN
+PRODUCT P
+ON
+L.P_Code = P.P_CODE
+ORDER BY 
+C.CUS_CODE, I.INV_NUMBER, P.P_DESCRIPT;
