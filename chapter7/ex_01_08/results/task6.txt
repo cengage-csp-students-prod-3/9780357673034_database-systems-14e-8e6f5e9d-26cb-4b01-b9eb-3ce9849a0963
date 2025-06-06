@@ -1,32 +1,6 @@
 
-Status: FAILED!
+Status: PASSED!
 Check: 1
 Test: Problem 6
-Reason: Expected:
-+---------+------------+-------------------+--------------------+
-| EMP_NUM | EMP_LNAME  | SUMOFASSIGN_HOURS | SUMOFASSIGN_CHARGE |
-+---------+------------+-------------------+--------------------+
-|   101   |    News    |        3.1        |       387.50       |
-|   103   |  Arbough   |       19.7        |      1664.65       |
-|   104   |  Ramoras   |       11.9        |      1218.70       |
-|   105   |  Johnson   |       12.5        |      1382.50       |
-|   108   | Washington |        8.3        |       840.15       |
-|   113   | Joenbrood  |        3.8        |       192.85       |
-|   115   |  Bawangi   |       12.5        |      1276.75       |
-|   117   | Williamson |       18.8        |       649.54       |
-+---------+------------+-------------------+--------------------+
-Found:
-+---------+------------+-------------------+--------------------+
-| EMP_NUM | EMP_LNAME  | SUMOFASSIGN_HOURS | SUMOFASSIGN_CHARGE |
-+---------+------------+-------------------+--------------------+
-|   101   |    News    |       3.10        |       387.50       |
-|   103   |  Arbough   |       19.70       |      1664.65       |
-|   104   |  Ramoras   |       11.90       |      1218.70       |
-|   105   |  Johnson   |       12.50       |      1382.50       |
-|   108   | Washington |       8.30        |       840.15       |
-|   113   | Joenbrood  |       3.80        |       192.85       |
-|   115   |  Bawangi   |       12.50       |      1276.75       |
-|   117   | Williamson |       18.80       |       649.54       |
-+---------+------------+-------------------+--------------------+
-Error : AssertionError - 
-Timestamp: 2025-06-06 01:18:39.842135
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-06 01:20:46.592945
