@@ -1,6 +1,6 @@
 -- Write your query below and then click "Run Query" to execute it. To save multiple queries, click the "+" icon on the left.
 SELECT 
-CUS_CODE,INV_NUMBER,INV_DATE,P_DESCRIPT,LINE_UNITS,LINE_PRICE
+C.CUS_CODE,I.INV_NUMBER,I.INV_DATE,P.P_DESCRIPT,L.LINE_UNITS,L.LINE_PRICE
 FROM
 CUSTOMER C
 JOIN
@@ -15,4 +15,5 @@ JOIN
 PRODUCT P
 ON
 L.P_CODE = P.P_CODE
-
+ORDER BY 
+C.CUS_CODE,I.INV_NUMBER,P.P_DESCRIPT;
