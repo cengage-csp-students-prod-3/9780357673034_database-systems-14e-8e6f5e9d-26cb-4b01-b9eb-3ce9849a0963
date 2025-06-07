@@ -2,7 +2,7 @@ USE Ch07_SaleCo;
 
 SELECT
     COUNT(DISTINCT I.INV_NUMBER) AS "Total Invoices",
-    SUM(L.LINE_UNITS * L.LINE_PRICE) AS "Total Sales",
+    ROUND(SUM(L.LINE_UNITS * L.LINE_PRICE)) AS "Total Sales",
     MIN(CustomerPurchases.Total_Purchases) AS "Minimum Customer Purchases",
     MAX(CustomerPurchases.Total_Purchases) AS "Largest Customer Purchases",
     AVG(CustomerPurchases.Total_Purchases) AS "Average Customer Purchases"
