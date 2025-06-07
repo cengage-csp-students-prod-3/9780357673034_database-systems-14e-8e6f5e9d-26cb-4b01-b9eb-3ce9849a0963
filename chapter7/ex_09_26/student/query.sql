@@ -15,7 +15,7 @@ WITH CustomerTotalSales AS (
 )
 SELECT
     (SELECT COUNT(DISTINCT INV_NUMBER) FROM INVOICE) AS "Total Invoices", -- Counts all unique invoices
-    (SELECT ROUND(SUM(LINE_UNITS * LINE_PRICE)) FROM Ch07_SaleCoLINE) AS "Total Sales", -- Sums all line item totals
+    (SELECT ROUND(SUM(LINE_UNITS * LINE_PRICE),2) FROM Ch07_SaleCoLINE) AS "Total Sales", -- Sums all line item totals
     ROUND(MIN(CTS.Total_Purchases),2) AS "Minimum Customer Purchases",
     ROUND(MAX(CTS.Total_Purchases),2) AS "Largest Customer Purchases",
     ROUND(AVG(CTS.Total_Purchases), 2) AS "Average Customer Purchases" -- Correct AVG of per-customer totals
