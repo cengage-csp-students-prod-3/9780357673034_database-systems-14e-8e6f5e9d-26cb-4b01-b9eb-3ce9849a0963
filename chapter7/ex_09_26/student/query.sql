@@ -1,19 +1,25 @@
+USE Ch07_SaleCo;
 
 SELECT
-C.CUS_CODE,
-ROUND(COUNT(DISTINCT I.INV_NUMBER),0) AS "NUMBER OF INVOICES", 
-SUM(ROUND(L.LINE_PRICE * L.LINE_UNITS,2)) AS "TOTAL CUSTOMER PURCHASES"
+    COUNT(DISTINCT I.INV_NUMBER) AS "Total Invoices",
+    SUM(L.LINE_UNITS * L.LINE_PRICE) AS "Total Sales",
+    MIN(CustomerPurchases.Total_Purchases) AS "Minimum Customer Purchases",
+    MAX(CustomerPurchases.Total_Purchases) AS "Largest Customer Purchases",
+    AVG(CustomerPurchases.Total_Purchases) AS "Average Customer Purchases"
 FROM
-CUSTOMER C 
-JOIN      
-INVOICE I
-ON
-I.CUS_CODE = C.CUS_CODE
+    INVOICE AS I
 JOIN
-Ch07_SaleCoLINE L
-ON 
-L.INV_NUMBER = I.INV_NUMBER
-GROUP BY
-C.CUS_CODE
-ORDER BY 
-C.CUS_CODE; 
+    Ch07_SaleCoLINE AS L ON I.INV_NUMBER = L.INV_NUMBER
+JOIN
+    (SELECT
+        C.CUS_CODE,
+        SUM(L2.LINE_UNITS * L2.LINE_PRICE) AS Total_Purchases
+    FROM
+        CUSTOMER AS C
+    JOIN
+        INVOICE AS I2 ON C.CUS_CODE = I2.CUS_CODE
+    JOIN
+        Ch07_SaleCoLINE AS L2 ON I2.INV_NUMBER = L2.INV_NUMBER
+    GROUP BY
+        C.CUS_CODE
+    ) AS CustomerPurchases ON I.CUS_CODE = CustomerPurchases.CUS_CODE;
