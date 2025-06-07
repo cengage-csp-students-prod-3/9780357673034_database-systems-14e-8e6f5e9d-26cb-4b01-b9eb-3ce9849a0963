@@ -13,7 +13,7 @@ JOIN
 JOIN
     (SELECT
         C.CUS_CODE,
-        SUM(L2.LINE_UNITS * L2.LINE_PRICE) AS Total_Purchases
+        ROUND(SUM(L2.LINE_UNITS * L2.LINE_PRICE),2) AS Total_Purchases
     FROM
         CUSTOMER AS C
     JOIN
