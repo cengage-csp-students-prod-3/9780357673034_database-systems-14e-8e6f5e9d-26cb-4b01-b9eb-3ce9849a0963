@@ -1,0 +1,66 @@
+
+Status: FAILED!
+Check: 1
+Test: Problem 48
+Reason: Expected:
++---------+-----------+-----------+------------+
+| EMP_NUM | EMP_LNAME | EMP_FNAME | SAL_AMOUNT |
++---------+-----------+-----------+------------+
+|  83746  |  RANKIN   |   SEAN    |  95550.00  |
+|  84328  | CARPENTER |   FERN    |  94090.00  |
+|  83716  |  RIVERA   |   HENRY   |  85920.00  |
+|  84432  |  JAMISON  |   MERLE   |  85360.00  |
+|  83902  |  VARGAS   |   ROCKY   |  79540.00  |
+|  83695  |  MENDEZ   |  CARROLL  |  79200.00  |
+|  84500  |  WESTON   | CHRISTINE |  78690.00  |
+|  84594  |  TIDWELL  |   ODELL   |  77400.00  |
+|  83910  |   AVERY   |  LAUREN   |  76110.00  |
+|  83359  |   WATTS   |   MERLE   |  72240.00  |
+|  83790  |  ACEVEDO  |  LAVINA   |  72000.00  |
+|  83433  |  NORWOOD  |   RONNA   |  68870.00  |
+|  84521  |   JUDD    |  DELFINA  |  66000.00  |
+|  83653  |   HORN    |  LEEANN   |  61920.00  |
+|  83738  |   STACY   |  PORTER   |  58200.00  |
+|  83788  |   DOWDY   |   LANA    |  56760.00  |
+|  83867  |   KELLY   |  TRACIE   |  56750.00  |
+|  84234  |   MINER   |   LUISA   |  54720.00  |
+|  83637  |   CRANE   |  TANIKA   |  52870.00  |
+|  83877  |  DUNLAP   | STEPHAINE |  52650.00  |
+|  84035  |  FISHER   |    HAL    |  51600.00  |
+|  83729  |   RAMEY   |  CORRINA  |  48500.00  |
+|  83732  |   DIGGS   |   SAMMY   |  44720.00  |
+|  83644  |  MAXWELL  |   WILLA   |  43200.00  |
+|  83312  |   BAKER   |  ROSALBA  |  42400.00  |
++---------+-----------+-----------+------------+
+Found:
++---------+-----------+-----------+---------------+
+| EMP_NUM | EMP_LNAME | EMP_FNAME | LARGESTSALARY |
++---------+-----------+-----------+---------------+
+|  83746  |  RANKIN   |   SEAN    |   95550.00    |
+|  84328  | CARPENTER |   FERN    |   94090.00    |
+|  83716  |  RIVERA   |   HENRY   |   85920.00    |
+|  84432  |  JAMISON  |   MERLE   |   85360.00    |
+|  83902  |  VARGAS   |   ROCKY   |   79540.00    |
+|  83695  |  MENDEZ   |  CARROLL  |   79200.00    |
+|  84500  |  WESTON   | CHRISTINE |   78690.00    |
+|  84594  |  TIDWELL  |   ODELL   |   77400.00    |
+|  83910  |   AVERY   |  LAUREN   |   76110.00    |
+|  83359  |   WATTS   |   MERLE   |   72240.00    |
+|  83790  |  ACEVEDO  |  LAVINA   |   72000.00    |
+|  83433  |  NORWOOD  |   RONNA   |   68870.00    |
+|  84521  |   JUDD    |  DELFINA  |   66000.00    |
+|  83653  |   HORN    |  LEEANN   |   61920.00    |
+|  83738  |   STACY   |  PORTER   |   58200.00    |
+|  83788  |   DOWDY   |   LANA    |   56760.00    |
+|  83867  |   KELLY   |  TRACIE   |   56750.00    |
+|  84234  |   MINER   |   LUISA   |   54720.00    |
+|  83637  |   CRANE   |  TANIKA   |   52870.00    |
+|  83877  |  DUNLAP   | STEPHAINE |   52650.00    |
+|  84035  |  FISHER   |    HAL    |   51600.00    |
+|  83729  |   RAMEY   |  CORRINA  |   48500.00    |
+|  83732  |   DIGGS   |   SAMMY   |   44720.00    |
+|  83644  |  MAXWELL  |   WILLA   |   43200.00    |
+|  83312  |   BAKER   |  ROSALBA  |   42400.00    |
++---------+-----------+-----------+---------------+
+Error : AssertionError - 
+Timestamp: 2025-06-08 06:31:08.793207
