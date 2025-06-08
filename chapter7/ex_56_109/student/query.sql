@@ -1,10 +1,14 @@
+SQL
+
 SELECT
-    PAT_ID,
-    CONCAT(PAT_FNAME, ' ', PAT_LNAME) AS `NAME`, -- Concatenates first and last names
-    PAT_TYPE
+    BOOK_NUM,
+    COUNT(*) AS `TIMES_CHECKED_OUT` -- Count the number of checkouts for each book
 FROM
-    PATRON
+    CHECKOUT
+GROUP BY
+    BOOK_NUM
+-- Implicitly, books that have never been checked out will not appear in the CHECKOUT table,
+-- so they won't be included in the results of this query.
 ORDER BY
-    LOWER(PAT_TYPE) ASC, -- Sorts by patron type case-insensitively
-    LOWER(PAT_LNAME) ASC, -- Then by last name case-insensitively
-    LOWER(PAT_FNAME) ASC; -- Then by first name case-insensitively
+    TimesCheckedOut DESC, -- Sort by the number of times checked out in descending order
+    BOOK_NUM DESC;        -- Then by book number in descending order
