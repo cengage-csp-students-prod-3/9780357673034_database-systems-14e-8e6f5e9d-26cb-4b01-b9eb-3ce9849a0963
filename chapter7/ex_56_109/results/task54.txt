@@ -1,18 +1,6 @@
 
-Status: FAILED!
+Status: PASSED!
 Check: 1
 Test: Problem 109
-Reason: Expected:
-+-----------------+------------------+
-| LOWEST AVG COST | HIGHEST AVG COST |
-+-----------------+------------------+
-|      66.62      |      89.95       |
-+-----------------+------------------+
-Found:
-+---------------+----------------+
-| LOWESTAVGCOST | HIGHESTAVGCOST |
-+---------------+----------------+
-|     66.62     |     89.95      |
-+---------------+----------------+
-Error : AssertionError - 
-Timestamp: 2025-06-08 14:48:04.056445
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-08 14:49:09.671519
