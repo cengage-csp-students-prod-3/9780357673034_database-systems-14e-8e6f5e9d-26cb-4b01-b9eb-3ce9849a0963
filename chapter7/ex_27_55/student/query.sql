@@ -1,31 +1,43 @@
 SELECT
-    C.CUST_CODE,
-    C.CUST_FNAME,
-    C.CUST_LNAME,
-    -- Select individual address components as expected
-    C.CUST_STREET,
-    C.CUST_CITY,
-    C.CUST_STATE,
-    C.CUST_ZIP,
-    CLP.INV_DATE,
-    -- Display invoice total as 0 if no purchase was made, and alias it as 'LARGEST INVOICE'
-    COALESCE(CLP.INV_TOTAL, 0) AS "LARGEST INVOICE"
+    B.BRAND_NAME,
+    B.BRAND_TYPE,
+    -- Calculate the average price of products for each brand.
+    -- This averages the PROD_PRICE from the LGPRODUCT table,
+    -- ensuring each distinct product's price is included once in the average,
+    -- regardless of how many times it was sold.
+    -- COALESCE handles brands with no associated products, displaying 0.00.
+    COALESCE(AVG_PRICE.AvgBrandPrice, 0.00) AS AveragePriceOfProducts,
+    -- Calculate the total units sold for products of each brand.
+    -- SUM(LL.LINE_QTY) aggregates all units sold across all invoices for products
+    -- belonging to that brand.
+    -- COALESCE handles brands with no sales, displaying 0.
+    COALESCE(TOTAL_SALES.TotalUnitsSold, 0) AS TotalUnitsSoldOfProducts
 FROM
-    LGCUSTOMER C
+    LGBRAND B
 LEFT JOIN (
-    -- Subquery to find the largest purchase for each customer
+    -- Subquery to compute the average product price for each brand.
+    -- It groups by BRAND_ID to get the average for all products belonging to that brand.
     SELECT
-        INV_NUM,
-        CUST_CODE,
-        INV_DATE,
-        INV_TOTAL,
-        -- Assign a rank to each invoice based on total and date, for each customer
-        ROW_NUMBER() OVER (PARTITION BY CUST_CODE ORDER BY INV_TOTAL DESC, INV_DATE DESC) as rn
+        P.BRAND_ID,
+        AVG(P.PROD_PRICE) AS AvgBrandPrice
     FROM
-        LGINVOICE
-) CLP ON C.CUST_CODE = CLP.CUST_CODE AND CLP.rn = 1 -- Join only the largest purchase for each customer
-WHERE
-    C.CUST_STATE = 'AL' -- Filter for customers located in Alabama
+        LGPRODUCT P
+    GROUP BY
+        P.BRAND_ID
+) AS AVG_PRICE ON B.BRAND_ID = AVG_PRICE.BRAND_ID
+LEFT JOIN (
+    -- Subquery to compute the total units sold for each brand.
+    -- It joins LGLINE (for quantity sold) with LGPRODUCT (to link to brand)
+    -- and then groups by BRAND_ID.
+    SELECT
+        P.BRAND_ID,
+        SUM(LL.LINE_QTY) AS TotalUnitsSold
+    FROM
+        LGLINE LL
+    JOIN
+        LGPRODUCT P ON LL.PROD_SKU = P.PROD_SKU
+    GROUP BY
+        P.BRAND_ID
+) AS TOTAL_SALES ON B.BRAND_ID = TOTAL_SALES.BRAND_ID
 ORDER BY
-    C.CUST_LNAME, -- Sort by customer last name
-    C.CUST_FNAME; -- Then by customer first name
+    B.BRAND_NAME; -- Sort the final results by brand name
