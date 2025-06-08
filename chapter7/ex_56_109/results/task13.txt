@@ -1,0 +1,45 @@
+
+Status: FAILED!
+Check: 1
+Test: Problem 68
+Reason: Expected:
++----------+----------------------------------------------+-----------+
+| BOOK_NUM |                  BOOK_TITLE                  | BOOK_YEAR |
++----------+----------------------------------------------+-----------+
+|   5235   |           Beginner's Guide to JAVA           |   2018    |
+|   5238   |            Conceptual Programming            |   2019    |
+|   5239   |              J++ in Mobile Apps              |   2019    |
+|   5240   |               iOS Programming                |   2019    |
+|   5241   |               JAVA First Steps               |   2019    |
+|   5247   |  Shining Through the Cloud: Sun Programming  |   2020    |
+|   5251   |        Thoughts on Revitalizing Ruby         |   2020    |
+|   5253   | Virtual Programming for Virtual Environments |   2020    |
+|   5254   |         Coding Style for Maintenance         |   2021    |
++----------+----------------------------------------------+-----------+
+Found:
++----------+-----------------------------------------------------------------------+-----------+
+| BOOK_NUM |                              BOOK_TITLE                               | BOOK_YEAR |
++----------+-----------------------------------------------------------------------+-----------+
+|   5235   |                       Beginner's Guide to JAVA                        |   2018    |
+|   5236   |                         Database in the Cloud                         |   2018    |
+|   5237   |                  Mastering the database environment                   |   2019    |
+|   5238   |                        Conceptual Programming                         |   2019    |
+|   5239   |                          J++ in Mobile Apps                           |   2019    |
+|   5240   |                            iOS Programming                            |   2019    |
+|   5241   |                           JAVA First Steps                            |   2019    |
+|   5242   |                      C# in Middleware Deployment                      |   2019    |
+|   5243   |                          DATABASES in Theory                          |   2019    |
+|   5244   |                    Cloud-based Mobile Applications                    |   2019    |
+|   5245   |               The Golden Road to Platform independence                |   2020    |
+|   5246   |                           Capture the Cloud                           |   2020    |
+|   5247   |              Shining Through the Cloud: Sun Programming               |   2020    |
+|   5248   | What You Always Wanted to Know About Database, But Were Afraid to Ask |   2020    |
+|   5249   |                        Starlight Applications                         |   2020    |
+|   5250   |                     Reengineering the Middle Tier                     |   2020    |
+|   5251   |                     Thoughts on Revitalizing Ruby                     |   2020    |
+|   5252   |                       Beyond the Database Veil                        |   2020    |
+|   5253   |             Virtual Programming for Virtual Environments              |   2020    |
+|   5254   |                     Coding Style for Maintenance                      |   2021    |
++----------+-----------------------------------------------------------------------+-----------+
+Error : AssertionError - 
+Timestamp: 2025-06-08 10:45:26.754890
