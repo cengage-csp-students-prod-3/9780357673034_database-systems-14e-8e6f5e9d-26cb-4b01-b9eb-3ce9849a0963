@@ -1,31 +1,6 @@
 
-Status: FAILED!
+Status: PASSED!
 Check: 1
 Test: Problem 106
-Reason: Expected:
-+-------+----------+-----------+
-| AU_ID | AU_FNAME | AU_LNAME  |
-+-------+----------+-----------+
-|  581  |  Manish  | Aggerwal  |
-|  251  |   Hugo   |   Bruer   |
-|  262  |   Xia    |  Chiang   |
-|  438  |  Perry   |  Pearson  |
-|  284  |  Trina   | Tankersly |
-|  383  |   Neal   |   Walsh   |
-+-------+----------+-----------+
-Found:
-+-------+----------+-----------+
-| AU_ID | AU_FNAME | AU_LNAME  |
-+-------+----------+-----------+
-|  581  |  Manish  | Aggerwal  |
-|  251  |   Hugo   |   Bruer   |
-|  262  |   Xia    |  Chiang   |
-|  394  |  Robert  |   Lake    |
-|  438  |  Perry   |  Pearson  |
-|  185  |  Benson  |  Reeves   |
-|  229  | Carmine  | Salvadore |
-|  284  |  Trina   | Tankersly |
-|  383  |   Neal   |   Walsh   |
-+-------+----------+-----------+
-Error : AssertionError - 
-Timestamp: 2025-06-08 14:32:45.331165
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-08 14:38:18.330514
