@@ -1,13 +1,20 @@
 SELECT
-    P.PAT_ID,      -- Patron ID
-    P.PAT_FNAME,   -- Patron First Name
-    P.PAT_LNAME    -- Patron Last Name
+P.PAT_ID,
+P.PAT_LNAME,
+COUNT(C.CHECK_NUM) AS `NUM CHECKOUTS`,
+COUNT(DISTINCT C.BOOK_NUM) AS `NUM DIFFERENT BOOKS`
 FROM
-    PATRON AS P
-LEFT JOIN
-    CHECKOUT AS C ON P.PAT_ID = C.PAT_ID -- Join PATRON with CHECKOUT
-WHERE
-    C.PAT_ID IS NULL -- Filter for patrons who have no matching records in the CHECKOUT table
-ORDER BY
-    P.PAT_LNAME ASC, -- Sort by patron last name in ascending order
-    P.PAT_FNAME ASC; -- Then by patron first name in ascending order
+PATRON P
+JOIN
+CHECKOUT C ON C.PAT_ID = P.PAT_ID
+GROUP BY
+P.PAT_ID,
+P.PAT_LNAME
+HAVING COUNT(C.CHECK_NUM) > 2
+
+ORDER BY 
+`NUM DIFFERENT BOOKS` DESC, 
+`NUM CHECKOUTS` DESC,
+P.PAT_ID
+
+
