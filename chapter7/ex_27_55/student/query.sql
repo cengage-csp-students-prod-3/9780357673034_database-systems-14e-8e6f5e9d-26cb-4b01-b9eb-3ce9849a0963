@@ -1,11 +1,11 @@
 SELECT
   L1.INV_NUM,
-  L1.LINE_NUM AS "L.LINE_NUM",        -- Corrected alias
-  P1.PROD_SKU AS "P.PROD_SKU",        -- Corrected alias
-  P1.PROD_DESCRIPT AS "P.PROD_DESCRIPT", -- Corrected alias
-  L2.LINE_NUM AS "L2.LINE_NUM",       -- Corrected alias
-  P2.PROD_SKU AS "P2.PROD_SKU",       -- Corrected alias
-  P2.PROD_DESCRIPT AS "P2.PROD_DESCRIPT", -- Corrected alias
+  L1.LINE_NUM AS "L.LINE_NUM",
+  P1.PROD_SKU AS "P.PROD_SKU",
+  P1.PROD_DESCRIPT AS "P.PROD_DESCRIPT",
+  L2.LINE_NUM AS "L2.LINE_NUM",
+  P2.PROD_SKU AS "P2.PROD_SKU",
+  P2.PROD_DESCRIPT AS "P2.PROD_DESCRIPT",
   B.BRAND_ID
 FROM
   LGLINE AS L1
@@ -27,9 +27,10 @@ ON
   L2.PROD_SKU = P2.PROD_SKU
 WHERE
   P1.PROD_CATEGORY = 'Sealer'
-  AND P2.PROD_CATEGORY <> 'Sealer' -- Product 2 is NOT a Sealer
+  AND P2.PROD_CATEGORY <> 'Sealer' -- P2 is not a Sealer
+  AND P2.PROD_CATEGORY <> 'Primer' -- Exclude Primer, if it's not considered a "top coat"
   AND P1.BRAND_ID = P2.BRAND_ID   -- Same Brand
-  AND L1.LINE_NUM <> L2.LINE_NUM  -- Different Line Numbers
+  AND L1.LINE_NUM < L2.LINE_NUM   -- Ensures 'sealer' line number is always less than 'top coat' line number
 ORDER BY
   L1.INV_NUM ASC,
   L1.LINE_NUM ASC,
