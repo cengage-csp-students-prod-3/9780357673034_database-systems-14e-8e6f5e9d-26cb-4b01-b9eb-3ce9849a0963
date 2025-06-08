@@ -1,0 +1,42 @@
+
+Status: FAILED!
+Check: 1
+Test: Problem 106
+Reason: Expected:
++-------+----------+-----------+
+| AU_ID | AU_FNAME | AU_LNAME  |
++-------+----------+-----------+
+|  581  |  Manish  | Aggerwal  |
+|  251  |   Hugo   |   Bruer   |
+|  262  |   Xia    |  Chiang   |
+|  438  |  Perry   |  Pearson  |
+|  284  |  Trina   | Tankersly |
+|  383  |   Neal   |   Walsh   |
++-------+----------+-----------+
+Found:
++----------+-----------------------------------------------------------------------+--------------+---------+------------+
+| BOOK_NUM |                              BOOK_TITLE                               | BOOK_SUBJECT | AVGCOST | DIFFERENCE |
++----------+-----------------------------------------------------------------------+--------------+---------+------------+
+|   5235   |                       Beginner's Guide to JAVA                        | Programming  |  66.62  |   -6.67    |
+|   5252   |                       Beyond the Database Veil                        |   Database   |  84.95  |   -15.00   |
+|   5242   |                      C# in Middleware Deployment                      |  Middleware  |  89.95  |   -30.00   |
+|   5246   |                           Capture the Cloud                           |    Cloud     |  72.45  |   -2.50    |
+|   5244   |                    Cloud-based Mobile Applications                    |    Cloud     |  72.45  |   -2.50    |
+|   5254   |                     Coding Style for Maintenance                      | Programming  |  66.62  |   -16.67   |
+|   5238   |                        Conceptual Programming                         | Programming  |  66.62  |   -6.67    |
+|   5236   |                         Database in the Cloud                         |    Cloud     |  72.45  |    7.50    |
+|   5243   |                          DATABASES in Theory                          |   Database   |  84.95  |   45.00    |
+|   5240   |                            iOS Programming                            | Programming  |  66.62  |   13.33    |
+|   5239   |                          J++ in Mobile Apps                           | Programming  |  66.62  |   -16.67   |
+|   5241   |                           JAVA First Steps                            | Programming  |  66.62  |   -16.67   |
+|   5237   |                  Mastering the database environment                   |   Database   |  84.95  |    5.00    |
+|   5250   |                     Reengineering the Middle Tier                     |  Middleware  |  89.95  |    0.00    |
+|   5247   |              Shining Through the Cloud: Sun Programming               | Programming  |  66.62  |   43.33    |
+|   5249   |                        Starlight Applications                         |    Cloud     |  72.45  |   -2.50    |
+|   5245   |               The Golden Road to Platform independence                |  Middleware  |  89.95  |   30.00    |
+|   5251   |                     Thoughts on Revitalizing Ruby                     | Programming  |  66.62  |   -6.67    |
+|   5253   |             Virtual Programming for Virtual Environments              | Programming  |  66.62  |   13.33    |
+|   5248   | What You Always Wanted to Know About Database, But Were Afraid to Ask |   Database   |  84.95  |   -35.00   |
++----------+-----------------------------------------------------------------------+--------------+---------+------------+
+Error : AssertionError - 
+Timestamp: 2025-06-08 14:24:52.878953
