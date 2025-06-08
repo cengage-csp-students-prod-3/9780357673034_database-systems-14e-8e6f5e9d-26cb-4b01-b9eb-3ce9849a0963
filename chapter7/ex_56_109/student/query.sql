@@ -1,31 +1,16 @@
-WITH AuthorTotalBooks AS (
-    -- First, calculate the total number of books written by each author, regardless of subject
+WITH SubjectAvgCost AS (
+    -- Step 1: Calculate the average cost for each distinct subject
     SELECT
-        A.AU_ID,
-        COUNT(W.BOOK_NUM) AS TotalBooksByAuthor
+        BOOK_SUBJECT,
+        AVG(BOOK_COST) AS AvgCost
     FROM
-        AUTHOR AS A
-    JOIN
-        WRITES AS W ON A.AU_ID = W.AU_ID
+        BOOK
     GROUP BY
-        A.AU_ID
+        BOOK_SUBJECT
 )
+-- Step 2: Find the minimum and maximum of these calculated subject averages
 SELECT
-    B.BOOK_NUM,         -- Book Number
-    B.BOOK_TITLE,       -- Book Title
-    B.BOOK_SUBJECT,     -- Book Subject
-    A.AU_LNAME,         -- Author Last Name
-    ATB.TotalBooksByAuthor AS `Num Books by Author` -- Use the pre-calculated total from the CTE
+    ROUND(MIN(AvgCost), 2) AS LowestAvgCost,
+    ROUND(MAX(AvgCost), 2) AS HighestAvgCost
 FROM
-    BOOK AS B
-JOIN
-    WRITES AS W ON B.BOOK_NUM = W.BOOK_NUM -- Link books to the authors who wrote them
-JOIN
-    AUTHOR AS A ON W.AU_ID = A.AU_ID       -- Link authors to their details
-JOIN
-    AuthorTotalBooks AS ATB ON A.AU_ID = ATB.AU_ID -- Join with the CTE to get total book count
-WHERE
-    B.BOOK_SUBJECT = 'Cloud' -- Now, filter for books specifically in the 'Cloud' subject
-ORDER BY
-    B.BOOK_TITLE ASC,   -- Sort by book title in ascending order
-    A.AU_LNAME ASC;     -- Then by author last name in ascending order
+    SubjectAvgCost;
