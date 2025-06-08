@@ -1,34 +1,6 @@
 
-Status: FAILED!
+Status: PASSED!
 Check: 1
 Test: Problem 34
-Reason: Expected:
-+-------------------+-------------+
-|    BRAND_NAME     | NUMPRODUCTS |
-+-------------------+-------------+
-|   BINDER PRIME    |     27      |
-|      BUSTERS      |     25      |
-|  FORESTERS BEST   |     15      |
-|   HOME COMFORT    |     36      |
-|      LE MODE      |     36      |
-|     LONG HAUL     |     41      |
-| OLDE TYME QUALITY |     27      |
-|   STUTTENFURST    |     27      |
-|    VALU-MATTE     |     18      |
-+-------------------+-------------+
-Found:
-+-------------------+------------------+
-|    BRAND_NAME     | NUMBEROFPRODUCTS |
-+-------------------+------------------+
-|   BINDER PRIME    |        27        |
-|      BUSTERS      |        25        |
-|  FORESTERS BEST   |        15        |
-|   HOME COMFORT    |        36        |
-|      LE MODE      |        36        |
-|     LONG HAUL     |        41        |
-| OLDE TYME QUALITY |        27        |
-|   STUTTENFURST    |        27        |
-|    VALU-MATTE     |        18        |
-+-------------------+------------------+
-Error : AssertionError - 
-Timestamp: 2025-06-08 03:53:54.830359
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-08 03:55:41.883098
