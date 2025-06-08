@@ -10,7 +10,7 @@ WITH SubjectAvgCost AS (
 )
 -- Step 2: Find the minimum and maximum of these calculated subject averages
 SELECT
-    ROUND(MIN(AvgCost), 2) AS LowestAvgCost,
-    ROUND(MAX(AvgCost), 2) AS HighestAvgCost
+    ROUND(MIN(AvgCost), 2) AS `LOWEST AVG COST`,
+    ROUND(MAX(AvgCost), 2) AS `HIGHEST AVG COST`
 FROM
     SubjectAvgCost;
