@@ -1,0 +1,18 @@
+
+Status: FAILED!
+Check: 1
+Test: Problem 79
+Reason: Expected:
++--------------------+
+| NUMBER OF SUBJECTS |
++--------------------+
+|         4          |
++--------------------+
+Found:
++---------------+
+| NUMBEROFBOOKS |
++---------------+
+|      20       |
++---------------+
+Error : AssertionError - 
+Timestamp: 2025-06-08 11:07:32.805502
