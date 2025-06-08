@@ -1,24 +1,53 @@
+WITH SealerProducts AS (
+    -- CTE 1: Get all line items for 'Sealer' products
+    SELECT
+        L.INV_NUM,
+        L.LINE_NUM,
+        P.PROD_SKU,
+        P.PROD_DESCRIPT,
+        P.BRAND_ID,
+        P.PROD_CATEGORY
+    FROM
+        LGLINE AS L
+    JOIN
+        LGPRODUCT AS P ON L.PROD_SKU = P.PROD_SKU
+    WHERE
+        P.PROD_CATEGORY = 'Sealer'
+),
+TopCoatProducts AS (
+    -- CTE 2: Get all line items for 'Top Coat' products
+    SELECT
+        L.INV_NUM,
+        L.LINE_NUM,
+        P.PROD_SKU,
+        P.PROD_DESCRIPT,
+        P.BRAND_ID,
+        P.PROD_CATEGORY
+    FROM
+        LGLINE AS L
+    JOIN
+        LGPRODUCT AS P ON L.PROD_SKU = P.PROD_SKU
+    WHERE
+        P.PROD_CATEGORY = 'Top Coat'
+)
 SELECT
-    L1.INV_NUM,
-    L1.LINE_NUM,
-    P1.PROD_SKU,
-    P1.PROD_DESCRIPT,
-    L2.LINE_NUM,
-    P2.PROD_SKU,
-    P2.PROD_DESCRIPT,
-    P1.BRAND_ID
+    SL.INV_NUM,
+    SL.LINE_NUM AS SealerLineNum,
+    SL.PROD_SKU AS SealerSKU,
+    SL.PROD_DESCRIPT AS SealerDescription,
+    TCL.LINE_NUM AS TopCoatLineNum,
+    TCL.PROD_SKU AS TopCoatSKU,
+    TCL.PROD_DESCRIPT AS TopCoatDescription,
+    SL.BRAND_ID
 FROM
-    (LGLINE AS L1 JOIN LGPRODUCT AS P1 ON L1.PROD_SKU = P1.PROD_SKU)
+    SealerProducts AS SL
 JOIN
-    (LGLINE AS L2 JOIN LGPRODUCT AS P2 ON L2.PROD_SKU = P2.PROD_SKU)
+    TopCoatProducts AS TCL
 ON
-    L1.INV_NUM = L2.INV_NUM AND L1.LINE_NUM < L2.LINE_NUM -- Added this crucial condition
-WHERE
-    P1.PROD_CATEGORY = 'Sealer'
-    AND P2.PROD_CATEGORY = 'Top Coat'
-    AND P1.BRAND_ID = P2.BRAND_ID
+    SL.INV_NUM = TCL.INV_NUM          -- Both products must be on the same invoice
+    AND SL.BRAND_ID = TCL.BRAND_ID    -- Both products must be from the same brand
+    AND SL.LINE_NUM < TCL.LINE_NUM    -- Ensure distinct line items and avoid duplicate pairs (e.g., A-B vs B-A)
 ORDER BY
-    L1.INV_NUM,
-    L1.LINE_NUM,
-    L2.LINE_NUM DESC
-LIMIT 100;
+    SL.INV_NUM ASC,
+    SL.LINE_NUM ASC,
+    TCL.LINE_NUM DESC;
