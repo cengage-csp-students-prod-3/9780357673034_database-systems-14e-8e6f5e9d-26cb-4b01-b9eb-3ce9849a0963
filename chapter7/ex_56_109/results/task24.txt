@@ -1,18 +1,6 @@
 
-Status: FAILED!
+Status: PASSED!
 Check: 1
 Test: Problem 79
-Reason: Expected:
-+--------------------+
-| NUMBER OF SUBJECTS |
-+--------------------+
-|         4          |
-+--------------------+
-Found:
-+--------------------+
-| NUMBER OF SUBJECTS |
-+--------------------+
-|         20         |
-+--------------------+
-Error : AssertionError - 
-Timestamp: 2025-06-08 11:11:04.730877
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-08 11:13:12.288793
