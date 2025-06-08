@@ -1,7 +1,7 @@
 
 SELECT
     BOOK_NUM,
-    COUNT(*) AS `TIMES_CHECKED_OUT` -- Count the number of checkouts for each book
+    COUNT(*) AS `TIMES CHECKED OUT` -- Count the number of checkouts for each book
 FROM
     CHECKOUT
 GROUP BY
@@ -9,5 +9,5 @@ GROUP BY
 -- Implicitly, books that have never been checked out will not appear in the CHECKOUT table,
 -- so they won't be included in the results of this query.
 ORDER BY
-    TIMES_CHECKED_OUT DESC, -- Sort by the number of times checked out in descending order
+    `TIMES CHECKED OUT` DESC, -- Sort by the number of times checked out in descending order
     BOOK_NUM DESC;        -- Then by book number in descending order
