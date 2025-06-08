@@ -25,7 +25,7 @@ LEFT JOIN (
     GROUP BY
         P.BRAND_ID
 ) AS AVG_PRICE ON B.BRAND_ID = AVG_PRICE.BRAND_ID
-LEFT JOIN (
+RIGHT JOIN (
     -- Subquery to compute the total units sold for each brand.
     -- It joins LGLINE (for quantity sold) with LGPRODUCT (to link to brand)
     -- and then groups by BRAND_ID.
