@@ -14,5 +14,4 @@ ON
 D.DEPT_NUM = E.DEPT_NUM
 --calculates Before group by
 ORDER BY
-D.DEPT_NAME
-;
+D.DEPT_NAME;
