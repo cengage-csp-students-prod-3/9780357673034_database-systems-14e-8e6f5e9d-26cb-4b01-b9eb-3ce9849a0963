@@ -1,7 +1,11 @@
-SELECT
-    ROUND(AVG(DATEDIFF( CHECK_IN_DATE, CHECK_OUT_DATE)),2) AS `AVERAGE DAYS KEPT` -- Calculates the average of 'Days Kept'
-FROM
+SELECT 
+    pat_id,
+    ROUND(AVG(CHECK_IN_DATE - CHECK_OUT_DATE),2) AS  `AVERAGE DAYS KEPT`
+FROM 
     CHECKOUT
-WHERE
-    CHECK_IN_DATE IS NOT NULL; -- Includes only checkouts that have been returned
-    
+GROUP BY 
+    pat_id
+HAVING 
+    COUNT(*) >= 3
+ORDER BY 
+      `AVERAGE DAYS KEPT` DESC, pat_id ASC;
