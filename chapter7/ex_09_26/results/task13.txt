@@ -1,18 +1,6 @@
 
-Status: FAILED!
+Status: PASSED!
 Check: 1
 Test: Problem 21
-Reason: Expected:
-+-----------------+-----------------+-----------------+
-| MINIMUM BALANCE | MAXIMUM BALANCE | AVERAGE BALANCE |
-+-----------------+-----------------+-----------------+
-|      0.00       |     345.86      |      70.30      |
-+-----------------+-----------------+-----------------+
-Found:
-+-----------------+-----------------+-----------------+
-| MINIMUM BALANCE | MAXIMUM BALANCE | AVERAGE BALANCE |
-+-----------------+-----------------+-----------------+
-|      0.00       |     768.93      |     208.93      |
-+-----------------+-----------------+-----------------+
-Error : AssertionError - 
-Timestamp: 2025-06-08 00:27:58.785136
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-08 00:37:07.052258
