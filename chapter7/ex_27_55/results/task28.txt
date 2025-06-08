@@ -1,34 +1,6 @@
 
-Status: FAILED!
+Status: PASSED!
 Check: 1
 Test: Problem 54
-Reason: Expected:
-+-------------------+------------+---------------+------------+
-|    BRAND_NAME     | BRAND_TYPE | AVERAGE PRICE | UNITS SOLD |
-+-------------------+------------+---------------+------------+
-|   BINDER PRIME    |  PREMIUM   |     16.12     |    3753    |
-|      BUSTERS      |   VALUE    |     22.59     |    3727    |
-|  FORESTERS BEST   |   VALUE    |     20.94     |    2086    |
-|   HOME COMFORT    | CONTRACTOR |     21.80     |    4842    |
-|      LE MODE      |  PREMIUM   |     19.22     |    5284    |
-|     LONG HAUL     | CONTRACTOR |     20.12     |    5728    |
-| OLDE TYME QUALITY | CONTRACTOR |     18.33     |    3614    |
-|   STUTTENFURST    | CONTRACTOR |     16.47     |    3671    |
-|    VALU-MATTE     |   VALUE    |     16.84     |    2485    |
-+-------------------+------------+---------------+------------+
-Found:
-+-------------------+------------+---------------+------------+
-|    BRAND_NAME     | BRAND_TYPE | AVERAGE_PRICE | UNITS_SOLD |
-+-------------------+------------+---------------+------------+
-|   BINDER PRIME    |  PREMIUM   |     16.12     |    3753    |
-|      BUSTERS      |   VALUE    |     22.59     |    3727    |
-|  FORESTERS BEST   |   VALUE    |     20.94     |    2086    |
-|   HOME COMFORT    | CONTRACTOR |     21.80     |    4842    |
-|      LE MODE      |  PREMIUM   |     19.22     |    5284    |
-|     LONG HAUL     | CONTRACTOR |     20.12     |    5728    |
-| OLDE TYME QUALITY | CONTRACTOR |     18.33     |    3614    |
-|   STUTTENFURST    | CONTRACTOR |     16.47     |    3671    |
-|    VALU-MATTE     |   VALUE    |     16.84     |    2485    |
-+-------------------+------------+---------------+------------+
-Error : AssertionError - 
-Timestamp: 2025-06-08 07:58:35.837327
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-08 08:00:46.431041
