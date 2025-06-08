@@ -1,16 +1,22 @@
 SELECT
-    B.BOOK_NUM,
-    B.BOOK_TITLE,
-    COUNT(C.CHECK_NUM) AS `TIMES CHECKED OUT` -- Count the number of actual checkouts for each book
+    A.AU_ID,          -- Author ID
+    A.AU_LNAME,       -- Author Last Name
+    B.BOOK_TITLE,     -- Book Title
+    C.CHECK_OUT_DATE, -- Checkout Date
+    P.PAT_LNAME       -- Patron Last Name
 FROM
-    BOOK AS B
+    AUTHOR AS A
 JOIN
-    CHECKOUT AS C ON B.BOOK_NUM = C.BOOK_NUM -- Use INNER JOIN to only include books that have been checked out
-GROUP BY
-    B.BOOK_NUM,
-    B.BOOK_TITLE
-HAVING
-    COUNT(C.CHECK_NUM) > 5 -- Filter for books checked out more than five times
+    WRITES AS W ON A.AU_ID = W.AU_ID       -- Link authors to books they wrote
+JOIN
+    BOOK AS B ON W.BOOK_NUM = B.BOOK_NUM   -- Link written books to their details
+JOIN
+    CHECKOUT AS C ON B.BOOK_NUM = C.BOOK_NUM -- Link books to their checkouts
+JOIN
+    PATRON AS P ON C.PAT_ID = P.PAT_ID     -- Link checkouts to patron details
+WHERE
+    A.AU_LNAME = 'Bruer' AND              -- Filter for authors with last name 'Bruer'
+    P.PAT_LNAME = 'Miles'                 -- Filter for patrons with last name 'Miles'
 ORDER BY
-    `TIMES CHECKED OUT` DESC, -- Sort by the number of times checked out in descending order
-    B.BOOK_TITLE ASC;     -- Then by book title in ascending order
+    C.CHECK_OUT_DATE ASC; -- Sort results by checkout date in ascending order
+    
