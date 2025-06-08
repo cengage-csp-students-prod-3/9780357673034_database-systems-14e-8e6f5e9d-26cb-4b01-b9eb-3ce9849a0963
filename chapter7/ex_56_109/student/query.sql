@@ -1,8 +1,12 @@
 SELECT
-    PAT_ID,
-    CONCAT(PAT_FNAME, ' ', PAT_LNAME) AS `PATRON NAME`, -- Concatenates first and last names
-    PAT_TYPE
+    A.AU_LNAME,
+    A.AU_FNAME,
+    W.BOOK_NUM
 FROM
-    PATRON
+    AUTHOR AS A
+JOIN
+    WRITES AS W ON A.AU_ID = W.AU_ID
 ORDER BY
-    PAT_ID ASC;
+    A.AU_LNAME ASC,
+    A.AU_FNAME ASC,
+    W.BOOK_NUM ASC;
