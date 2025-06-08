@@ -12,13 +12,13 @@ Reason: Expected:
 |  Middleware  |        3         |
 +--------------+------------------+
 Found:
-+--------------+----------------+
-| BOOK_SUBJECT | BOOKSINSUBJECT |
-+--------------+----------------+
-|    Cloud     |       4        |
-|   Database   |       4        |
-|  Middleware  |       3        |
-| Programming  |       9        |
-+--------------+----------------+
++--------------+-----------------+
+| BOOK_SUBJECT | BOOKS_INSUBJECT |
++--------------+-----------------+
+| Programming  |        9        |
+|    Cloud     |        4        |
+|   Database   |        4        |
+|  Middleware  |        3        |
++--------------+-----------------+
 Error : AssertionError - 
-Timestamp: 2025-06-08 11:27:01.915572
+Timestamp: 2025-06-08 11:44:27.021839
