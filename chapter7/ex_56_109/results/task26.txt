@@ -1,18 +1,6 @@
 
-Status: FAILED!
+Status: PASSED!
 Check: 1
 Test: Problem 81
-Reason: Expected:
-+----------------+
-| MOST EXPENSIVE |
-+----------------+
-|     129.95     |
-+----------------+
-Found:
-+-------------------+
-| HIGHEST BOOK COST |
-+-------------------+
-|      129.95       |
-+-------------------+
-Error : AssertionError - 
-Timestamp: 2025-06-08 11:16:05.461114
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-08 11:17:09.587744
