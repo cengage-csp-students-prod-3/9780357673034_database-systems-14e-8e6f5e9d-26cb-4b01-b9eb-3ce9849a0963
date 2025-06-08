@@ -1,22 +1,6 @@
 
-Status: FAILED!
+Status: PASSED!
 Check: 1
 Test: Problem 73
-Reason: Expected:
-+--------+-----------+-----------+----------+
-| PAT_ID | PAT_FNAME | PAT_LNAME | PAT_TYPE |
-+--------+-----------+-----------+----------+
-|  1160  |  robert   |  carter   | Faculty  |
-|  1208  |   Ollie   | Cantrell  | Student  |
-|  1210  |   Keith   |  Cooley   | STUdent  |
-+--------+-----------+-----------+----------+
-Found:
-+-------+----------+-----------+
-| AU_ID | AU_FNAME | AU_LNAME  |
-+-------+----------+-----------+
-|  229  | Carmine  | Salvadore |
-|  262  |   Xia    |  Chiang   |
-|  559  |  Rachel  |  McGill   |
-+-------+----------+-----------+
-Error : AssertionError - 
-Timestamp: 2025-06-08 11:01:55.850306
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-08 11:03:20.280934
