@@ -1,18 +1,6 @@
 
-Status: FAILED!
+Status: PASSED!
 Check: 1
 Test: Problem 80
-Reason: Expected:
-+-----------------+
-| AVAILABLE BOOKS |
-+-----------------+
-|       14        |
-+-----------------+
-Found:
-+-----------------+
-| NUMBER OF BOOKS |
-+-----------------+
-|       14        |
-+-----------------+
-Error : AssertionError - 
-Timestamp: 2025-06-08 11:14:32.336440
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-08 11:15:21.485675
