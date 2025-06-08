@@ -1,10 +1,4 @@
 SELECT
-    AU_ID,
-    AU_FNAME,
-    AU_LNAME
+    COUNT(DISTINCT BOOK_SUBJECT) AS NumberOfDifferentBookSubjects
 FROM
-    AUTHOR
-WHERE
-    AU_BIRTHYEAR IS NOT NULL
-ORDER BY
-    AU_ID;
+    BOOK;
