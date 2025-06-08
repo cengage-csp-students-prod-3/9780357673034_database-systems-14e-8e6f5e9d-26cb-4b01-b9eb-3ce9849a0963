@@ -1,8 +1,8 @@
 SELECT
-    BOOK_NUM,
-    CONCAT(BOOK_TITLE, ' (', BOOK_YEAR, ')') AS `BOOK`, -- Concatenates title and year in desired format
-    BOOK_SUBJECT
+    PAT_ID,
+    CONCAT(PAT_FNAME, ' ', PAT_LNAME) AS `PATRON NAME`, -- Concatenates first and last names
+    PAT_TYPE
 FROM
-    BOOK
+    PATRON
 ORDER BY
-    BOOK_NUM ASC; 
+    PAT_ID ASC;
