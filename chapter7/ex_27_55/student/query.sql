@@ -1,26 +1,24 @@
 SELECT
-    B.BRAND_NAME,
-    B.BRAND_TYPE,
-    P.PROD_SKU,
-    P.PROD_DESCRIPT,
-    P.PROD_PRICE
+    L1.INV_NUM,
+    L1.LINE_NUM,
+    P1.PROD_SKU,
+    P1.PROD_DESCRIPT,
+    L2.LINE_NUM,
+    P2.PROD_SKU,
+    P2.PROD_DESCRIPT,
+    P1.BRAND_ID
 FROM
-    LGBRAND B
+    (LGLINE AS L1 JOIN LGPRODUCT AS P1 ON L1.PROD_SKU = P1.PROD_SKU)
 JOIN
-    LGPRODUCT P ON B.BRAND_ID = P.BRAND_ID
+    (LGLINE AS L2 JOIN LGPRODUCT AS P2 ON L2.PROD_SKU = P2.PROD_SKU)
+ON
+    L1.INV_NUM = L2.INV_NUM AND L1.LINE_NUM < L2.LINE_NUM -- Added this crucial condition
 WHERE
-    B.BRAND_TYPE != 'PREMIUM' -- Select products that are NOT a premium brand
-    AND P.PROD_PRICE > (
-        -- Subquery to find the maximum price of a premium brand product
-        SELECT
-            MAX(P2.PROD_PRICE)
-        FROM
-            LGBRAND B2
-        JOIN
-            LGPRODUCT P2 ON B2.BRAND_ID = P2.BRAND_ID
-        WHERE
-            B2.BRAND_TYPE = 'PREMIUM'
-    )
+    P1.PROD_CATEGORY = 'Sealer'
+    AND P2.PROD_CATEGORY = 'Top Coat'
+    AND P1.BRAND_ID = P2.BRAND_ID
 ORDER BY
-    B.BRAND_NAME,
-    P.PROD_PRICE DESC; -- Order by brand name and then price (descending) as is common for "most expensive" queries
+    L1.INV_NUM,
+    L1.LINE_NUM,
+    L2.LINE_NUM DESC
+LIMIT 100;
