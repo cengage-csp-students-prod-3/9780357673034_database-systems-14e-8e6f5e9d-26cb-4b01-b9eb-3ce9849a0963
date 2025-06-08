@@ -1,1 +1,6 @@
--- Write your query below and then click "Run Query" to execute it. To save multiple queries, click the "+" icon on the left.
+SELECT
+B.BOOK_TITLE,
+B.BOOK_COST,
+B.BOOK_YEAR
+FROM 
+BOOK B
