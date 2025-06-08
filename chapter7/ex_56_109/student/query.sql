@@ -1,12 +1,14 @@
 SELECT
-    W.AU_ID,        -- Author ID from the WRITES table
-    B.BOOK_NUM,     -- Book number from the BOOK table
-    B.BOOK_TITLE,   -- Book title from the BOOK table
-    B.BOOK_SUBJECT  -- Book subject from the BOOK table
+    A.AU_LNAME,        -- Author's last name
+    A.AU_FNAME,        -- Author's first name
+    B.BOOK_TITLE,      -- Book title
+    B.BOOK_COST AS `BOOK COST` -- Book cost, aliased as 'Replacement Cost'
 FROM
-    BOOK AS B
+    AUTHOR AS A
 JOIN
-    WRITES AS W ON B.BOOK_NUM = W.BOOK_NUM -- Join BOOK and WRITES tables on BOOK_NUM
+    WRITES AS W ON A.AU_ID = W.AU_ID -- Link authors to books via the WRITES table
+JOIN
+    BOOK AS B ON W.BOOK_NUM = B.BOOK_NUM -- Link WRITES to BOOK table
 ORDER BY
-    B.BOOK_NUM ASC, -- Sort by book number in ascending order
-    W.AU_ID ASC;    -- Then by author ID in ascending order
+    B.BOOK_NUM ASC,    -- Sort by book number
+    A.AU_ID ASC;       -- Then by author ID
