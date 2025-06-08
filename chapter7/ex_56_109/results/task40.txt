@@ -1,0 +1,21 @@
+
+Status: FAILED!
+Check: 1
+Test: Problem 95
+Reason: The following error is preventing tests from completing: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SQL
+
+SELECT
+    BOOK_NUM,
+    COUNT(*) AS `TIMES_CHECKED_OUT`
+FROM
+    CHECKOUT
+' at line 1
+Error : ProgrammingError - 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SQL
+
+SELECT
+    BOOK_NUM,
+    COUNT(*) AS `TIMES_CHECKED_OUT`
+FROM
+    CHECKOUT
+' at line 1
+Timestamp: 2025-06-08 13:03:12.442467
