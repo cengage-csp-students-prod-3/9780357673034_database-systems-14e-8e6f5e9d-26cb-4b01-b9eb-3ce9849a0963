@@ -1,12 +1,12 @@
 SELECT
-    A.AU_LNAME,
-    A.AU_FNAME,
-    W.BOOK_NUM
+    W.AU_ID,        -- Author ID from the WRITES table
+    B.BOOK_NUM,     -- Book number from the BOOK table
+    B.BOOK_TITLE,   -- Book title from the BOOK table
+    B.BOOK_SUBJECT  -- Book subject from the BOOK table
 FROM
-    AUTHOR AS A
+    BOOK AS B
 JOIN
-    WRITES AS W ON A.AU_ID = W.AU_ID
+    WRITES AS W ON B.BOOK_NUM = W.BOOK_NUM -- Join BOOK and WRITES tables on BOOK_NUM
 ORDER BY
-    A.AU_LNAME ASC,
-    A.AU_FNAME ASC,
-    W.BOOK_NUM ASC;
+    B.BOOK_NUM ASC, -- Sort by book number in ascending order
+    W.AU_ID ASC;    -- Then by author ID in ascending order
