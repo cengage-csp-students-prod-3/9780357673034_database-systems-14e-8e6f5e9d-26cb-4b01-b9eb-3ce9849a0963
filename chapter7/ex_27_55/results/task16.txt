@@ -2,24 +2,10 @@
 Status: FAILED!
 Check: 1
 Test: Problem 42
-Reason: The following error is preventing tests from completing: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
-SELECT
-D.DEPT_NUM,
-D.DEPT_NAME,
-D.DEPT_PHONE,
-E.EMP_NUM,
-E.EMP_LNAME,
-
-FROM 
-L' at line 3
-Error : ProgrammingError - 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
-SELECT
-D.DEPT_NUM,
-D.DEPT_NAME,
-D.DEPT_PHONE,
-E.EMP_NUM,
-E.EMP_LNAME,
-
-FROM 
-L' at line 3
-Timestamp: 2025-06-08 05:02:41.922511
+Reason: The following error is preventing tests from completing: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Before group by
+ORDER BY
+D.DEPT_NAME' at line 14
+Error : ProgrammingError - 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Before group by
+ORDER BY
+D.DEPT_NAME' at line 14
+Timestamp: 2025-06-08 05:04:07.091652
