@@ -27,11 +27,10 @@ ON
   L2.PROD_SKU = P2.PROD_SKU
 WHERE
   P1.PROD_CATEGORY = 'Sealer'
-  AND P2.PROD_CATEGORY <> 'Sealer' -- P2 is not a Sealer
-  AND P2.PROD_CATEGORY <> 'Primer' -- Exclude Primer, if it's not considered a "top coat"
+  AND P2.PROD_CATEGORY NOT IN ('Sealer', 'Primer', 'Cleaner', 'Block Filler') -- P2 is not a Sealer, Primer, Cleaner, or Block Filler
   AND P1.BRAND_ID = P2.BRAND_ID   -- Same Brand
-  AND L1.LINE_NUM < L2.LINE_NUM   -- Ensures 'sealer' line number is always less than 'top coat' line number
+  AND L1.LINE_NUM <> L2.LINE_NUM  -- Different Line Numbers on the same invoice
 ORDER BY
   L1.INV_NUM ASC,
   L1.LINE_NUM ASC,
-  L2.LINE_NUM DESC;
+  L2.LINE_NUM DESC; -- This ordering matches your 'Expected' output's secondary sort
