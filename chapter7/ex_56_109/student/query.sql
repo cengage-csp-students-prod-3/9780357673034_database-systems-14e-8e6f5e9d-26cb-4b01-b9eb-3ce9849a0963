@@ -1,4 +1,4 @@
-SELECT
+SELECT DISTINCT
     A.AU_ID,       -- Author ID
     A.AU_FNAME,    -- Author First Name
     A.AU_LNAME     -- Author Last Name
