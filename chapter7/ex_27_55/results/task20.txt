@@ -1,18 +1,6 @@
 
-Status: FAILED!
+Status: PASSED!
 Check: 1
 Test: Problem 46
-Reason: Expected:
-+----------+------------+------------+----------+
-| BRAND_ID | BRAND_NAME | BRAND_TYPE | AVGPRICE |
-+----------+------------+------------+----------+
-|    29    |  BUSTERS   |   VALUE    |  22.59   |
-+----------+------------+------------+----------+
-Found:
-+----------+------------+------------+-----------------------+
-| BRAND_ID | BRAND_NAME | BRAND_TYPE | AVERAGE_PRODUCT_PRICE |
-+----------+------------+------------+-----------------------+
-|    29    |  BUSTERS   |   VALUE    |         22.59         |
-+----------+------------+------------+-----------------------+
-Error : AssertionError - 
-Timestamp: 2025-06-08 06:07:11.579695
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-08 06:07:50.987632
