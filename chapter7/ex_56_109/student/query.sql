@@ -1,12 +1,10 @@
 SELECT
-    CHECK_NUM,
-    BOOK_NUM,
-    PAT_ID,
-    CHECK_OUT_DATE,
-    CHECK_DUE_DATE
+    AU_ID,
+    AU_FNAME,
+    AU_LNAME,
+    AU_BIRTHYEAR
 FROM
-    CHECKOUT
-WHERE
-    CHECK_IN_DATE IS NULL -- A NULL CHECK_IN_DATE indicates the book has not been returned
+    AUTHOR
 ORDER BY
-    BOOK_NUM;
+    AU_BIRTHYEAR DESC, -- Sorts by year of birth in descending order
+    AU_LNAME ASC;      -- Then sorts by last name in ascending order for authors with the same birth year
