@@ -2,14 +2,14 @@ SELECT
     C.CUST_CODE,
     C.CUST_FNAME,
     C.CUST_LNAME,
-    -- Concatenate address fields to form the full address
-    C.CUST_STREET, 
+    -- Select individual address components as expected
+    C.CUST_STREET,
     C.CUST_CITY,
     C.CUST_STATE,
     C.CUST_ZIP,
     CLP.INV_DATE,
-    -- Display invoice total as 0 if no purchase was made (due to LEFT JOIN)
-    COALESCE(CLP.INV_TOTAL, 0) AS LARGEST_INVOICE
+    -- Display invoice total as 0 if no purchase was made, and alias it as 'LARGEST INVOICE'
+    COALESCE(CLP.INV_TOTAL, 0) AS "LARGEST INVOICE"
 FROM
     LGCUSTOMER C
 LEFT JOIN (
