@@ -2,7 +2,7 @@ SELECT
     A.AU_LNAME,        -- Author's last name
     A.AU_FNAME,        -- Author's first name
     B.BOOK_TITLE,      -- Book title
-    B.BOOK_COST AS `BOOK COST` -- Book cost, aliased as 'Replacement Cost'
+    B.BOOK_COST AS `BOOK_COST` -- Book cost, aliased as 'Replacement Cost'
 FROM
     AUTHOR AS A
 JOIN
