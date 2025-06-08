@@ -6,12 +6,12 @@ SELECT
     -- ensuring each distinct product's price is included once in the average,
     -- regardless of how many times it was sold.
     -- COALESCE handles brands with no associated products, displaying 0.00.
-    ROUND(COALESCE(AVG_PRICE.AvgBrandPrice, 0.00),2) AS AVERAGE_PRICE,
+    ROUND(COALESCE(AVG_PRICE.AvgBrandPrice, 0.00),2) AS "AVERAGE PRICE",
     -- Calculate the total units sold for products of each brand.
     -- SUM(LL.LINE_QTY) aggregates all units sold across all invoices for products
     -- belonging to that brand.
     -- COALESCE handles brands with no sales, displaying 0.
-    COALESCE(TOTAL_SALES.TotalUnitsSold, 0) AS UNITS_SOLD
+    COALESCE(TOTAL_SALES.TotalUnitsSold, 0) AS "UNITS SOLD"
 FROM
     LGBRAND B
 LEFT JOIN (
