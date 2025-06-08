@@ -1,13 +1,13 @@
 WITH BALANCES AS (
-    SELECT
-        C.CUS_CODE,
+    SELECT DISTINCT
+        I.CUS_CODE,
         C.CUS_BALANCE
     FROM
-        CUSTOMER AS C
-    JOIN 
+        CUSTOMER C
+    JOIN
         INVOICE I
-    ON
-    I.CUS_CODE = C.CUS_CODE 
+    ON 
+    C.CUS_CODE = I.CUS_CODE
 )
 SELECT
  CUS_CODE,
