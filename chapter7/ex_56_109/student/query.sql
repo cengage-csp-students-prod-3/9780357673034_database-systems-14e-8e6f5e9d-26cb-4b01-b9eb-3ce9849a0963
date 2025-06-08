@@ -1,13 +1,10 @@
 SELECT
-    PAT_ID,
-    PAT_FNAME,
-    PAT_LNAME,
-    PAT_TYPE
+    BOOK_NUM,
+    BOOK_TITLE,
+    BOOK_SUBJECT
 FROM
-    PATRON
+    BOOK
 WHERE
-    PAT_LNAME LIKE 'C%' -- This will match last names starting with 'C' (case-sensitive, depends on DB collation)
-    -- OR, for guaranteed case-insensitivity across databases:
-    -- LOWER(PAT_LNAME) LIKE 'c%'
+    LOWER(BOOK_TITLE) LIKE '%database%'
 ORDER BY
-    PAT_ID;
+    BOOK_NUM;
