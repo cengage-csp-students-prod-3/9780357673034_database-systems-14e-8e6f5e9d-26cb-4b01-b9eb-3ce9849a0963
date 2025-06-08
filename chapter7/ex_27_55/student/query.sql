@@ -1,53 +1,25 @@
-WITH SealerProducts AS (
-    -- CTE 1: Get all line items for 'Sealer' products
-    SELECT
-        L.INV_NUM,
-        L.LINE_NUM,
-        P.PROD_SKU,
-        P.PROD_DESCRIPT,
-        P.BRAND_ID,
-        P.PROD_CATEGORY
-    FROM
-        LGLINE AS L
-    JOIN
-        LGPRODUCT AS P ON L.PROD_SKU = P.PROD_SKU
-    WHERE
-        P.PROD_CATEGORY = 'Sealer'
-),
-TopCoatProducts AS (
-    -- CTE 2: Get all line items for 'Top Coat' products
-    SELECT
-        L.INV_NUM,
-        L.LINE_NUM,
-        P.PROD_SKU,
-        P.PROD_DESCRIPT,
-        P.BRAND_ID,
-        P.PROD_CATEGORY
-    FROM
-        LGLINE AS L
-    JOIN
-        LGPRODUCT AS P ON L.PROD_SKU = P.PROD_SKU
-    WHERE
-        P.PROD_CATEGORY = 'Top Coat'
-)
 SELECT
-    SL.INV_NUM,
-    SL.LINE_NUM AS SealerLineNum,
-    SL.PROD_SKU AS SealerSKU,
-    SL.PROD_DESCRIPT AS SealerDescription,
-    TCL.LINE_NUM AS TopCoatLineNum,
-    TCL.PROD_SKU AS TopCoatSKU,
-    TCL.PROD_DESCRIPT AS TopCoatDescription,
-    SL.BRAND_ID
+    L1.INV_NUM,
+    L1.LINE_NUM AS "L.LINE_NUM",          -- Alias for the first line item's number (Sealer)
+    P1.PROD_SKU AS "P.PROD_SKU",           -- Alias for the first product's SKU (Sealer)
+    P1.PROD_DESCRIPT AS "P.PROD_DESCRIPT", -- Alias for the first product's description (Sealer)
+    L2.LINE_NUM AS "L2.LINE_NUM",          -- Alias for the second line item's number (Top Coat)
+    P2.PROD_SKU AS "P2.PROD_SKU",          -- Alias for the second product's SKU (Top Coat)
+    P2.PROD_DESCRIPT AS "P2.PROD_DESCRIPT",-- Alias for the second product's description (Top Coat)
+    P1.BRAND_ID AS BRAND_ID               -- Alias for the brand ID
 FROM
-    SealerProducts AS SL
-JOIN
-    TopCoatProducts AS TCL
-ON
-    SL.INV_NUM = TCL.INV_NUM          -- Both products must be on the same invoice
-    AND SL.BRAND_ID = TCL.BRAND_ID    -- Both products must be from the same brand
-    AND SL.LINE_NUM < TCL.LINE_NUM    -- Ensure distinct line items and avoid duplicate pairs (e.g., A-B vs B-A)
+    LGLINE AS L1
+INNER JOIN
+    LGPRODUCT AS P1 ON L1.PROD_SKU = P1.PROD_SKU
+INNER JOIN
+    LGLINE AS L2 ON L1.INV_NUM = L2.INV_NUM AND L1.LINE_NUM <> L2.LINE_NUM -- Changed from < to <>
+INNER JOIN
+    LGPRODUCT AS P2 ON L2.PROD_SKU = P2.PROD_SKU
+WHERE
+    P1.PROD_CATEGORY = 'Sealer'
+    AND P2.PROD_CATEGORY = 'Top Coat'
+    AND P1.BRAND_ID = P2.BRAND_ID
 ORDER BY
-    SL.INV_NUM ASC,
-    SL.LINE_NUM ASC,
-    TCL.LINE_NUM DESC;
+    L1.INV_NUM ASC,
+    L1.LINE_NUM ASC,
+    L2.LINE_NUM DESC;
