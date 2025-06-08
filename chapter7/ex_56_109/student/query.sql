@@ -1,22 +1,13 @@
 SELECT
-    A.AU_ID,          -- Author ID
-    A.AU_LNAME,       -- Author Last Name
-    B.BOOK_TITLE,     -- Book Title
-    C.CHECK_OUT_DATE, -- Checkout Date
-    P.PAT_LNAME       -- Patron Last Name
+    P.PAT_ID,      -- Patron ID
+    P.PAT_FNAME,   -- Patron First Name
+    P.PAT_LNAME    -- Patron Last Name
 FROM
-    AUTHOR AS A
-JOIN
-    WRITES AS W ON A.AU_ID = W.AU_ID       -- Link authors to books they wrote
-JOIN
-    BOOK AS B ON W.BOOK_NUM = B.BOOK_NUM   -- Link written books to their details
-JOIN
-    CHECKOUT AS C ON B.BOOK_NUM = C.BOOK_NUM -- Link books to their checkouts
-JOIN
-    PATRON AS P ON C.PAT_ID = P.PAT_ID     -- Link checkouts to patron details
+    PATRON AS P
+LEFT JOIN
+    CHECKOUT AS C ON P.PAT_ID = C.PAT_ID -- Join PATRON with CHECKOUT
 WHERE
-    A.AU_LNAME = 'Bruer' AND              -- Filter for authors with last name 'Bruer'
-    P.PAT_LNAME = 'Miles'                 -- Filter for patrons with last name 'Miles'
+    C.PAT_ID IS NULL -- Filter for patrons who have no matching records in the CHECKOUT table
 ORDER BY
-    C.CHECK_OUT_DATE ASC; -- Sort results by checkout date in ascending order
-    
+    P.PAT_LNAME ASC, -- Sort by patron last name in ascending order
+    P.PAT_FNAME ASC; -- Then by patron first name in ascending order
