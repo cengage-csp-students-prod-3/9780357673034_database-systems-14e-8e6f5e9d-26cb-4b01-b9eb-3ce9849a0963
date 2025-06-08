@@ -19,9 +19,6 @@ Found:
 +-------+----------+-----------+
 |  581  |  Manish  | Aggerwal  |
 |  251  |   Hugo   |   Bruer   |
-|  251  |   Hugo   |   Bruer   |
-|  262  |   Xia    |  Chiang   |
-|  262  |   Xia    |  Chiang   |
 |  262  |   Xia    |  Chiang   |
 |  394  |  Robert  |   Lake    |
 |  438  |  Perry   |  Pearson  |
@@ -29,7 +26,6 @@ Found:
 |  229  | Carmine  | Salvadore |
 |  284  |  Trina   | Tankersly |
 |  383  |   Neal   |   Walsh   |
-|  383  |   Neal   |   Walsh   |
 +-------+----------+-----------+
 Error : AssertionError - 
-Timestamp: 2025-06-08 14:26:04.312225
+Timestamp: 2025-06-08 14:28:42.227188
