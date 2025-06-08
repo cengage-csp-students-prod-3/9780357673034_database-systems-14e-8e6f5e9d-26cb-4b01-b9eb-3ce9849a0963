@@ -1,45 +1,6 @@
 
-Status: FAILED!
+Status: PASSED!
 Check: 1
 Test: Problem 52
-Reason: Expected:
-+-----------+------------+------------+
-| CUST_CODE | CUST_FNAME | CUST_LNAME |
-+-----------+------------+------------+
-|    684    |   WENDI    |    BEAN    |
-|    684    |   WENDI    |    BEAN    |
-|    340    |   MARCIA   |   BURRIS   |
-|    211    |   GERALD   |  CAUDILL   |
-|    211    |   GERALD   |  CAUDILL   |
-|    292    |  VALARIE   |  DILLARD   |
-|    293    |   CLAIR    |  ERICKSON  |
-|    416    |  TATIANA   |    HOWE    |
-|    996    |    EZRA    |    LYON    |
-|    98     |  VALENTIN  |   MARINO   |
-|    98     |  VALENTIN  |   MARINO   |
-|    121    |   PETER    |   SMALL    |
-|   1157    |   LUCIO    |   STALEY   |
-|    617    |   CESAR    |   TALLEY   |
-|    457    |   SHAUNA   |   WERNER   |
-|    131    |    SAL     |   WHALEY   |
-+-----------+------------+------------+
-Found:
-+-----------+------------+------------+
-| CUST_CODE | CUST_FNAME | CUST_LNAME |
-+-----------+------------+------------+
-|    684    |   WENDI    |    BEAN    |
-|    340    |   MARCIA   |   BURRIS   |
-|    211    |   GERALD   |  CAUDILL   |
-|    292    |  VALARIE   |  DILLARD   |
-|    293    |   CLAIR    |  ERICKSON  |
-|    416    |  TATIANA   |    HOWE    |
-|    996    |    EZRA    |    LYON    |
-|    98     |  VALENTIN  |   MARINO   |
-|    121    |   PETER    |   SMALL    |
-|   1157    |   LUCIO    |   STALEY   |
-|    617    |   CESAR    |   TALLEY   |
-|    457    |   SHAUNA   |   WERNER   |
-|    131    |    SAL     |   WHALEY   |
-+-----------+------------+------------+
-Error : AssertionError - 
-Timestamp: 2025-06-08 07:40:06.015435
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-08 07:42:19.296606
