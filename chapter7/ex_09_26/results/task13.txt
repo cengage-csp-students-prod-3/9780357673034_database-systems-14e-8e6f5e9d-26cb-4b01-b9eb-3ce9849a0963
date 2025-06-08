@@ -2,17 +2,6 @@
 Status: FAILED!
 Check: 1
 Test: Problem 21
-Reason: Expected:
-+-----------------+-----------------+-----------------+
-| MINIMUM BALANCE | MAXIMUM BALANCE | AVERAGE BALANCE |
-+-----------------+-----------------+-----------------+
-|      0.00       |     345.86      |      70.30      |
-+-----------------+-----------------+-----------------+
-Found:
-+------------------+------------------+------------------+
-| MINIMUM BALANCES | MAXIMUM BALANCES | AVERAGE BALANCES |
-+------------------+------------------+------------------+
-|       0.00       |      768.93      |      208.93      |
-+------------------+------------------+------------------+
-Error : AssertionError - 
-Timestamp: 2025-06-08 00:26:04.562099
+Reason: The following error is preventing tests from completing: Unknown column 'B.MINIMUM BALANCE' in 'field list'
+Error : MySQLInterfaceError - Unknown column 'B.MINIMUM BALANCE' in 'field list'
+Timestamp: 2025-06-08 00:26:57.972419
