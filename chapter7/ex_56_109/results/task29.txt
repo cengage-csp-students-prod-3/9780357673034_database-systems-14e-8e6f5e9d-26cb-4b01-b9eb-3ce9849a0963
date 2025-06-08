@@ -1,0 +1,24 @@
+
+Status: FAILED!
+Check: 1
+Test: Problem 84
+Reason: Expected:
++--------------+------------------+
+| BOOK_SUBJECT | BOOKS IN SUBJECT |
++--------------+------------------+
+| Programming  |        9         |
+|    Cloud     |        4         |
+|   Database   |        4         |
+|  Middleware  |        3         |
++--------------+------------------+
+Found:
++--------------+----------------+
+| BOOK_SUBJECT | BOOKSINSUBJECT |
++--------------+----------------+
+|    Cloud     |       4        |
+|   Database   |       4        |
+|  Middleware  |       3        |
+| Programming  |       9        |
++--------------+----------------+
+Error : AssertionError - 
+Timestamp: 2025-06-08 11:27:01.915572
