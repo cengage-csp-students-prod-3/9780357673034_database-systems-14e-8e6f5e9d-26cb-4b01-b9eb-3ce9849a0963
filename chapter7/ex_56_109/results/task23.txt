@@ -1,0 +1,18 @@
+
+Status: FAILED!
+Check: 1
+Test: Problem 78
+Reason: Expected:
++-----------------+
+| NUMBER OF BOOKS |
++-----------------+
+|       20        |
++-----------------+
+Found:
++-------------------------------+
+| NUMBEROFDIFFERENTBOOKSUBJECTS |
++-------------------------------+
+|               4               |
++-------------------------------+
+Error : AssertionError - 
+Timestamp: 2025-06-08 11:06:23.184057
