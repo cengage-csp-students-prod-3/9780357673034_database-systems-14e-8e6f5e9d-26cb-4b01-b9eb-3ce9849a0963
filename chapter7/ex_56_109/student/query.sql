@@ -1,10 +1,10 @@
 SELECT
-    BOOK_NUM,
-    BOOK_TITLE,
-    BOOK_SUBJECT
+    PAT_ID,
+    PAT_FNAME,
+    PAT_LNAME
 FROM
-    BOOK
+    PATRON
 WHERE
-    LOWER(BOOK_TITLE) LIKE '%database%'
+    PAT_TYPE = 'Student'
 ORDER BY
-    BOOK_NUM;
+    PAT_ID;
