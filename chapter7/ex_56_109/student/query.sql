@@ -11,6 +11,6 @@ LEFT JOIN
     BOOK AS B ON W.BOOK_NUM = B.BOOK_NUM
 WHERE
     -- Filter for authors who had no matching 'Programming' book
-     B.BOOK_SUBJECT <> 'Programming'
+     B.BOOK_SUBJECT NOT LIKE '%Programming'
 ORDER BY
     A.AU_LNAME ASC; -- Sort by author last name in ascending order
