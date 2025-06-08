@@ -33,47 +33,37 @@ Reason: Expected:
 |  MELONIE   |  JIMENEZ   |   848 DOWNEY FINCH LANE   | East Monkton  |     VT     |  05443   |
 +------------+------------+---------------------------+---------------+------------+----------+
 Found:
-+------------+------------+----------------------------+---------------------+------------+----------+
-| CUST_FNAME | CUST_LNAME |        CUST_STREET         |      CUST_CITY      | CUST_STATE | CUST_ZIP |
-+------------+------------+----------------------------+---------------------+------------+----------+
-|   CECIL    |  ESPARZA   |  1928 VALLEY VISTA CIRCLE  |        Mulga        |     AL     |  35118   |
-|  TATIANA   |    HOWE    |    1650 ALL STAR CIRCLE    |     Sunny South     |     AL     |  36769   |
-|    LUPE    |  SANTANA   |    1292 WEST 70TH PLACE    |     Phenix City     |     AL     |  36867   |
-|   HOLLIS   |   STILES   | 1493 DOLLY MADISON CIRCLE  |      Snow Hill      |     AL     |  36778   |
-|  LISETTE   | WHITTAKER  |    339 NORTHPARK DRIVE     |     Montgomery      |     AL     |  36197   |
-|  DEANDRE   |  JAMISON   |     1571 HANES STREET      |        Miami        |     FL     |  33169   |
-|  CATHLEEN  |  WHITMAN   |   1712 NORTHFIELD DRIVE    |    Marshallville    |     GA     |  31057   |
-|   SHERIE   |   STOVER   |  640 MOUNTAIN VIEW DRIVE   |     Parksville      |     KY     |  40464   |
-|   HANNAH   |  BASSETT   |     259 ELMHURST DRIVE     |      Worcester      |     MA     |  01608   |
-|   BRYCE    |   HOGAN    |     1860 IMLACH DRIVE      |       Newbury       |     MA     |  01951   |
-|   SHELBY   |   SALAS    |   486 SUSITNA VIEW COURT   |    North Tisbury    |     MA     |  02568   |
-|  JERMAINE  |  HANCOCK   |     1627 SAUNDERS ROAD     |    Ellicott City    |     MD     |  21041   |
-|  JERMAINE  |  HANCOCK   |     1627 SAUNDERS ROAD     |    Ellicott City    |     MD     |  21041   |
-|  WHITNEY   | WHITFIELD  |     1259 RHONE STREET      |     Phippsburg      |     ME     |  04567   |
-|   MONROE   |  ALLISON   |     272 SCHODDE STREET     |      Kalamazoo      |     MI     |  49002   |
-|  DARLEEN   |   PARRA    |    561 COLLIE HILL WAY     |       Madison       |     MS     |  39130   |
-|  DARLEEN   |   PARRA    |    561 COLLIE HILL WAY     |       Madison       |     MS     |  39130   |
-|  CLINTON   |  AGUIRRE   |    1651 VANGUARD DRIVE     |    Franklinville    |     NC     |  27248   |
-|  VALARIE   |  MAYNARD   |     606 MEADOW STREET      |    Winston-Salem    |     NC     |  27116   |
-|   TOMMIE   |   PALMER   |    933 ELCADORE CIRCLE     |      Arapahoe       |     NC     |  28510   |
-|   JESSE    |   HICKS    |  614 SOUTH AIRPARK DRIVE   |      Bay Head       |     NJ     |  08742   |
-|  JEFFEREY  |  MCBRIDE   |    1043 ROCKRIDGE DRIVE    |      Glenwood       |     NJ     |  07418   |
-|    EARL    |   STATON   |    522 WEST LAKE AVENUE    |     Smithville      |     NJ     |  08201   |
-|   RENITA   | CHRISTIAN  |     1205 MALLARD LANE      |       Exeter        |     NY     |  13315   |
-|   SIDNEY   |   GARZA    |     772 SHEPPARD DRIVE     |     Fair Harbor     |     NY     |  11706   |
-|   TAMELA   |   GUIDRY   |      1873 BAXTER ROAD      |      Brooklyn       |     NY     |  11252   |
-|  FERNANDO  |  RICHARDS  |   46 COMMUNITY PARK LOOP   | Saint James Heights |     NY     |  11780   |
-|   STEVE    |    SAMS    | 1506 BOOTLEGGER COVE DRIVE |       Irving        |     NY     |  14081   |
-|   WILMA    |   DUTTON   | 1593 NORTH CHICHAGOF LOOP  |     Centerpoint     |     OH     |  45656   |
-|   KAREN    |   LEVINE   |     1534 PALMER COURT      |     Cincinnati      |     OH     |  45218   |
-| STEPHENIE  |  MCKENZIE  |    1039 DELAWARE PLACE     |    Wilkes Barre     |     PA     |  18763   |
-|    LAN     |  NICHOLS   |     367 LAKEVIEW DRIVE     |     Pittsburgh      |     PA     |  15262   |
-|    LAN     |  NICHOLS   |     367 LAKEVIEW DRIVE     |     Pittsburgh      |     PA     |  15262   |
-|   KASEY    |    SOSA    |    975 WEST 96TH AVENUE    |       Kinzers       |     PA     |  17535   |
-|   SHELBY   |   THAYER   |      1634 RUANE ROAD       |      Bordeaux       |     SC     |  29835   |
-|   WILSON   |    BELL    |   1127 CUNNINGHAM STREET   |     Louisville      |     TN     |  37777   |
-|   RENATE   |    LADD    |      652 LEWIS STREET      |    Crystal City     |     VA     |  22202   |
-|  MELONIE   |  JIMENEZ   |   848 DOWNEY FINCH LANE    |    East Monkton     |     VT     |  05443   |
-+------------+------------+----------------------------+---------------------+------------+----------+
++------------+------------+---------------------------+---------------+------------+----------+
+| CUST_FNAME | CUST_LNAME |        CUST_STREET        |   CUST_CITY   | CUST_STATE | CUST_ZIP |
++------------+------------+---------------------------+---------------+------------+----------+
+|    LUPE    |  SANTANA   |   1292 WEST 70TH PLACE    |  Phenix City  |     AL     |  36867   |
+|   HOLLIS   |   STILES   | 1493 DOLLY MADISON CIRCLE |   Snow Hill   |     AL     |  36778   |
+|  LISETTE   | WHITTAKER  |    339 NORTHPARK DRIVE    |  Montgomery   |     AL     |  36197   |
+|  DEANDRE   |  JAMISON   |     1571 HANES STREET     |     Miami     |     FL     |  33169   |
+|  CATHLEEN  |  WHITMAN   |   1712 NORTHFIELD DRIVE   | Marshallville |     GA     |  31057   |
+|   SHERIE   |   STOVER   |  640 MOUNTAIN VIEW DRIVE  |  Parksville   |     KY     |  40464   |
+|   BRYCE    |   HOGAN    |     1860 IMLACH DRIVE     |    Newbury    |     MA     |  01951   |
+|   SHELBY   |   SALAS    |  486 SUSITNA VIEW COURT   | North Tisbury |     MA     |  02568   |
+|  JERMAINE  |  HANCOCK   |    1627 SAUNDERS ROAD     | Ellicott City |     MD     |  21041   |
+|  JERMAINE  |  HANCOCK   |    1627 SAUNDERS ROAD     | Ellicott City |     MD     |  21041   |
+|  WHITNEY   | WHITFIELD  |     1259 RHONE STREET     |  Phippsburg   |     ME     |  04567   |
+|   MONROE   |  ALLISON   |    272 SCHODDE STREET     |   Kalamazoo   |     MI     |  49002   |
+|  DARLEEN   |   PARRA    |    561 COLLIE HILL WAY    |    Madison    |     MS     |  39130   |
+|  DARLEEN   |   PARRA    |    561 COLLIE HILL WAY    |    Madison    |     MS     |  39130   |
+|  CLINTON   |  AGUIRRE   |    1651 VANGUARD DRIVE    | Franklinville |     NC     |  27248   |
+|   TOMMIE   |   PALMER   |    933 ELCADORE CIRCLE    |   Arapahoe    |     NC     |  28510   |
+|  JEFFEREY  |  MCBRIDE   |   1043 ROCKRIDGE DRIVE    |   Glenwood    |     NJ     |  07418   |
+|   SIDNEY   |   GARZA    |    772 SHEPPARD DRIVE     |  Fair Harbor  |     NY     |  11706   |
+|   TAMELA   |   GUIDRY   |     1873 BAXTER ROAD      |   Brooklyn    |     NY     |  11252   |
+|   KAREN    |   LEVINE   |     1534 PALMER COURT     |  Cincinnati   |     OH     |  45218   |
+| STEPHENIE  |  MCKENZIE  |    1039 DELAWARE PLACE    | Wilkes Barre  |     PA     |  18763   |
+|    LAN     |  NICHOLS   |    367 LAKEVIEW DRIVE     |  Pittsburgh   |     PA     |  15262   |
+|    LAN     |  NICHOLS   |    367 LAKEVIEW DRIVE     |  Pittsburgh   |     PA     |  15262   |
+|   KASEY    |    SOSA    |   975 WEST 96TH AVENUE    |    Kinzers    |     PA     |  17535   |
+|   SHELBY   |   THAYER   |      1634 RUANE ROAD      |   Bordeaux    |     SC     |  29835   |
+|   WILSON   |    BELL    |  1127 CUNNINGHAM STREET   |  Louisville   |     TN     |  37777   |
+|   RENATE   |    LADD    |     652 LEWIS STREET      | Crystal City  |     VA     |  22202   |
+|  MELONIE   |  JIMENEZ   |   848 DOWNEY FINCH LANE   | East Monkton  |     VT     |  05443   |
++------------+------------+---------------------------+---------------+------------+----------+
 Error : AssertionError - 
-Timestamp: 2025-06-08 03:21:12.039374
+Timestamp: 2025-06-08 03:22:41.111028
