@@ -1,6 +1,6 @@
 SELECT
     PAT_ID,
-    CONCAT(PAT_FNAME, ' ', PAT_LNAME) AS `Patron Full Name`, -- Concatenates first and last names
+    CONCAT(PAT_FNAME, ' ', PAT_LNAME) AS `NAME`, -- Concatenates first and last names
     PAT_TYPE
 FROM
     PATRON
