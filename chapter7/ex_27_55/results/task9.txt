@@ -1,0 +1,26 @@
+
+Status: FAILED!
+Check: 1
+Test: Problem 35
+Reason: Expected:
++---------------+-------------+
+| PROD_CATEGORY | NUMPRODUCTS |
++---------------+-------------+
+|    Cleaner    |      2      |
+|    Filler     |      2      |
+|    Primer     |     16      |
+|    Sealer     |      1      |
+|   Top Coat    |     81      |
++---------------+-------------+
+Found:
++---------------+-------------+
+| PROD_CATEGORY | NUMPRODUCTS |
++---------------+-------------+
+|    Cleaner    |      6      |
+|    Filler     |      6      |
+|    Primer     |     52      |
+|    Sealer     |     12      |
+|   Top Coat    |     176     |
++---------------+-------------+
+Error : AssertionError - 
+Timestamp: 2025-06-08 03:51:45.065199
