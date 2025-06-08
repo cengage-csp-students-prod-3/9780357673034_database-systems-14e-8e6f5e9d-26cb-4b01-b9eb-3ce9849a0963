@@ -1,13 +1,17 @@
-
 SELECT
-    BOOK_NUM,
-    COUNT(*) AS `TIMES CHECKED OUT` -- Count the number of checkouts for each book
+    A.AU_ID,        -- Author ID
+    A.AU_FNAME,     -- Author First Name
+    A.AU_LNAME,     -- Author Last Name
+    B.BOOK_NUM,     -- Book Number
+    B.BOOK_TITLE    -- Book Title
 FROM
-    CHECKOUT
-GROUP BY
-    BOOK_NUM
--- Implicitly, books that have never been checked out will not appear in the CHECKOUT table,
--- so they won't be included in the results of this query.
+    AUTHOR AS A
+JOIN
+    WRITES AS W ON A.AU_ID = W.AU_ID -- Link Author to Written Books
+JOIN
+    BOOK AS B ON W.BOOK_NUM = B.BOOK_NUM -- Link Written Books to Book details
+WHERE
+    B.BOOK_SUBJECT = 'Cloud' -- Filter for books in the 'Cloud' subject
 ORDER BY
-    `TIMES CHECKED OUT` DESC, -- Sort by the number of times checked out in descending order
-    BOOK_NUM DESC;        -- Then by book number in descending order
+    B.BOOK_TITLE ASC, -- Sort by book title in ascending order
+    A.AU_LNAME ASC;   -- Then by author last name in ascending order
