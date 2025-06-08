@@ -1,10 +1,10 @@
 SELECT
-    PAT_ID,
-    PAT_FNAME,
-    PAT_LNAME
+    AU_ID,
+    AU_FNAME,
+    AU_LNAME
 FROM
-    PATRON
+    AUTHOR
 WHERE
-    PAT_TYPE = 'Student'
+    AU_BIRTHYEAR IS NULL
 ORDER BY
-    PAT_ID;
+    AU_ID;
