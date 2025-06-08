@@ -1,16 +1,13 @@
 SELECT
     PAT_ID AS PATRON,
     BOOK_NUM AS BOOK,
-    -- Calculate "Days Kept" as the difference between check-in and check-out dates.
-    -- If CHECK_IN_DATE is NULL (book not returned), DaysKept will also be NULL.
-    -- The specific function for date difference may vary slightly by database system:
-    -- SQL Server: DATEDIFF(day, CHECK_OUT_DATE, CHECK_IN_DATE)
-    -- MySQL: DATEDIFF(CHECK_IN_DATE, CHECK_OUT_DATE)
-    -- PostgreSQL/Oracle: CHECK_IN_DATE - CHECK_OUT_DATE (results in days for DATE types)
-       DATEDIFF(CHECK_IN_DATE, CHECK_IN_DATE) AS `DAYS KEPT`
+    (CHECK_IN_DATE - CHECK_OUT_DATE) AS `Days Kept` -- This syntax is common in PostgreSQL/Oracle for DATE type subtraction
+    -- If your environment is MySQL and DATEDIFF was giving 0, this might be a specific test environment issue.
+    -- For MySQL, the syntax is DATEDIFF(CHECK_IN_DATE, CHECK_OUT_DATE)
+    -- For SQL Server, the syntax is DATEDIFF(day, CHECK_OUT_DATE, CHECK_IN_DATE)
 FROM
     CHECKOUT
 ORDER BY
-    `DAYS KEPT` DESC, -- Sort by days kept in descending order
-    PATRON ASC,    -- Then by patron ID in ascending order
-     BOOK ASC;  -- Then by book number in ascending order
+    `Days Kept` DESC, -- Sort by days kept in descending order (NULLs will be at the end or beginning depending on DB)
+    PATRON ASC,       -- Then by patron ID in ascending order
+    BOOK ASC;         -- Then by book number in ascending order
