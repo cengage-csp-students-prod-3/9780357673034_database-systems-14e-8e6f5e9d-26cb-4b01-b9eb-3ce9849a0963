@@ -1,10 +1,12 @@
 SELECT
-    AU_ID,
-    AU_FNAME,
-    AU_LNAME
+    CHECK_NUM,
+    BOOK_NUM,
+    PAT_ID,
+    CHECK_OUT_DATE,
+    CHECK_DUE_DATE
 FROM
-    AUTHOR
+    CHECKOUT
 WHERE
-    AU_BIRTHYEAR IS NOT NULL
+    CHECK_IN_DATE IS NULL -- A NULL CHECK_IN_DATE indicates the book has not been returned
 ORDER BY
-    AU_ID;
+    BOOK_NUM;
