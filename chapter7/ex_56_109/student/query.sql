@@ -1,14 +1,15 @@
 SELECT
-    A.AU_LNAME,        -- Author's last name
-    A.AU_FNAME,        -- Author's first name
-    B.BOOK_TITLE,      -- Book title
-    B.BOOK_COST AS `BOOK_COST` -- Book cost, aliased as 'Replacement Cost'
+    P.PAT_ID,        -- Patron ID
+    B.BOOK_NUM,      -- Book Number
+    P.PAT_FNAME,     -- Patron First Name
+    P.PAT_LNAME,     -- Patron Last Name
+    B.BOOK_TITLE     -- Book Title
 FROM
-    AUTHOR AS A
+    PATRON AS P      -- Alias PATRON table as P
 JOIN
-    WRITES AS W ON A.AU_ID = W.AU_ID -- Link authors to books via the WRITES table
-JOIN
-    BOOK AS B ON W.BOOK_NUM = B.BOOK_NUM -- Link WRITES to BOOK table
+    BOOK AS B ON P.PAT_ID = B.PAT_ID -- Join PATRON and BOOK tables where PAT_ID in BOOK matches a PATRON
+WHERE
+    B.PAT_ID IS NOT NULL -- Filter for books that are currently checked out (have a PAT_ID assigned in the BOOK table)
 ORDER BY
-    B.BOOK_NUM ASC,    -- Sort by book number
-    A.AU_ID ASC;       -- Then by author ID
+    P.PAT_LNAME ASC, -- Sort by patron last name in ascending order
+    B.BOOK_TITLE ASC; -- Then by book title in ascending order
