@@ -9,18 +9,10 @@ Reason: Expected:
 |      22.59      |
 +-----------------+
 Found:
-+-------------------+-------------------+
-|    BRAND_NAME     | MAX(P.PROD_PRICE) |
-+-------------------+-------------------+
-| OLDE TYME QUALITY |       34.49       |
-|      LE MODE      |       62.99       |
-|     LONG HAUL     |       78.49       |
-|   STUTTENFURST    |       45.99       |
-|  FORESTERS BEST   |       41.99       |
-|   HOME COMFORT    |       54.89       |
-|   BINDER PRIME    |       41.99       |
-|      BUSTERS      |       42.99       |
-|    VALU-MATTE     |       41.99       |
-+-------------------+-------------------+
++--------------------------+
+| ROUND(MAX(A.AVERAGEC),2) |
++--------------------------+
+|          22.59           |
++--------------------------+
 Error : AssertionError - 
-Timestamp: 2025-06-08 05:46:15.746106
+Timestamp: 2025-06-08 05:52:17.750938
