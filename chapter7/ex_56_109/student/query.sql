@@ -1,4 +1,4 @@
 SELECT
-    COUNT(*) AS NumberOfBooks
+    COUNT(*) AS "NUMBER OF BOOKS"
 FROM
     BOOK;
