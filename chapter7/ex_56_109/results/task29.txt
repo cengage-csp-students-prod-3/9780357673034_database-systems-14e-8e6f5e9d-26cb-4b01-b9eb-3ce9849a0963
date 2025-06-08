@@ -1,24 +1,6 @@
 
-Status: FAILED!
+Status: PASSED!
 Check: 1
 Test: Problem 84
-Reason: Expected:
-+--------------+------------------+
-| BOOK_SUBJECT | BOOKS IN SUBJECT |
-+--------------+------------------+
-| Programming  |        9         |
-|    Cloud     |        4         |
-|   Database   |        4         |
-|  Middleware  |        3         |
-+--------------+------------------+
-Found:
-+--------------+-----------------+
-| BOOK_SUBJECT | BOOKS_INSUBJECT |
-+--------------+-----------------+
-| Programming  |        9        |
-|    Cloud     |        4        |
-|   Database   |        4        |
-|  Middleware  |        3        |
-+--------------+-----------------+
-Error : AssertionError - 
-Timestamp: 2025-06-08 11:44:27.021839
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-08 14:53:05.409600
