@@ -1,7 +1,7 @@
 SELECT
     B.BOOK_NUM,
     B.BOOK_TITLE,
-    COUNT(C.CHECK_NUM) AS TIMES_CHECKED_OUT -- Counts non-null checkouts, resulting in 0 for books never checked out
+    COUNT(C.CHECK_NUM) AS `TIMES CHECKED OUT` -- Counts non-null checkouts, resulting in 0 for books never checked out
 FROM
     BOOK AS B
 LEFT JOIN
@@ -10,5 +10,5 @@ GROUP BY
     B.BOOK_NUM,
     B.BOOK_TITLE
 ORDER BY
-    TIMES_CHECKED_OUT DESC, -- Sort by the number of times checked out in descending order
+    `TIMES CHECKED OUT` DESC, -- Sort by the number of times checked out in descending order
     B.BOOK_TITLE ASC;     -- Then by book title in ascending order
