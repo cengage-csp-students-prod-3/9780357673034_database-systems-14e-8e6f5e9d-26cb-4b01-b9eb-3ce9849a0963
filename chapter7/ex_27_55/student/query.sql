@@ -1,12 +1,13 @@
 SELECT
-  EM.EMP_FNAME AS ManagerFirstName,
-  EM.EMP_LNAME AS ManagerLastName,
+
+  EM.EMP_FNAME AS MNG_FNAME,
+  EM.EMP_LNAME AS MNG_LNAME,
   D.DEPT_NAME,
   D.DEPT_PHONE,
-  ES.EMP_FNAME AS EmployeeFirstName,
-  ES.EMP_LNAME AS EmployeeLastName,
-  C.CUST_FNAME AS CustomerFirstName,
-  C.CUST_LNAME AS CustomerLastName,
+  ES.EMP_FNAME AS EMP_FNAME,
+  ES.EMP_LNAME AS EMP_LNAME,
+  C.CUST_FNAME AS CUST_FNAME,
+  C.CUST_LNAME AS CUST_LNAME,
   I.INV_DATE,
   I.INV_TOTAL
 FROM
@@ -18,7 +19,7 @@ ON
 JOIN
   LGEMPLOYEE AS ES -- Alias for the employee who made the sale
 ON
-  I.EMPLOYEE_ID = ES.EMP_NUM
+  I.EMPLOYEE_ID = ES.EMP_NUM -- CORRECTED: Using I.EMPLOYEE_ID
 JOIN
   LGDEPARTMENT AS D
 ON
@@ -29,6 +30,4 @@ ON
   D.EMP_NUM = EM.EMP_NUM
 WHERE
   C.CUST_LNAME = 'Hagan'
-  AND I.INV_DATE = '2021-05-18'
-  AND ES.EMP_FNAME = 'THURMAN' -- Added filter for the specific employee
-  AND ES.EMP_LNAME = 'WILKINSON'; -- Added filter for the specific employee
+  AND I.INV_DATE = '2021-05-18';
