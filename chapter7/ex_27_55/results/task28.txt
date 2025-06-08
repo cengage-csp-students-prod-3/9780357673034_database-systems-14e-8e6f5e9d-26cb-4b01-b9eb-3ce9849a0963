@@ -17,22 +17,22 @@ Reason: Expected:
 |    VALU-MATTE     |   VALUE    |     16.84     |    2485    |
 +-------------------+------------+---------------+------------+
 Found:
-+--------------------+------------+------------------------+--------------------------+
-|     BRAND_NAME     | BRAND_TYPE | AVERAGEPRICEOFPRODUCTS | TOTALUNITSSOLDOFPRODUCTS |
-+--------------------+------------+------------------------+--------------------------+
-|    BINDER PRIME    |  PREMIUM   |       16.115926        |           3753           |
-|      BUSTERS       |   VALUE    |       22.586000        |           3727           |
-|   FORESTERS BEST   |   VALUE    |       20.943333        |           2086           |
-|    HOME COMFORT    | CONTRACTOR |       21.795556        |           4842           |
-| HOMESTEADER FINEST |  PREMIUM   |        0.000000        |            0             |
-|      LE MODE       |  PREMIUM   |       19.220556        |           5284           |
-|     LONG HAUL      | CONTRACTOR |       20.119268        |           5728           |
-| OLDE TYME QUALITY  | CONTRACTOR |       18.330741        |           3614           |
-|   PRIME OF LIFE    |   VALUE    |        0.000000        |            0             |
-|     REGAL HOME     |   VALUE    |        0.000000        |            0             |
-|    STUTTENFURST    | CONTRACTOR |       16.467778        |           3671           |
-|     VALU-MATTE     |   VALUE    |       16.840000        |           2485           |
-|  YOUR HOME HELPER  |   VALUE    |        0.000000        |            0             |
-+--------------------+------------+------------------------+--------------------------+
++--------------------+------------+---------------+------------+
+|     BRAND_NAME     | BRAND_TYPE | AVERAGE_PRICE | UNITS_SOLD |
++--------------------+------------+---------------+------------+
+|    BINDER PRIME    |  PREMIUM   |     16.12     |    3753    |
+|      BUSTERS       |   VALUE    |     22.59     |    3727    |
+|   FORESTERS BEST   |   VALUE    |     20.94     |    2086    |
+|    HOME COMFORT    | CONTRACTOR |     21.80     |    4842    |
+| HOMESTEADER FINEST |  PREMIUM   |     0.00      |     0      |
+|      LE MODE       |  PREMIUM   |     19.22     |    5284    |
+|     LONG HAUL      | CONTRACTOR |     20.12     |    5728    |
+| OLDE TYME QUALITY  | CONTRACTOR |     18.33     |    3614    |
+|   PRIME OF LIFE    |   VALUE    |     0.00      |     0      |
+|     REGAL HOME     |   VALUE    |     0.00      |     0      |
+|    STUTTENFURST    | CONTRACTOR |     16.47     |    3671    |
+|     VALU-MATTE     |   VALUE    |     16.84     |    2485    |
+|  YOUR HOME HELPER  |   VALUE    |     0.00      |     0      |
++--------------------+------------+---------------+------------+
 Error : AssertionError - 
-Timestamp: 2025-06-08 07:49:58.943098
+Timestamp: 2025-06-08 07:51:09.251143
