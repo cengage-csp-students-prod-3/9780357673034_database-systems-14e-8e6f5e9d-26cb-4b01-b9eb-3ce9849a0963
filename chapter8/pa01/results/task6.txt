@@ -1,0 +1,21 @@
+
+Status: FAILED!
+Check: 1
+Test: Alter the `MAINTENANCE_TYPES` table to include pricing information
+Reason: Expected:
++------------------------------+--------------+------+-----+---------+-------+
+|            FIELD             |     TYPE     | NULL | KEY | DEFAULT | EXTRA |
++------------------------------+--------------+------+-----+---------+-------+
+|     MAINTENANCE_TYPE_ID      |   char(5)    |  NO  | PRI |  NULL   |       |
+| MAINTENANCE_TYPE_DESCRIPTION | varchar(30)  |  NO  |     |  NULL   |       |
+|      MAINTENANCE_PRICE       | decimal(5,2) | YES  |     |  NULL   |       |
++------------------------------+--------------+------+-----+---------+-------+
+Found:
++------------------------------+-------------+------+-----+---------+-------+
+|            FIELD             |    TYPE     | NULL | KEY | DEFAULT | EXTRA |
++------------------------------+-------------+------+-----+---------+-------+
+|     MAINTENANCE_TYPE_ID      |   char(5)   |  NO  | PRI |  NULL   |       |
+| MAINTENANCE_TYPE_DESCRIPTION | varchar(30) |  NO  |     |  NULL   |       |
++------------------------------+-------------+------+-----+---------+-------+
+Error : AssertionError - 
+Timestamp: 2025-06-09 17:52:45.955870
