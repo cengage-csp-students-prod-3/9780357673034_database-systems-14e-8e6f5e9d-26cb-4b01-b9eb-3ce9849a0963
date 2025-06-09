@@ -1,0 +1,6 @@
+
+Status: PASSED!
+Check: 1
+Test: Create a new table to store car maintenance types
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-09 14:01:03.313799
