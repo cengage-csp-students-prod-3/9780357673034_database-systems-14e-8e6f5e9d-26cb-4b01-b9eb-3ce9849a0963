@@ -1,0 +1,6 @@
+
+Status: PASSED!
+Check: 1
+Test: Create a constraint on the `ACTIVE_DRIVERS` table
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-09 17:51:19.828127
