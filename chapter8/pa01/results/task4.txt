@@ -12,13 +12,16 @@ Reason: Expected:
 | ACTIVE_DRIVERS |     1      | NameSearch |      3       | DRIVER_DRIVING_LICENSE_ID |     A     |      3      |   NULL   |  NULL  | YES  |   BTREE    |         |               |   YES   |    NULL    |
 +----------------+------------+------------+--------------+---------------------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
 Found:
-+----------------+------------+------------+--------------+-------------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
-|     TABLE      | NON_UNIQUE |  KEY_NAME  | SEQ_IN_INDEX |    COLUMN_NAME    | COLLATION | CARDINALITY | SUB_PART | PACKED | NULL | INDEX_TYPE | COMMENT | INDEX_COMMENT | VISIBLE | EXPRESSION |
-+----------------+------------+------------+--------------+-------------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
-| ACTIVE_DRIVERS |     0      |  PRIMARY   |      1       |     DRIVER_ID     |     A     |      3      |   NULL   |  NULL  |      |   BTREE    |         |               |   YES   |    NULL    |
-| ACTIVE_DRIVERS |     1      | NameSearch |      1       | DRIVER_FIRST_NAME |     A     |      3      |   NULL   |  NULL  | YES  |   BTREE    |         |               |   YES   |    NULL    |
-| ACTIVE_DRIVERS |     1      | NameSearch |      2       | DRIVER_LAST_NAME  |     A     |      3      |   NULL   |  NULL  | YES  |   BTREE    |         |               |   YES   |    NULL    |
-| ACTIVE_DRIVERS |     1      | NameSearch |      3       |     DRIVER_ID     |     A     |      3      |   NULL   |  NULL  |      |   BTREE    |         |               |   YES   |    NULL    |
-+----------------+------------+------------+--------------+-------------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
++----------------+------------+----------------+--------------+---------------------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+|     TABLE      | NON_UNIQUE |    KEY_NAME    | SEQ_IN_INDEX |        COLUMN_NAME        | COLLATION | CARDINALITY | SUB_PART | PACKED | NULL | INDEX_TYPE | COMMENT | INDEX_COMMENT | VISIBLE | EXPRESSION |
++----------------+------------+----------------+--------------+---------------------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
+| ACTIVE_DRIVERS |     0      |    PRIMARY     |      1       |         DRIVER_ID         |     A     |      3      |   NULL   |  NULL  |      |   BTREE    |         |               |   YES   |    NULL    |
+| ACTIVE_DRIVERS |     0      | DuplicateCheck |      1       |     DRIVER_FIRST_NAME     |     A     |      3      |   NULL   |  NULL  | YES  |   BTREE    |         |               |   YES   |    NULL    |
+| ACTIVE_DRIVERS |     0      | DuplicateCheck |      2       |     DRIVER_LAST_NAME      |     A     |      3      |   NULL   |  NULL  | YES  |   BTREE    |         |               |   YES   |    NULL    |
+| ACTIVE_DRIVERS |     0      | DuplicateCheck |      3       | DRIVER_DRIVING_LICENSE_ID |     A     |      3      |   NULL   |  NULL  | YES  |   BTREE    |         |               |   YES   |    NULL    |
+| ACTIVE_DRIVERS |     1      |   NameSearch   |      1       |     DRIVER_FIRST_NAME     |     A     |      3      |   NULL   |  NULL  | YES  |   BTREE    |         |               |   YES   |    NULL    |
+| ACTIVE_DRIVERS |     1      |   NameSearch   |      2       |     DRIVER_LAST_NAME      |     A     |      3      |   NULL   |  NULL  | YES  |   BTREE    |         |               |   YES   |    NULL    |
+| ACTIVE_DRIVERS |     1      |   NameSearch   |      3       | DRIVER_DRIVING_LICENSE_ID |     A     |      3      |   NULL   |  NULL  | YES  |   BTREE    |         |               |   YES   |    NULL    |
++----------------+------------+----------------+--------------+---------------------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+------------+
 Error : AssertionError - 
-Timestamp: 2025-06-09 17:45:25.447885
+Timestamp: 2025-06-09 18:25:48.923360
