@@ -1,17 +1,6 @@
 
-Status: FAILED!
+Status: PASSED!
 Check: 1
 Test: Add the four maintenance types to the `MAINTENANCE_TYPES` table
-Reason: Expected:
-+---------------------+------------------------------+-------------------+
-| MAINTENANCE_TYPE_ID | MAINTENANCE_TYPE_DESCRIPTION | MAINTENANCE_PRICE |
-+---------------------+------------------------------+-------------------+
-|          1          |         Tire Change          |       50.00       |
-|          2          |          Oil Change          |       45.00       |
-|          3          |        Full Cleaning         |      100.00       |
-|          4          |       Gas Pump Change        |      145.00       |
-+---------------------+------------------------------+-------------------+
-Found:
-
-Error : AssertionError - 
-Timestamp: 2025-06-10 02:54:33.714050
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-10 02:57:36.885821
