@@ -1,0 +1,6 @@
+
+Status: PASSED!
+Check: 1
+Test: Insert two maintenance types in a batch to the `MAINTENANCES` table
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-10 17:32:42.614153
