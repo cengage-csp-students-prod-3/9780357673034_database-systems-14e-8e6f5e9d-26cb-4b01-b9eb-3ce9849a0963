@@ -1,14 +1,6 @@
 
-Status: FAILED!
+Status: PASSED!
 Check: 1
 Test: Create tire maintenance tasks for each car with a model year of **2022**
-Reason: Expected:
-+--------+---------------------+-----------------+
-| CAR_ID | MAINTENANCE_TYPE_ID | MAINTENANCE_DUE |
-+--------+---------------------+-----------------+
-|  1001  |          1          |   2022-12-31    |
-+--------+---------------------+-----------------+
-Found:
-
-Error : AssertionError - 
-Timestamp: 2025-06-10 03:28:01.318975
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-10 03:31:26.041794
