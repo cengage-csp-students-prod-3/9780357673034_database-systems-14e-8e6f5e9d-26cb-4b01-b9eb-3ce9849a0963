@@ -135,4 +135,4 @@ INSERT INTO MAINTENANCE_TYPES (ID, Description, Price) VALUES
 (1, 'Tire Change', 50.00),
 (2, 'Oil Change', 45.00),
 (3, 'Full Cleaning', 100.00),
-(4, 'Gas Pump Change', 145.00);
+(4, 'Gas Pump Change', 145.00); 
