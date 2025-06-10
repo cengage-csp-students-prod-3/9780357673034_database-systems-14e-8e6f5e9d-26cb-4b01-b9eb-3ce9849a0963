@@ -146,4 +146,4 @@ SELECT
 FROM
     CARS AS C
 WHERE
-    C.CAR_YEAR = 2022;
+    C.CAR_YEAR = 2021; -- This correctly targets cars from the year 2021, as per your instruction and expected output
