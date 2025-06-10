@@ -1,0 +1,6 @@
+
+Status: PASSED!
+Check: 1
+Test: Set the default price value of the `MAINTENANCE_TYPES` table
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-10 02:19:46.171053
