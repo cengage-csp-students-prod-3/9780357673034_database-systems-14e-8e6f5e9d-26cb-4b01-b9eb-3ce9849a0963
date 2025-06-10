@@ -1,0 +1,6 @@
+
+Status: PASSED!
+Check: 1
+Test: Add a `CHECK` to the `ACTIVE_DRIVERS` table 
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-10 02:27:06.472202
