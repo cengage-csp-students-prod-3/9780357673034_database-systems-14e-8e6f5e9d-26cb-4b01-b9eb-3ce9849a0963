@@ -1,7 +1,6 @@
 
-Status: FAILED!
+Status: PASSED!
 Check: 1
 Test: Create a procedure to collect emails formatted as a mailing list
-Reason: The following error is preventing tests from completing: 1305 (42000): PROCEDURE InstantRide.EmailList does not exist
-Error : ProgrammingError - 1305 (42000): PROCEDURE InstantRide.EmailList does not exist
-Timestamp: 2025-06-11 06:51:31.432986
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-11 06:59:54.082740
