@@ -237,3 +237,26 @@ DELIMITER ;
 
 -- Execute the VATCalculator procedure to see the results
 CALL VATCalculator();
+USE InstantRide;
+
+-- Drop procedure if it exists
+DROP PROCEDURE IF EXISTS VATCalculator;
+
+-- Set delimiter
+DELIMITER //
+
+-- Create procedure
+CREATE PROCEDURE VATCalculator()
+BEGIN
+    SELECT
+        TRAVEL_ID,
+        ROUND(TRAVEL_PRICE * (1 - COALESCE(TRAVEL_DISCOUNT, 0)) * 0.08, 2) AS VAT_AMOUNT
+    FROM
+        TRAVELS;
+END //
+
+-- Reset delimiter
+DELIMITER ;
+
+-- Execute the procedure
+CALL VATCalculator();
