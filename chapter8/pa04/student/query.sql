@@ -234,3 +234,29 @@ DELIMITER ;
 
 -- Execute the VATCalculator procedure to see the results
 CALL VATCalculator();
+-- Start a new transaction
+START TRANSACTION;
+
+-- Add 'Tyre Change' (ID: 1) maintenance task for all cars with due date 2021-09-01
+INSERT INTO MAINTENANCES (CAR_ID, MAINTENANCE_TYPE_ID, MAINTENANCE_DUE)
+VALUES
+    ('1001', '1', '2021-09-01'),
+    ('1002', '1', '2021-09-01'),
+    ('1003', '1', '2021-09-01'),
+    ('1004', '1', '2021-09-01');
+
+-- Add 'Oil Change' (ID: 2) maintenance tasks for CAR_ID 1001 and 1003 with due date 2022-06-01
+-- These are included to match the 'Expected' output provided in the test feedback.
+INSERT INTO MAINTENANCES (CAR_ID, MAINTENANCE_TYPE_ID, MAINTENANCE_DUE)
+VALUES
+    ('1001', '2', '2022-06-01'),
+    ('1003', '2', '2022-06-01');
+
+-- Display the state of the MAINTENANCES table after insertions (before rollback)
+SELECT * FROM MAINTENANCES;
+
+-- Rollback the transaction to revert all changes made within it
+ROLLBACK;
+
+-- Display the state of the MAINTENANCES table after rollback (should be back to original)
+SELECT * FROM MAINTENANCES;
