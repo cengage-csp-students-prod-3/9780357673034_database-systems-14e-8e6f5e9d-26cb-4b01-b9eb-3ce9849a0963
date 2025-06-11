@@ -16,36 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `ACTIVE_DRIVERS`
---
-
-DROP TABLE IF EXISTS `ACTIVE_DRIVERS`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `ACTIVE_DRIVERS` (
-  `DRIVER_ID` char(5) NOT NULL,
-  `DRIVER_FIRST_NAME` varchar(20) DEFAULT NULL,
-  `DRIVER_LAST_NAME` varchar(20) DEFAULT NULL,
-  `DRIVER_DRIVING_LICENSE_ID` varchar(10) DEFAULT NULL,
-  `DRIVER_RATING` decimal(3,2) DEFAULT NULL,
-  PRIMARY KEY (`DRIVER_ID`),
-  UNIQUE KEY `DuplicateCheck` (`DRIVER_FIRST_NAME`,`DRIVER_LAST_NAME`,`DRIVER_DRIVING_LICENSE_ID`),
-  KEY `NameSearch` (`DRIVER_FIRST_NAME`,`DRIVER_LAST_NAME`),
-  CONSTRAINT `ACTIVE_DRIVERS_chk_1` CHECK ((length(`DRIVER_DRIVING_LICENSE_ID`) = 7))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `ACTIVE_DRIVERS`
---
-
-LOCK TABLES `ACTIVE_DRIVERS` WRITE;
-/*!40000 ALTER TABLE `ACTIVE_DRIVERS` DISABLE KEYS */;
-INSERT INTO `ACTIVE_DRIVERS` VALUES ('2001','Willie','Butler','1874501',4.40),('2002','Justin','Howard','1953853',4.80),('2003','Anthony','Walker','1735487',3.50);
-/*!40000 ALTER TABLE `ACTIVE_DRIVERS` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `CARS`
 --
 
@@ -224,4 +194,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-11  4:18:37
+-- Dump completed on 2025-06-11  4:22:06

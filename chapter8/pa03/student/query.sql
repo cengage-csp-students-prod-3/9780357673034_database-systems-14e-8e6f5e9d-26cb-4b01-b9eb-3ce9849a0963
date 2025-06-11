@@ -188,3 +188,5 @@ COMMIT;
 -- If the script completes successfully, this query's output should match your "Expected" result.
 SELECT * FROM MAINTENANCES;
 DROP TABLE IF EXISTS ACTIVE_DRIVERS;
+
+SHOW TABLES;
