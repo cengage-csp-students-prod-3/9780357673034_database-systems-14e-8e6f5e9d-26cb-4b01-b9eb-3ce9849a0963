@@ -1,4 +1,4 @@
--- Chapter 8 Activities  
+-- Chapter 8 Activities
 DROP DATABASE IF EXISTS InstantRide;
 CREATE DATABASE InstantRide;
 USE InstantRide;
@@ -71,16 +71,16 @@ CREATE TABLE TRAVELS (
 );
 
 -- Updated INSERT statements for TRAVELS to use INT for DRIVER_ID
-INSERT INTO TRAVELS VALUES('5001', '2022-10-01 04:04:55', '2022-10-01 04:14:19', '9614 York Road', '84 Church Lane', '15.44', 2001, '1003', '3005', NULL);
-INSERT INTO TRAVELS VALUES('5002', '2022-10-01 05:57:33', '2022-10-01 06:12:33', '47 Church Street', '68 High Street', '20.56', 2001, '1003', '3006',NULL);
-INSERT INTO TRAVELS VALUES('5003', '2022-10-01 13:35:20', '2022-10-01 13:45:10', '2 Windsor Road', '95 West Street', '12.32', 2002, '1001', '3002',NULL);
-INSERT INTO TRAVELS VALUES('5004', '2022-10-02 08:44:48', '2022-10-02 09:15:28', '9060 Mill Lane', '27 Main Road', '30.49', 2003, '1002', '3001','0.13');
-INSERT INTO TRAVELS VALUES('5005', '2022-10-02 16:38:54', '2022-10-02 16:48:10', '2 Queensway', '24 Mill Lane', '11.15', 2001, '1003', '3007',NULL);
-INSERT INTO TRAVELS VALUES('5006', '2022-10-03 19:12:14', '2022-10-03 19:23:45', '50 Main Road', '93 Broadway', '14.61', 2003, '1002', '3007', '0.1');
-INSERT INTO TRAVELS VALUES('5007', '2022-10-03 16:06:36', '2022-10-03 16:08:56', '39 Park Road', '91 West Street', '4.41', 2002, '1004', 3003, '0.14');
-INSERT INTO TRAVELS VALUES('5008', '2022-10-03 17:17:12', '2022-10-03 17:37:42', '37 The Drive', '17 Stanley Road', '25.12', 2001, '1003', '3001', '0.25');
-INSERT INTO TRAVELS VALUES('5009', '2022-10-03 21:16:48', '2022-10-03 21:26:18', '77 Mill Road', '724 Springfield Road', '13.55', 2001, '1003', '3005', NULL);
-INSERT INTO TRAVELS VALUES('5010', '2022-10-03 23:21:40', '2022-10-03 23:39:10', '16 Church Road', '30 North Road', '25.62', 2003, '1002', 3003, '0.2');
+INSERT INTO TRAVELS VALUES('5001', '2022-10-01 04:04:55', '2022-10-01 04:14:19', '15.44', 2001, '1003', '3005', NULL);
+INSERT INTO TRAVELS VALUES('5002', '2022-10-01 05:57:33', '2022-10-01 06:12:33', '20.56', 2001, '1003', '3006',NULL);
+INSERT INTO TRAVELS VALUES('5003', '2022-10-01 13:35:20', '2022-10-01 13:45:10', '12.32', 2002, '1001', '3002',NULL);
+INSERT INTO TRAVELS VALUES('5004', '2022-10-02 08:44:48', '2022-10-02 09:15:28', '30.49', 2003, '1002', '3001','0.13');
+INSERT INTO TRAVELS VALUES('5005', '2022-10-02 16:38:54', '2022-10-02 16:48:10', '11.15', 2001, '1003', '3007',NULL);
+INSERT INTO TRAVELS VALUES('5006', '2022-10-03 19:12:14', '2022-10-03 19:23:45', '14.61', 2003, '1002', '3007', '0.1');
+INSERT INTO TRAVELS VALUES('5007', '2022-10-03 16:06:36', '2022-10-03 16:08:56', '4.41', 2002, '1004', 3003, '0.14');
+INSERT INTO TRAVELS VALUES('5008', '2022-10-03 17:17:12', '2022-10-03 17:37:42', '25.12', 2001, '1003', '3001', '0.25');
+INSERT INTO TRAVELS VALUES('5009', '2022-10-03 21:16:48', '2022-10-03 21:26:18', '13.55', 2001, '1003', '3005', NULL);
+INSERT INTO TRAVELS VALUES('5010', '2022-10-03 23:21:40', '2022-10-03 23:39:10', '25.62', 2003, '1002', 3003, '0.2');
 
 
 /*8 - 1 - 1 */
@@ -211,6 +211,9 @@ SELECT * FROM MAINTENANCES;
 
 -- Task 1: Create a procedure to calculate the VAT.
 
+-- Explicitly use the database before creating the procedure to ensure correct context.
+USE InstantRide;
+
 -- Change the delimiter to allow semicolons within the procedure definition
 DELIMITER //
 
@@ -234,29 +237,3 @@ DELIMITER ;
 
 -- Execute the VATCalculator procedure to see the results
 CALL VATCalculator();
--- Start a new transaction
-START TRANSACTION;
-
--- Add 'Tyre Change' (ID: 1) maintenance task for all cars with due date 2021-09-01
-INSERT INTO MAINTENANCES (CAR_ID, MAINTENANCE_TYPE_ID, MAINTENANCE_DUE)
-VALUES
-    ('1001', '1', '2021-09-01'),
-    ('1002', '1', '2021-09-01'),
-    ('1003', '1', '2021-09-01'),
-    ('1004', '1', '2021-09-01');
-
--- Add 'Oil Change' (ID: 2) maintenance tasks for CAR_ID 1001 and 1003 with due date 2022-06-01
--- These are included to match the 'Expected' output provided in the test feedback.
-INSERT INTO MAINTENANCES (CAR_ID, MAINTENANCE_TYPE_ID, MAINTENANCE_DUE)
-VALUES
-    ('1001', '2', '2022-06-01'),
-    ('1003', '2', '2022-06-01');
-
--- Display the state of the MAINTENANCES table after insertions (before rollback)
-SELECT * FROM MAINTENANCES;
-
--- Rollback the transaction to revert all changes made within it
-ROLLBACK;
-
--- Display the state of the MAINTENANCES table after rollback (should be back to original)
-SELECT * FROM MAINTENANCES;
