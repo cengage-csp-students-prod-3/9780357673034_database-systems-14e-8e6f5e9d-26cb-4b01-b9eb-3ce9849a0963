@@ -158,44 +158,76 @@ DELETE FROM MAINTENANCE_TYPES
 WHERE
     MAINTENANCE_TYPE_DESCRIPTION = 'Gas Pump Change'; 
 SET SQL_SAFE_UPDATES = 1;
+START TRANSACTION;
 
+-- Declare a variable to store the error state.
+-- In MySQL, you often rely on specific handler conditions or check status after operations.
+-- For a stored procedure or function, you might use a condition handler.
+-- For a direct script, we'll demonstrate a basic flow.
 
--- Start a transaction
-BEGIN TRANSACTION;
-
--- Declare variables (if needed for your specific database system, e.g., SQL Server)
--- DECLARE @TireChangeTaskID INT = 1;
--- DECLARE @DueDate DATE = '2021-09-01';
-
--- Attempt to insert the 'Tire Change' task for all cars
--- Replace 'YourCarsTable', 'YourMaintenanceTasksTable',
--- and column names with your actual table and column names.
-INSERT INTO YourMaintenanceTasksTable (TaskID, CarID, TaskDescription, DueDate, Status)
+-- Attempt to insert 'Tire Change' (Maintenance Type ID: 1) for all cars due on 2021-09-01.
+-- This assumes 'MAINTENANCES' table has (CAR_ID, MAINTENANCE_TYPE_ID, MAINTENANCE_DUE)
+-- and 'CARS' table has CAR_ID.
+INSERT INTO MAINTENANCES (CAR_ID, MAINTENANCE_TYPE_ID, MAINTENANCE_DUE)
 SELECT
-    1 AS TaskID, -- Assuming 1 is the ID for 'Tire Change'
-    c.CarID,
-    'Tire Change' AS TaskDescription,
-    '2021-09-01' AS DueDate,
-    'Scheduled' AS Status -- Or whatever your default status is
+    c.CAR_ID,
+    1 AS MAINTENANCE_TYPE_ID,   -- ID for 'Tire Change'
+    '2021-09-01' AS MAINTENANCE_DUE
 FROM
-    YourCarsTable c;
+    CARS c;
 
--- Check for errors after the insert operation
--- This part of the script is conceptual and error handling varies by database.
--- For example, in SQL Server, you might check @@ERROR or use a TRY...CATCH block.
--- In PostgreSQL/MySQL, an error during INSERT will typically cause the transaction
--- to fail and rollback automatically unless explicitly handled.
+-- In MySQL, direct script-level error handling for transactions typically
+-- involves client-side logic or more complex stored procedures.
+-- For a simple script, if an INSERT statement encounters an error (e.g., due to a constraint violation),
+-- MySQL's default behavior might be to implicitly roll back the statement,
+-- but for a multi-statement transaction, you need explicit COMMIT/ROLLBACK.
 
-IF @@ERROR <> 0 -- Example for SQL Server: Checks if the last T-SQL statement resulted in an error
+-- A common pattern in MySQL (especially in stored procedures) involves condition handlers.
+-- Since we are executing a direct script, we assume the INSERT will either succeed
+-- or throw an error that would implicitly prevent the COMMIT from completing if not handled.
+
+-- Check for success or failure.
+-- If the INSERT statement completes without error, commit the transaction.
+-- If an error occurred (e.g., a constraint violation during INSERT),
+-- the transaction would typically be implicitly rolled back by MySQL's error handling,
+-- or you would explicitly ROLLBACK within a handler.
+
+-- For a simple script, if the INSERT was successful, proceed to COMMIT.
+-- If an error happened, the script would likely stop execution before COMMIT,
+-- and the transaction would remain uncommitted or implicitly rolled back based on
+-- the specific error type and MySQL's internal handling.
+
+-- Assuming the INSERT completes successfully if we reach this point:
+COMMIT; -- Make the changes permanent if no errors occurred.
+SELECT 'Tire Change tasks added successfully and committed.' AS Message;
+
+-- Example of how you *might* structure error handling in a more robust MySQL context (e.g., in a stored procedure):
+/*
+DELIMITER //
+CREATE PROCEDURE AddTireChangeTasks()
 BEGIN
-    PRINT 'An error occurred during the insertion process. Rolling back changes.';
-    ROLLBACK TRANSACTION; -- Revert all changes made within this transaction
-END
-ELSE
-BEGIN
-    PRINT 'Tire Change tasks added successfully. However, for demonstration, we will now rollback.';
-    -- For the purpose of this request, we are demonstrating a rollback even on success.
-    -- In a real scenario, you would COMMIT TRANSACTION here if you wanted to keep the changes.
-    ROLLBACK TRANSACTION; -- This line explicitly rolls back the changes for the demonstration.
-    PRINT 'All changes have been rolled back.';
-END;
+    DECLARE exit handler FOR SQLEXCEPTION
+    BEGIN
+        -- ERROR
+        ROLLBACK;
+        SELECT 'An error occurred. Changes have been rolled back.' AS Message;
+    END;
+
+    START TRANSACTION;
+
+    INSERT INTO MAINTENANCES (CAR_ID, MAINTENANCE_TYPE_ID, MAINTENANCE_DUE)
+    SELECT
+        c.CAR_ID,
+        1 AS MAINTENANCE_TYPE_ID,
+        '2021-09-01' AS MAINTENANCE_DUE
+    FROM
+        CARS c;
+
+    COMMIT;
+    SELECT 'Tire Change tasks added successfully and committed.' AS Message;
+END //
+DELIMITER ;
+
+-- To run the procedure:
+-- CALL AddTireChangeTasks();
+*/
