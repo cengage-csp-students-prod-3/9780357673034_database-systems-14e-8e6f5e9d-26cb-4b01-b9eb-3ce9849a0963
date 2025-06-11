@@ -3,15 +3,8 @@ DROP DATABASE IF EXISTS InstantRide;
 CREATE DATABASE InstantRide;
 USE InstantRide;
 
--- Drop the ACTIVE_DRIVERS VIEW if it exists, to ensure a clean recreation later.
-DROP VIEW IF EXISTS ACTIVE_DRIVERS;
--- Remove the ACTIVE_DRIVERS table if it exists (for robustness, though we're moving to a VIEW).
-DROP TABLE IF EXISTS ACTIVE_DRIVERS;
-
-
 CREATE TABLE DRIVERS (
-    -- Corrected DRIVER_ID definition: now INT and AUTO_INCREMENT for automatic ID generation.
-    DRIVER_ID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    DRIVER_ID CHAR(5) PRIMARY KEY NOT NULL,
     DRIVER_FIRST_NAME VARCHAR(20) NOT NULL,
     DRIVER_LAST_NAME VARCHAR(20) NOT NULL,
     DRIVER_DRIVING_LICENSE_ID VARCHAR(10) NOT NULL,
@@ -20,11 +13,10 @@ CREATE TABLE DRIVERS (
     DRIVER_RATING DECIMAL(2,1) NOT NULL
 );
 
--- Insert initial driver data. DRIVER_ID values are explicitly provided as integers.
-INSERT INTO DRIVERS VALUES(2001, 'Willie', 'Butler', '1874501','2022-09-12', true, 4.4 );
-INSERT INTO DRIVERS VALUES(2002, 'Justin', 'Howard', '1953853','2022-09-09', true, 4.8);
-INSERT INTO DRIVERS VALUES(2003, 'Anthony', 'Walker', '1735487','2022-09-15', true, 3.5);
-INSERT INTO DRIVERS VALUES(2004, 'Ece', 'Yilmaz', '1734747','2022-08-15', true, 0);
+INSERT INTO DRIVERS VALUES('2001', 'Willie', 'Butler', '1874501','2022-09-12', true, 4.4 );
+INSERT INTO DRIVERS VALUES('2002', 'Justin', 'Howard', '1953853','2022-09-09', true, 4.8);
+INSERT INTO DRIVERS VALUES('2003', 'Anthony', 'Walker', '1735487','2022-09-15', true, 3.5);
+INSERT INTO DRIVERS VALUES('2004', 'Ece', 'Yilmaz', '1734747','2022-08-15', true, 0);
 
 CREATE TABLE CARS (
     CAR_ID CHAR(5) PRIMARY KEY NOT NULL,
@@ -55,27 +47,6 @@ INSERT INTO USERS VALUES('3006', 'Randy', 'Clark', 'r.clark@xmail.com');
 INSERT INTO USERS VALUES('3007', 'Jose', 'Thomas', 'j.thomas@xmail.com');
 INSERT INTO USERS VALUES('3008', 'Nursin', 'Yilmaz', 'n.yilmaz@xmail.com');
 
-
--- Task 4: Create a TRIGGER to ensure all new email addresses are lowercase.
-USE InstantRide; -- Ensure the correct database is selected
-DELIMITER $$
-
-DROP TRIGGER IF EXISTS email_insert $$
-
-CREATE TRIGGER email_insert
-BEFORE INSERT ON USERS
-FOR EACH ROW
-SET NEW.USER_EMAIL = LOWER(NEW.USER_EMAIL) $$
-
-DELIMITER ;
-
--- Test the trigger by inserting a new user with an uppercase email
-INSERT INTO USERS VALUES('3009', 'Test', 'User', 'Test.User@EXAMPLE.com');
-
--- Verify the email was converted to lowercase
-SELECT * FROM USERS WHERE USER_ID = '3009';
-
-
 CREATE TABLE TRAVELS (
     TRAVEL_ID CHAR(10) PRIMARY KEY NOT NULL,
     TRAVEL_START_TIME DATETIME NOT NULL,
@@ -83,25 +54,22 @@ CREATE TABLE TRAVELS (
     TRAVEL_START_LOCATION CHAR(30) NOT NULL,
     TRAVEL_END_LOCATION CHAR(30) NOT NULL,
     TRAVEL_PRICE DECIMAL(5 , 2 ) NOT NULL,
-    -- Changed DRIVER_ID to INT to match the DRIVERS table for consistency
-    DRIVER_ID INT NOT NULL,
+    DRIVER_ID CHAR(5) NOT NULL,
     CAR_ID CHAR(5) NOT NULL,
     USER_ID CHAR(5) NOT NULL,
     TRAVEL_DISCOUNT DECIMAL(3 , 2 )
 );
 
--- Corrected INSERT statements for TRAVELS to include all columns in correct order and type
-INSERT INTO TRAVELS VALUES('5001', '2022-10-01 04:04:55', '2022-10-01 04:14:19', '9614 York Road', '84 Church Lane', '15.44', 2001, '1003', '3005', NULL);
-INSERT INTO TRAVELS VALUES('5002', '2022-10-01 05:57:33', '2022-10-01 06:12:33', '47 Church Street', '68 High Street', '20.56', 2001, '1003', '3006',NULL);
-INSERT INTO TRAVELS VALUES('5003', '2022-10-01 13:35:20', '2022-10-01 13:45:10', '2 Windsor Road', '95 West Street', '12.32', 2002, '1001', '3002',NULL);
-INSERT INTO TRAVELS VALUES('5004', '2022-10-02 08:44:48', '2022-10-02 09:15:28', '9060 Mill Lane', '27 Main Road', '30.49', 2003, '1002', '3001','0.13');
-INSERT INTO TRAVELS VALUES('5005', '2022-10-02 16:38:54', '2022-10-02 16:48:10', '2 Queensway', '24 Mill Lane', '11.15', 2001, '1003', '3007',NULL);
-INSERT INTO TRAVELS VALUES('5006', '2022-10-03 19:12:14', '2022-10-03 19:23:45', '50 Main Road', '93 Broadway', '14.61', 2003, '1002', '3007', '0.1');
-INSERT INTO TRAVELS VALUES('5007', '2022-10-03 16:06:36', '2022-10-03 16:08:56', '39 Park Road', '91 West Street', '4.41', 2002, '1004', 3003, '0.14');
-INSERT INTO TRAVELS VALUES('5008', '2022-10-03 17:17:12', '2022-10-03 17:37:42', '37 The Drive', '17 Stanley Road', '25.12', 2001, '1003', '3001', '0.25');
-INSERT INTO TRAVELS VALUES('5009', '2022-10-03 21:16:48', '2022-10-03 21:26:18', '77 Mill Road', '724 Springfield Road', '13.55', 2001, '1003', '3005', NULL);
-INSERT INTO TRAVELS VALUES('5010', '2022-10-03 23:21:40', '2022-10-03 23:39:10', '16 Church Road', '30 North Road', '25.62', 2003, '1002', 3003, '0.2');
-
+INSERT INTO TRAVELS VALUES('5001', '2022-10-01 04:04:55', '2022-10-01 04:14:19', '9614 York Road', '84 Church Lane', '15.44', '2001', '1003', '3005', NULL);
+INSERT INTO TRAVELS VALUES('5002', '2022-10-01 05:57:33', '2022-10-01 06:12:33', '47 Church Street', '68 High Street', '20.56', '2001', '1003', '3006',NULL);
+INSERT INTO TRAVELS VALUES('5003', '2022-10-01 13:35:20', '2022-10-01 13:45:10', '2 Windsor Road', '95 West Street', '12.32', '2002', '1001', '3002',NULL);
+INSERT INTO TRAVELS VALUES('5004', '2022-10-02 08:44:48', '2022-10-02 09:15:28', '9060 Mill Lane', '27 Main Road', '30.49', '2003', '1002', '3001','0.13');
+INSERT INTO TRAVELS VALUES('5005', '2022-10-02 16:38:54', '2022-10-02 16:48:10', '2 Queensway', '24 Mill Lane', '11.15', '2001', '1003', '3007',NULL);
+INSERT INTO TRAVELS VALUES('5006', '2022-10-03 19:12:14', '2022-10-03 19:23:45', '50 Main Road', '93 Broadway', '14.61', '2003', '1002', '3007', '0.1');
+INSERT INTO TRAVELS VALUES('5007', '2022-10-03 16:06:36', '2022-10-03 16:08:56', '39 Park Road', '91 West Street', '4.41', '2002', '1004', '3003', '0.14');
+INSERT INTO TRAVELS VALUES('5008', '2022-10-03 17:17:12', '2022-10-03 17:37:42', '37 The Drive', '17 Stanley Road', '25.12', '2001', '1003', '3001', '0.25');
+INSERT INTO TRAVELS VALUES('5009', '2022-10-03 21:16:48', '2022-10-03 21:26:18', '77 Mill Road', '724 Springfield Road', '13.55', '2001', '1003', '3005', NULL);
+INSERT INTO TRAVELS VALUES('5010', '2022-10-03 23:21:40', '2022-10-03 23:39:10', '16 Church Road', '30 North Road', '25.62', '2003', '1002', '3003', '0.2');
 
 /*8 - 1 - 1 */
 CREATE TABLE MAINTENANCE_TYPES (
@@ -139,211 +107,15 @@ CREATE TABLE MAINTENANCES (
 );
 
 /* 8 - 2 - 4 */
--- Changed CAR_YEAR to '2021' to match existing data and ensure insertion.
+-- Original insert from Chapter 8 Activities, retaining for 'clear all changes' request.
 INSERT INTO MAINTENANCES(CAR_ID, MAINTENANCE_TYPE_ID, MAINTENANCE_DUE)
-SELECT CAR_ID, '1', '2020-12-31' FROM CARS WHERE CAR_YEAR = '2021';
-
-/* 8 - 3 - 1 */
-SET autocommit = OFF;
-START TRANSACTION;
-INSERT INTO MAINTENANCES VALUES ('1001','2', '2020-06-01');
-INSERT INTO MAINTENANCES VALUES ('1003','2','2020-06-01');
-COMMIT;
-SET autocommit = ON;
-
-/* 8 - 3 - 2 */
-SET autocommit = OFF;
-START TRANSACTION;
-INSERT INTO MAINTENANCES(CAR_ID, MAINTENANCE_TYPE_ID, MAINTENANCE_DUE)
-SELECT CAR_ID, '1', '2020-09-01' FROM CARS;
-ROLLBACK;
-SET autocommit = ON;
+SELECT CAR_ID, '1', '2020-12-31' FROM CARS WHERE CAR_YEAR = '2018';
 
 
-/*8 - 1 - 3 */
--- The ACTIVE_DRIVERS table creation is now replaced by a VIEW below.
--- This block is kept as commented out for historical context from the user's input.
--- CREATE TABLE ACTIVE_DRIVERS (
---     DRIVER_ID CHAR(5) PRIMARY KEY,
---     DRIVER_FIRST_NAME VARCHAR(20),
---     DRIVER_LAST_NAME VARCHAR(20),
---     DRIVER_DRIVING_LICENSE_ID VARCHAR(10),
---     DRIVER_DRIVING_LICENSE_CHECKED BOOL,
---     DRIVER_RATING DECIMAL(2,1)
--- ) AS SELECT DRIVER_ID,
---     DRIVER_FIRST_NAME,
---     DRIVER_LAST_NAME,
---     DRIVER_DRIVING_LICENSE_ID,
---     DRIVER_DRIVING_LICENSE_CHECKED,
---     DRIVER_RATING FROM
---     DRIVERS
--- WHERE
---     DRIVER_ID IN (SELECT DISTINCT
---             DRIVER_ID
---         FROM
---             TRAVELS
--- );
 
-/*8 - 1 - 5 */
--- Constraint for ACTIVE_DRIVERS table is commented out/removed
--- ALTER TABLE ACTIVE_DRIVERS
--- ADD CONSTRAINT DuplicateCheck UNIQUE (DRIVER_FIRST_NAME, DRIVER_LAST_NAME, DRIVER_DRIVING_LICENSE_ID);
-
-/*8 - 1 - 4 */
--- Index for ACTIVE_DRIVERS table is commented out/removed
--- CREATE INDEX NameSearch ON ACTIVE_DRIVERS(DRIVER_FIRST_NAME, DRIVER_LAST_NAME);
-
-/*8 - 2 - 2 */
--- Check constraint for ACTIVE_DRIVERS table is commented out/removed
--- ALTER TABLE ACTIVE_DRIVERS ADD CHECK (LENGTH(DRIVER_DRIVING_LICENSE_ID) = 7);
-
-/*8 - 2 - 5 */
--- Column drop for ACTIVE_DRIVERS table is commented out/removed
--- ALTER TABLE ACTIVE_DRIVERS DROP COLUMN DRIVER_DRIVING_LICENSE_CHECKED;
-
-/*8 - 2 - 6 */
-SET SQL_SAFE_UPDATES = 0;
-UPDATE MAINTENANCE_TYPES
-SET
-    MAINTENANCE_PRICE = 75
-WHERE
-    MAINTENANCE_TYPE_DESCRIPTION = 'Oil Change';
-DELETE FROM MAINTENANCE_TYPES
-WHERE
-    MAINTENANCE_TYPE_DESCRIPTION = 'Gas Pump Change';
-SET SQL_SAFE_UPDATES = 1;
-
-
-/*8 - 3 - 3 */
--- This was part of a previous task to drop the table, now handled by initial DROP TABLE.
--- DROP TABLE ACTIVE_DRIVERS;
-
-/*8 - 3 - 4 */
--- Re-creating the VIEW ACTIVE_DRIVERS as requested in previous turns.
-CREATE VIEW ACTIVE_DRIVERS AS
-    SELECT
-        DRIVER_ID,
-        DRIVER_FIRST_NAME,
-        DRIVER_LAST_NAME,
-        DRIVER_DRIVING_LICENSE_ID,
-        DRIVER_RATING
-    FROM
-        DRIVERS
-    WHERE
-        DRIVER_ID IN (SELECT DISTINCT
-                DRIVER_ID
-            FROM
-                TRAVELS
-    );
-
-
-/*8 - 3 - 5 */
--- Update a driver's record using the ACTIVE_DRIVERS VIEW.
-UPDATE ACTIVE_DRIVERS
-SET
-    DRIVER_DRIVING_LICENSE_ID = '1734748'
-WHERE
-    DRIVER_ID = 2004; -- Use integer for DRIVER_ID as it's INT now.
-
-/*8 - 3 - 6 */
--- Alter DRIVERS table to make DRIVER_ID AUTO_INCREMENT (already done in initial CREATE TABLE).
--- This line is kept for historical context from the user's input.
--- ALTER TABLE DRIVERS CHANGE DRIVER_ID DRIVER_ID INT AUTO_INCREMENT;
-
--- Insert a new driver record with auto-incremented DRIVER_ID.
-INSERT INTO DRIVERS(DRIVER_FIRST_NAME, DRIVER_LAST_NAME, DRIVER_DRIVING_LICENSE_ID ,DRIVER_START_DATE, DRIVER_DRIVING_LICENSE_CHECKED, DRIVER_RATING)
-VALUES('Nursin', 'Yilmaz','4141447','2019-12-28',TRUE, 4.0);
-
--- Task 1: Create a procedure to calculate the VAT.
-
--- Explicitly use the database before creating the procedure to ensure correct context.
-USE InstantRide;
-
--- Change the delimiter to allow semicolons within the procedure definition
 DELIMITER $$
-
--- Drop the procedure if it already exists to allow re-creation
-DROP PROCEDURE IF EXISTS VATCalculator $$
-
-CREATE PROCEDURE VATCalculator()
-BEGIN
-    SELECT
-        TRAVEL_ID,
-        ROUND(
-            CASE
-                WHEN TRAVEL_DISCOUNT IS NULL THEN TRAVEL_PRICE * 0.08
-                ELSE (TRAVEL_PRICE * (1 - TRAVEL_DISCOUNT)) * 0.08
-            END
-        , 2) AS VAT
-    FROM
-        TRAVELS
-    ORDER BY
-        TRAVEL_ID;
-END $$
-
--- Reset the delimiter back to the default
+CREATE TRIGGER email_insert
+BEFORE INSERT ON USERS
+FOR EACH ROW
+SET NEW . USER_EMAIL = LOWER(NEW.USER_EMAIL) $$
 DELIMITER ;
-
--- Commented out for Task 3 test isolation: Execute the VATCalculator procedure to see the results
--- CALL VATCalculator();
-
--- Task 2: Create the DRIVER_STATUS function to create clusters of drivers based on experience.
-
--- Explicitly use the database before creating the function
-USE InstantRide;
-
--- Change the delimiter for function creation
-DELIMITER $$
-
--- Drop the function if it already exists to allow re-creation
-DROP FUNCTION IF EXISTS DRIVER_STATUS $$
-
-CREATE FUNCTION DRIVER_STATUS(driver_id_param INT)
-RETURNS VARCHAR(10)
-READS SQL DATA
-BEGIN
-    DECLARE num_travels INT;
-    DECLARE driver_level VARCHAR(10);
-
-    -- Count the number of travels for the given driver ID
-    SELECT COUNT(TRAVEL_ID)
-    INTO num_travels
-    FROM TRAVELS
-    WHERE DRIVER_ID = driver_id_param;
-
-    -- Determine the driver's level based on the number of travels
-    IF num_travels > 4 THEN
-        SET driver_level = 'MASTER';
-    ELSEIF num_travels > 2 THEN
-        SET driver_level = 'PRO';
-    ELSE
-        SET driver_level = 'ROOKIE';
-    END IF;
-
-    RETURN driver_level;
-END $$
-
--- Reset the delimiter back to the default
-DELIMITER ;
-
--- Commented out for Task 3 test isolation: Execute the DRIVER_STATUS function for all drivers to verify it works
--- SELECT
---     DRIVER_ID,
---     DRIVER_FIRST_NAME,
---     DRIVER_LAST_NAME,
---     DRIVER_STATUS(DRIVER_ID) AS DriverLevel
--- FROM
---     DRIVERS
--- ORDER BY
---     DRIVER_ID;
-
--- Task 3: Create a prepared statement for use with the EXECUTE command.
-
--- Prepare a statement to select all user emails from the USERS table.
-PREPARE GetUserEmails FROM 'SELECT USER_EMAIL FROM USERS';
-
--- Execute the prepared statement. This should now be the primary output.
-EXECUTE GetUserEmails;
-
--- Deallocate the prepared statement to free up resources.
-DEALLOCATE PREPARE GetUserEmails;
