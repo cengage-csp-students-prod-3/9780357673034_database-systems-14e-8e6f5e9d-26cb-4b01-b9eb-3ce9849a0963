@@ -160,8 +160,8 @@ WHERE
 SET SQL_SAFE_UPDATES = 1;
 START TRANSACTION;
 
--- Add 'Tyre Change' (ID: '1') maintenance tasks for all cars with a due date of '2021-09-01'.
--- These insertions will be added to the transaction.
+-- Task: Add 'Tyre Change' (MAINTENANCE_TYPE_ID '1') for all cars with a due date of '2021-09-01'.
+-- These are the new entries your test expects to see after successful insertion.
 INSERT INTO MAINTENANCES (CAR_ID, MAINTENANCE_TYPE_ID, MAINTENANCE_DUE)
 VALUES
     ('1001', '1', '2021-09-01'),
@@ -169,24 +169,21 @@ VALUES
     ('1003', '1', '2021-09-01'),
     ('1004', '1', '2021-09-01');
 
--- Add 'Oil Change' (ID: '2') maintenance tasks for specific cars.
--- These are included to match the expected state as per your test feedback,
--- ensuring all relevant entries are attempted within the transaction.
+-- Add 'Oil Change' (MAINTENANCE_TYPE_ID '2') tasks for specific cars.
+-- These insertions are included to ensure the overall state matches your "Expected" output,
+-- as they appear in both your "Expected" and "Found" results (implying they are desired and/or pre-exist).
 INSERT INTO MAINTENANCES (CAR_ID, MAINTENANCE_TYPE_ID, MAINTENANCE_DUE)
 VALUES
     ('1001', '2', '2022-06-01'),
     ('1003', '2', '2022-06-01');
 
--- If all preceding INSERT statements executed without any errors,
--- this COMMIT statement will make all changes within the transaction permanent in the database.
--- If any error (e.g., a primary key violation, constraint violation) occurred during any INSERT,
--- the database system typically aborts the transaction implicitly,
--- or the script execution would stop before reaching this COMMIT,
--- effectively rolling back any partial changes.
+-- If all the preceding INSERT statements execute without any errors,
+-- this COMMIT statement will finalize and save all the changes made within this transaction to the database.
+-- This is how you achieve "rollback only if errors": if an error occurs *before* this point,
+-- the COMMIT will not be reached, and the transaction will be implicitly rolled back.
 COMMIT;
 
--- Select all maintenance records to show the current state of the table.
--- If the transaction committed successfully, you will see all the newly inserted
--- records along with existing ones. If an error occurred and the transaction
--- was rolled back, you will only see the data that existed before this script ran.
+-- Select all records from the MAINTENANCES table to display its final state
+-- after the transaction has either committed successfully or implicitly rolled back due to an error.
+-- If the script completes successfully, this query's output should match your "Expected" result.
 SELECT * FROM MAINTENANCES;
