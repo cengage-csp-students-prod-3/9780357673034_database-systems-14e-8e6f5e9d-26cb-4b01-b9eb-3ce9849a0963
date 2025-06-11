@@ -265,3 +265,56 @@ DELIMITER ;
 
 -- Execute the VATCalculator procedure to see the results
 CALL VATCalculator();
+
+-- Task 2: Create the DRIVER_STATUS function to create clusters of drivers based on experience.
+
+-- Explicitly use the database before creating the function
+USE InstantRide;
+
+-- Change the delimiter for function creation
+DELIMITER $$
+
+-- Drop the function if it already exists to allow re-creation
+DROP FUNCTION IF EXISTS DRIVER_STATUS $$
+
+CREATE FUNCTION DRIVER_STATUS(driver_id_param INT)
+RETURNS VARCHAR(10)
+READS SQL DATA
+BEGIN
+    DECLARE num_travels INT;
+    DECLARE driver_level VARCHAR(10);
+
+    -- Count the number of travels for the given driver ID
+    SELECT COUNT(TRAVEL_ID)
+    INTO num_travels
+    FROM TRAVELS
+    WHERE DRIVER_ID = driver_id_param;
+
+    -- Determine the driver's level based on the number of travels
+    IF num_travels > 4 THEN
+        SET driver_level = 'MASTER';
+    ELSEIF num_travels > 2 THEN
+        SET driver_level = 'PRO';
+    ELSE
+        SET driver_level = 'ROOKIE';
+    END IF;
+
+    RETURN driver_level;
+END $$
+
+-- Reset the delimiter back to the default
+DELIMITER ;
+
+-- Execute the DRIVER_STATUS function for all drivers to verify it works
+SELECT
+    DRIVER_ID,
+    DRIVER_FIRST_NAME,
+    DRIVER_LAST_NAME,
+    DRIVER_STATUS(DRIVER_ID) AS DriverLevel
+FROM
+    DRIVERS
+ORDER BY
+    DRIVER_ID;
+
+
+SHOW TABLES;
