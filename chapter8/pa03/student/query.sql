@@ -187,3 +187,4 @@ COMMIT;
 -- after the transaction has either committed successfully or implicitly rolled back due to an error.
 -- If the script completes successfully, this query's output should match your "Expected" result.
 SELECT * FROM MAINTENANCES;
+DROP TABLE IF EXISTS ACTIVE_DRIVERS;
