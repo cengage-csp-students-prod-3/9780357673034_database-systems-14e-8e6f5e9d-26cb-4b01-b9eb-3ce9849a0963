@@ -159,8 +159,43 @@ WHERE
     MAINTENANCE_TYPE_DESCRIPTION = 'Gas Pump Change'; 
 SET SQL_SAFE_UPDATES = 1;
 
-/*
-INSERT INTO MAINTENANCES (CAR_ID,MAINTENANCE_TYPE_ID,MAINTENANCE_DUE) VALUES
-(1001,2,'2022-06-01'),
-(1003, 2,'2022-06-01');*/
 
+-- Start a transaction
+BEGIN TRANSACTION;
+
+-- Declare variables (if needed for your specific database system, e.g., SQL Server)
+-- DECLARE @TireChangeTaskID INT = 1;
+-- DECLARE @DueDate DATE = '2021-09-01';
+
+-- Attempt to insert the 'Tire Change' task for all cars
+-- Replace 'YourCarsTable', 'YourMaintenanceTasksTable',
+-- and column names with your actual table and column names.
+INSERT INTO YourMaintenanceTasksTable (TaskID, CarID, TaskDescription, DueDate, Status)
+SELECT
+    1 AS TaskID, -- Assuming 1 is the ID for 'Tire Change'
+    c.CarID,
+    'Tire Change' AS TaskDescription,
+    '2021-09-01' AS DueDate,
+    'Scheduled' AS Status -- Or whatever your default status is
+FROM
+    YourCarsTable c;
+
+-- Check for errors after the insert operation
+-- This part of the script is conceptual and error handling varies by database.
+-- For example, in SQL Server, you might check @@ERROR or use a TRY...CATCH block.
+-- In PostgreSQL/MySQL, an error during INSERT will typically cause the transaction
+-- to fail and rollback automatically unless explicitly handled.
+
+IF @@ERROR <> 0 -- Example for SQL Server: Checks if the last T-SQL statement resulted in an error
+BEGIN
+    PRINT 'An error occurred during the insertion process. Rolling back changes.';
+    ROLLBACK TRANSACTION; -- Revert all changes made within this transaction
+END
+ELSE
+BEGIN
+    PRINT 'Tire Change tasks added successfully. However, for demonstration, we will now rollback.';
+    -- For the purpose of this request, we are demonstrating a rollback even on success.
+    -- In a real scenario, you would COMMIT TRANSACTION here if you wanted to keep the changes.
+    ROLLBACK TRANSACTION; -- This line explicitly rolls back the changes for the demonstration.
+    PRINT 'All changes have been rolled back.';
+END;
