@@ -1,0 +1,6 @@
+
+Status: PASSED!
+Check: 1
+Test: Create a `TRIGGER` to run on the `USERS` table before any `UPDATE` operation
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-11 06:50:35.237827
