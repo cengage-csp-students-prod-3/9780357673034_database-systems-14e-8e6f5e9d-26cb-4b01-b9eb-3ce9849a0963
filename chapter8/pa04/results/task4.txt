@@ -1,14 +1,6 @@
 
-Status: FAILED!
+Status: PASSED!
 Check: 1
 Test: Create a `TRIGGER` to ensure all new email address are lowercase
-Reason: Expected:
-+--------------+--------------------+----------------------------------------------+---------------+
-| TRIGGER_NAME | EVENT_MANIPULATION |               ACTION_STATEMENT               | ACTION_TIMING |
-+--------------+--------------------+----------------------------------------------+---------------+
-| email_insert |       INSERT       | SET NEW . USER_EMAIL = LOWER(NEW.USER_EMAIL) |    BEFORE     |
-+--------------+--------------------+----------------------------------------------+---------------+
-Found:
-
-Error : AssertionError - 
-Timestamp: 2025-06-11 06:49:32.764177
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-11 06:53:24.651910
