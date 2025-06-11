@@ -4,4 +4,4 @@ Check: 1
 Test: Create a procedure to calculate the VAT 
 Reason: The following error is preventing tests from completing: 1305 (42000): PROCEDURE InstantRide.VATCalculator does not exist
 Error : ProgrammingError - 1305 (42000): PROCEDURE InstantRide.VATCalculator does not exist
-Timestamp: 2025-06-11 05:14:49.349273
+Timestamp: 2025-06-11 05:50:12.209212
