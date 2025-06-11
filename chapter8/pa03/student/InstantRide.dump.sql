@@ -16,6 +16,23 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Temporary view structure for view `ACTIVE_DRIVERS`
+--
+
+DROP TABLE IF EXISTS `ACTIVE_DRIVERS`;
+/*!50001 DROP VIEW IF EXISTS `ACTIVE_DRIVERS`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `ACTIVE_DRIVERS` AS SELECT 
+ 1 AS `DRIVER_ID`,
+ 1 AS `DRIVER_FIRST_NAME`,
+ 1 AS `DRIVER_LAST_NAME`,
+ 1 AS `DRIVER_DRIVING_LICENSE_ID`,
+ 1 AS `DRIVER_DRIVING_LICENSE_CHECKED`,
+ 1 AS `DRIVER_RATING`*/;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Table structure for table `CARS`
 --
 
@@ -184,6 +201,24 @@ UNLOCK TABLES;
 --
 -- Dumping routines for database 'InstantRide'
 --
+
+--
+-- Final view structure for view `ACTIVE_DRIVERS`
+--
+
+/*!50001 DROP VIEW IF EXISTS `ACTIVE_DRIVERS`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_unicode_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `ACTIVE_DRIVERS` AS select `D`.`DRIVER_ID` AS `DRIVER_ID`,`D`.`DRIVER_FIRST_NAME` AS `DRIVER_FIRST_NAME`,`D`.`DRIVER_LAST_NAME` AS `DRIVER_LAST_NAME`,`D`.`DRIVER_DRIVING_LICENSE_ID` AS `DRIVER_DRIVING_LICENSE_ID`,`D`.`DRIVER_DRIVING_LICENSE_CHECKED` AS `DRIVER_DRIVING_LICENSE_CHECKED`,`D`.`DRIVER_RATING` AS `DRIVER_RATING` from `DRIVERS` `D` where `D`.`DRIVER_ID` in (select distinct `T`.`DRIVER_ID` from `TRAVELS` `T`) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -194,4 +229,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-11  4:22:06
+-- Dump completed on 2025-06-11  4:26:54
