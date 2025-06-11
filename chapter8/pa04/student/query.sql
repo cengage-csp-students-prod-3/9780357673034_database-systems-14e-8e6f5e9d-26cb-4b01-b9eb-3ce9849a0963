@@ -55,6 +55,29 @@ INSERT INTO USERS VALUES('3006', 'Randy', 'Clark', 'r.clark@xmail.com');
 INSERT INTO USERS VALUES('3007', 'Jose', 'Thomas', 'j.thomas@xmail.com');
 INSERT INTO USERS VALUES('3008', 'Nursin', 'Yilmaz', 'n.yilmaz@xmail.com');
 
+
+-- Task 4: Create a TRIGGER to ensure all new email addresses are lowercase.
+USE InstantRide; -- Ensure the correct database is selected
+DELIMITER $$
+
+DROP TRIGGER IF EXISTS email_insert $$
+
+CREATE TRIGGER email_insert
+BEFORE INSERT ON USERS
+FOR EACH ROW
+BEGIN
+    SET NEW.USER_EMAIL = LOWER(NEW.USER_EMAIL);
+END $$
+
+DELIMITER ;
+
+-- Test the trigger by inserting a new user with an uppercase email
+INSERT INTO USERS VALUES('3009', 'Test', 'User', 'Test.User@EXAMPLE.com');
+
+-- Verify the email was converted to lowercase
+SELECT * FROM USERS WHERE USER_ID = '3009';
+
+
 CREATE TABLE TRAVELS (
     TRAVEL_ID CHAR(10) PRIMARY KEY NOT NULL,
     TRAVEL_START_TIME DATETIME NOT NULL,
