@@ -4,4 +4,4 @@ Check: 1
 Test: Create a procedure to calculate the VAT 
 Reason: The following error is preventing tests from completing: 1146 (42S02): Table 'InstantRide.TRAVELS' doesn't exist
 Error : ProgrammingError - 1146 (42S02): Table 'InstantRide.TRAVELS' doesn't exist
-Timestamp: 2025-06-11 07:37:51.249100
+Timestamp: 2025-06-11 07:39:04.342789
