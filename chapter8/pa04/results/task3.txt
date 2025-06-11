@@ -1,0 +1,47 @@
+
+Status: FAILED!
+Check: 1
+Test: Create a prepared statement for use with the `EXECUTE` command
+Reason: Expected:
++---------------------+
+|     USER_EMAIL      |
++---------------------+
+|  j.hill@xmail.com   |
+| r.collins@xmail.com |
+|  n.atak@gmail.com   |
+|  s.price@xmail.com  |
+| b.griffin@xmail.com |
+|  r.clark@xmail.com  |
+| j.thomas@xmail.com  |
+| n.yilmaz@xmail.com  |
++---------------------+
+Found:
++---------------------+------------+
+|                     | USER_EMAIL |
++---------------------+------------+
+|        5001         |    1.24    |
+|        5002         |    1.64    |
+|        5003         |    0.99    |
+|        5004         |    2.12    |
+|        5005         |    0.89    |
+|        5006         |    1.05    |
+|        5007         |    0.30    |
+|        5008         |    1.51    |
+|        5009         |    1.08    |
+|        5010         |    1.64    |
+|        2001         |   Willie   |
+|        2002         |   Justin   |
+|        2003         |  Anthony   |
+|        2004         |    Ece     |
+|        2005         |   Nursin   |
+|  j.hill@xmail.com   |            |
+| r.collins@xmail.com |            |
+|  n.atak@gmail.com   |            |
+|  s.price@xmail.com  |            |
+| b.griffin@xmail.com |            |
+|  r.clark@xmail.com  |            |
+| j.thomas@xmail.com  |            |
+| n.yilmaz@xmail.com  |            |
++---------------------+------------+
+Error : AssertionError - 
+Timestamp: 2025-06-11 06:12:23.811789
