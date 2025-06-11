@@ -238,26 +238,22 @@ VALUES('Nursin', 'Yilmaz','4141447','2019-12-28',TRUE, 4.0);
 -- Explicitly use the database before creating the procedure to ensure correct context.
 USE InstantRide;
 
--- Change the delimiter to allow semicolons within the procedure definition
-DELIMITER //
 
--- Drop the procedure if it already exists to allow re-creation
-DROP PROCEDURE IF EXISTS VATCalculator //
-
+USE InstantRide;
+DELIMITER $$
 CREATE PROCEDURE VATCalculator()
 BEGIN
-    SELECT
-        TRAVEL_ID,
-        -- Calculate the price after discount: TRAVEL_PRICE * (1 - discount_rate)
-        -- COALESCE handles NULL discounts by treating them as 0, so price remains unchanged.
-        -- Then, calculate 8% VAT on the discounted price and round to 2 decimal places.
-        ROUND(TRAVEL_PRICE * (1 - COALESCE(TRAVEL_DISCOUNT, 0)) * 0.08, 2) AS VAT_AMOUNT
-    FROM
-        TRAVELS;
-END //
-
--- Reset the delimiter back to the default
+SELECT
+TRAVEL_ID,
+ROUND(
+CASE
+WHEN TRAVEL_DISCOUNT IS NULL THEN TRAVEL_PRICE * 0.08
+ELSE (TRAVEL_PRICE (1 - TRAVEL_DISCOUNT)) 0.08
+END
+, 2) AS VAT
+FROM
+TRAVELS
+ORDER BY
+TRAVEL_ID;
+END $$
 DELIMITER ;
-
--- Execute the VATCalculator procedure to see the results
-CALL VATCalculator();
