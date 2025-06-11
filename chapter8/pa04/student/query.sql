@@ -315,3 +315,14 @@ FROM
     DRIVERS
 ORDER BY
     DRIVER_ID;
+
+-- Task 3: Create a prepared statement for use with the EXECUTE command.
+
+-- Prepare a statement to select all user emails from the USERS table.
+PREPARE GetUserEmails FROM 'SELECT USER_EMAIL FROM USERS';
+
+-- Execute the prepared statement.
+EXECUTE GetUserEmails;
+
+-- Deallocate the prepared statement to free up resources.
+DEALLOCATE PREPARE GetUserEmails;
