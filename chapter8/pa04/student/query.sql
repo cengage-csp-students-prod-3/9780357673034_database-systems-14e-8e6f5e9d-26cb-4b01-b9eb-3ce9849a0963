@@ -26,3 +26,6 @@ DELIMITER ;
 
 -- Execute the VATCalculator procedure to get the results
 CALL VATCalculator();
+
+SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'InstantRide' AND TABLE_NAME = 'TRAVELS';
+
