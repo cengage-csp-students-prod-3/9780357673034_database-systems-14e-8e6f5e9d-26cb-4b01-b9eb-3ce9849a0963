@@ -263,8 +263,8 @@ END $$
 -- Reset the delimiter back to the default
 DELIMITER ;
 
--- Execute the VATCalculator procedure to see the results
-CALL VATCalculator();
+-- Commented out for Task 3 test isolation: Execute the VATCalculator procedure to see the results
+-- CALL VATCalculator();
 
 -- Task 2: Create the DRIVER_STATUS function to create clusters of drivers based on experience.
 
@@ -305,23 +305,23 @@ END $$
 -- Reset the delimiter back to the default
 DELIMITER ;
 
--- Execute the DRIVER_STATUS function for all drivers to verify it works
-SELECT
-    DRIVER_ID,
-    DRIVER_FIRST_NAME,
-    DRIVER_LAST_NAME,
-    DRIVER_STATUS(DRIVER_ID) AS DriverLevel
-FROM
-    DRIVERS
-ORDER BY
-    DRIVER_ID;
+-- Commented out for Task 3 test isolation: Execute the DRIVER_STATUS function for all drivers to verify it works
+-- SELECT
+--     DRIVER_ID,
+--     DRIVER_FIRST_NAME,
+--     DRIVER_LAST_NAME,
+--     DRIVER_STATUS(DRIVER_ID) AS DriverLevel
+-- FROM
+--     DRIVERS
+-- ORDER BY
+--     DRIVER_ID;
 
 -- Task 3: Create a prepared statement for use with the EXECUTE command.
 
 -- Prepare a statement to select all user emails from the USERS table.
 PREPARE GetUserEmails FROM 'SELECT USER_EMAIL FROM USERS';
 
--- Execute the prepared statement.
+-- Execute the prepared statement. This should now be the primary output.
 EXECUTE GetUserEmails;
 
 -- Deallocate the prepared statement to free up resources.
