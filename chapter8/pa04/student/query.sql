@@ -238,22 +238,30 @@ VALUES('Nursin', 'Yilmaz','4141447','2019-12-28',TRUE, 4.0);
 -- Explicitly use the database before creating the procedure to ensure correct context.
 USE InstantRide;
 
-
-USE InstantRide;
+-- Change the delimiter to allow semicolons within the procedure definition
 DELIMITER $$
+
+-- Drop the procedure if it already exists to allow re-creation
+DROP PROCEDURE IF EXISTS VATCalculator $$
+
 CREATE PROCEDURE VATCalculator()
 BEGIN
-SELECT
-TRAVEL_ID,
-ROUND(
-CASE
-WHEN TRAVEL_DISCOUNT IS NULL THEN TRAVEL_PRICE * 0.08
-ELSE (TRAVEL_PRICE (1 - TRAVEL_DISCOUNT)) 0.08
-END
-, 2) AS VAT
-FROM
-TRAVELS
-ORDER BY
-TRAVEL_ID;
+    SELECT
+        TRAVEL_ID,
+        ROUND(
+            CASE
+                WHEN TRAVEL_DISCOUNT IS NULL THEN TRAVEL_PRICE * 0.08
+                ELSE (TRAVEL_PRICE * (1 - TRAVEL_DISCOUNT)) * 0.08
+            END
+        , 2) AS VAT
+    FROM
+        TRAVELS
+    ORDER BY
+        TRAVEL_ID;
 END $$
+
+-- Reset the delimiter back to the default
 DELIMITER ;
+
+-- Execute the VATCalculator procedure to see the results
+CALL VATCalculator();
