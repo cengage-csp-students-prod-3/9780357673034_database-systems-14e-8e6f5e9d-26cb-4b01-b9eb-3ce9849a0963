@@ -237,4 +237,3 @@ DELIMITER ;
 
 -- Execute the VATCalculator procedure to see the results
 CALL VATCalculator();
- 
