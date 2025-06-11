@@ -141,27 +141,7 @@ DELIMITER ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `EmailList`(OUT result TEXT)
 BEGIN
-DECLARE done INT DEFAULT FALSE;
-DECLARE email_var VARCHAR(100);
-DECLARE email_list TEXT DEFAULT '';
-DECLARE email_cursor CURSOR FOR
-SELECT USER_EMAIL FROM USERS ORDER BY USER_ID;
-DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
-OPEN email_cursor;
-email_loop: LOOP
-FETCH email_cursor INTO email_var;
-IF done THEN
-LEAVE email_loop;
-END IF;
-IF email_list = '' THEN
-SET email_list = email_var;
-ELSE
-SET email_list = CONCAT(email_list, ';', email_var);
-END IF;
-END LOOP;
-CLOSE email_cursor;
-
-SET result = CONCAT(';', email_list);
+    SELECT GROUP_CONCAT(USER_EMAIL ORDER BY USER_ID SEPARATOR ';') INTO result FROM USERS;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -178,4 +158,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-11  7:01:20
+-- Dump completed on 2025-06-11  7:26:04
