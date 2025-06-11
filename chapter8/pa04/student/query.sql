@@ -218,9 +218,9 @@ USE InstantRide;
 DELIMITER //
 
 -- Drop the procedure if it already exists to allow re-creation
-DROP PROCEDURE IF EXISTS VATCALCULATOR //
+DROP PROCEDURE IF EXISTS VATCalculator //
 
-CREATE PROCEDURE VATCALCULATOR()
+CREATE PROCEDURE VATCalculator()
 BEGIN
     SELECT
         TRAVEL_ID,
@@ -235,5 +235,5 @@ END //
 -- Reset the delimiter back to the default
 DELIMITER ;
 
--- Execute the VATCALCULATOR procedure to see the results
-CALL VATCALCULATOR();
+-- Execute the VATCalculator procedure to see the results
+CALL VATCalculator();
