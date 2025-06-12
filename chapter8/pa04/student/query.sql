@@ -1,3 +1,17 @@
+DROP PROCEDURE IF EXISTS VATCalculator;
 
+USE InstantRide;
+DELIMITER //
+
+CREATE PROCEDURE VATCalculator()
+BEGIN
+    SELECT
+        TRAVEL_ID,
+        ROUND(TRAVEL_PRICE * (1 - COALESCE(TRAVEL_DISCOUNT, 0)) * 0.08, 2) AS VAT
+    FROM
+        TRAVELS;
+END //
+
+DELIMITER ;
 
 CALL VATCalculator();
