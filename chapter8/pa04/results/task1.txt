@@ -2,6 +2,6 @@
 Status: FAILED!
 Check: 1
 Test: Create a procedure to calculate the VAT 
-Reason: The following error is preventing tests from completing: 1146 (42S02): Table 'InstantRide.TRAVELS' doesn't exist
-Error : ProgrammingError - 1146 (42S02): Table 'InstantRide.TRAVELS' doesn't exist
-Timestamp: 2025-06-11 07:39:04.342789
+Reason: The following error is preventing tests from completing: 1305 (42000): PROCEDURE InstantRide.VATCalculator does not exist
+Error : ProgrammingError - 1305 (42000): PROCEDURE InstantRide.VATCalculator does not exist
+Timestamp: 2025-06-12 01:30:01.417719
