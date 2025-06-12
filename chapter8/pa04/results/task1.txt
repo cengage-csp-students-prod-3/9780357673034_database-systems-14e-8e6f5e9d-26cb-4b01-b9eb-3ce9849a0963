@@ -2,6 +2,35 @@
 Status: FAILED!
 Check: 1
 Test: Create a procedure to calculate the VAT 
-Reason: The following error is preventing tests from completing: 1305 (42000): PROCEDURE InstantRide.VATCalculator does not exist
-Error : ProgrammingError - 1305 (42000): PROCEDURE InstantRide.VATCalculator does not exist
-Timestamp: 2025-06-12 01:35:16.665681
+Reason: Expected:
++-----------+------+
+| TRAVEL_ID | VAT  |
++-----------+------+
+|   5001    | 1.24 |
+|   5002    | 1.64 |
+|   5003    | 0.99 |
+|   5004    | 2.12 |
+|   5005    | 0.89 |
+|   5006    | 1.05 |
+|   5007    | 0.30 |
+|   5008    | 1.51 |
+|   5009    | 1.08 |
+|   5010    | 1.64 |
++-----------+------+
+Found:
++-----------+------------+
+| TRAVEL_ID | VAT_AMOUNT |
++-----------+------------+
+|   5001    |    1.24    |
+|   5002    |    1.64    |
+|   5003    |    0.99    |
+|   5004    |    2.12    |
+|   5005    |    0.89    |
+|   5006    |    1.05    |
+|   5007    |    0.30    |
+|   5008    |    1.51    |
+|   5009    |    1.08    |
+|   5010    |    1.64    |
++-----------+------------+
+Error : AssertionError - 
+Timestamp: 2025-06-12 01:44:37.405041
