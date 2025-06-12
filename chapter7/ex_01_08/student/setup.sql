@@ -1,11 +1,10 @@
-/* Database Systems, Coronel/Morris */
-/* Type of SQL : MySQL  */
+
 
 CREATE DATABASE Ch07_ConstructCo;
 USE Ch07_ConstructCo;
 
 
-/* -- */
+
 CREATE TABLE JOB
 (
     JOB_CODE VARCHAR(3),
@@ -89,7 +88,7 @@ VALUES('117', 'Williamson', 'Angie', 'H', '2000-6-19', '509', '8');
 INSERT INTO EMPLOYEE
 VALUES('118', 'Frommer', 'James', 'J', '2009-1-4', '510', '0');
 
-/* -- */
+
 
 CREATE TABLE PROJECT
 (
@@ -110,7 +109,7 @@ VALUES('22', 'Rolling Tide', '805000', '500345.2', '102');
 INSERT INTO PROJECT
 VALUES('25', 'Starflight', '2650500', '2309880', '107');
 
-/* -- */
+
 CREATE TABLE ASSIGNMENT
 (
     ASSIGN_NUM INT(5),
