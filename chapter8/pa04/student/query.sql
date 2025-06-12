@@ -1,5 +1,7 @@
 
+USE InstantRide;
 DELIMITER //
+
 CREATE PROCEDURE VATCalculator()
 BEGIN
     SELECT
@@ -8,4 +10,8 @@ BEGIN
     FROM
         TRAVELS;
 END //
+
 DELIMITER ;
+
+SHOW *
+FROM TRAVELS;
