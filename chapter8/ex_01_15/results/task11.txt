@@ -1,18 +1,6 @@
 
-Status: FAILED!
+Status: PASSED!
 Check: 1
 Test: Problem 11
-Reason: Expected:
-+---------+------------+-----------+-------------+--------------+----------+---------+----------+
-| EMP_NUM | EMP_LNAME  | EMP_FNAME | EMP_INITIAL | EMP_HIREDATE | JOB_CODE | EMP_PCT | PROJ_NUM |
-+---------+------------+-----------+-------------+--------------+----------+---------+----------+
-|   102   |   Senior   |   David   |      H      |  1989-07-12  |   501    |  10.00  |   NULL   |
-|   104   |  Ramoras   |   Anne    |      K      |  1991-11-15  |   501    |  10.00  |   NULL   |
-|   106   | Smithfield |  William  |    NULL     |  2008-06-22  |   500    |  10.00  |   NULL   |
-|   108   | Washington |   Ralph   |      B      |  1995-08-22  |   501    |  10.00  |   NULL   |
-|   109   |   Smith    |   Larry   |      W      |  2001-07-18  |   501    |  10.00  |   NULL   |
-+---------+------------+-----------+-------------+--------------+----------+---------+----------+
-Found:
-
-Error : AssertionError - 
-Timestamp: 2025-06-13 04:09:35.451357
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-13 04:13:49.230641
