@@ -1,0 +1,39 @@
+
+Status: FAILED!
+Check: 1
+Test: Problem 3
+Reason: Expected:
++---------+------------+-----------+-------------+--------------+----------+
+| EMP_NUM | EMP_LNAME  | EMP_FNAME | EMP_INITIAL | EMP_HIREDATE | JOB_CODE |
++---------+------------+-----------+-------------+--------------+----------+
+|   103   |  Arbough   |   June    |      E      |  2000-12-01  |   500    |
+|   104   |  Ramoras   |   Anne    |      K      |  1991-11-15  |   501    |
+|   105   |  Johnson   |   Alice   |      K      |  1997-02-01  |   502    |
+|   106   | Smithfield |  William  |    NULL     |  2008-06-22  |   500    |
+|   107   |   Alonzo   |   Maria   |      D      |  1997-10-10  |   500    |
+|   108   | Washington |   Ralph   |      B      |  1995-08-22  |   501    |
+|   109   |   Smith    |   Larry   |      W      |  2001-07-18  |   501    |
++---------+------------+-----------+-------------+--------------+----------+
+Found:
++---------+------------+-----------+-------------+--------------+----------+
+| EMP_NUM | EMP_LNAME  | EMP_FNAME | EMP_INITIAL | EMP_HIREDATE | JOB_CODE |
++---------+------------+-----------+-------------+--------------+----------+
+|   103   |  Arbough   |   June    |      E      |  2000-12-01  |   500    |
+|   104   |  Ramoras   |   Anne    |      K      |  1991-11-15  |   501    |
+|   105   |  Johnson   |   Alice   |      K      |  1997-02-01  |   502    |
+|   106   | Smithfield |  William  |    NULL     |  2008-06-22  |   500    |
+|   107   |   Alonzo   |   Maria   |      D      |  1997-10-10  |   500    |
+|   108   | Washington |   Ralph   |      B      |  1995-08-22  |   501    |
+|   109   |   Smith    |   Larry   |      W      |  2001-07-18  |   501    |
+|   110   |   Olenko   |  Gerald   |      A      |  1999-12-11  |   505    |
+|   111   |   Wabash   |   Geoff   |      B      |  1995-04-04  |   506    |
+|   112   |  Smithson  |  Darlene  |      M      |  1998-10-23  |   507    |
+|   113   | Joenbrood  |  Delbert  |      K      |  2000-11-15  |   508    |
+|   114   |   Jones    | Annelise  |    NULL     |  1997-08-20  |   508    |
+|   115   |  Bawangi   |  Travis   |      B      |  1996-01-25  |   501    |
+|   116   |   Pratt    |  Gerald   |      L      |  2001-03-05  |   510    |
+|   117   | Williamson |   Angie   |      H      |  2000-06-19  |   509    |
+|   118   |  Frommer   |   James   |      J      |  2009-01-04  |   510    |
++---------+------------+-----------+-------------+--------------+----------+
+Error : AssertionError - 
+Timestamp: 2025-06-13 02:26:40.442030
