@@ -1,16 +1,7 @@
--- Write your query below and then click "Run Query" to execute it. To save multiple queries, click the "+" icon on the left.
-DROP TABLE IF EXISTS EMP_1;
+-- Insert the first row
+INSERT INTO EMP_1 (EMP_NUM, EMP_LNAME, EMP_FNAME, EMP_INITIAL, EMP_HIREDATE, JOB_CODE)
+VALUES ('101', 'News', 'John', 'G', '2000-11-08', '502');
 
-CREATE TABLE EMP_1(
-EMP_NUM VARCHAR(3) NOT NULL, 
-EMP_LNAME VARCHAR(15) NOT NULL,
-EMP_FNAME VARCHAR(15) NOT NULL,
-EMP_INITIAL VARCHAR(1),
-EMP_HIREDATE DATE,
-JOB_CODE VARCHAR(3),
-PRIMARY KEY (EMP_NUM),
-FOREIGN KEY (JOB_CODE) REFERENCES JOB(JOB_CODE) 
-);
-
-select *
-FROM EMP_1;
+-- Insert the second row
+INSERT INTO EMP_1 (EMP_NUM, EMP_LNAME, EMP_FNAME, EMP_INITIAL, EMP_HIREDATE, JOB_CODE)
+VALUES ('102', 'Senior', 'David', 'H', '1989-07-12', '501');
