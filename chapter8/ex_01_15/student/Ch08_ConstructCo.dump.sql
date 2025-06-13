@@ -119,12 +119,11 @@ DROP TABLE IF EXISTS `EMP_2`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `EMP_2` (
   `EMP_NUM` varchar(3) NOT NULL,
-  `EMP_LNAME` varchar(15) DEFAULT NULL,
-  `EMP_FNAME` varchar(15) DEFAULT NULL,
+  `EMP_LNAME` varchar(15) NOT NULL,
+  `EMP_FNAME` varchar(15) NOT NULL,
   `EMP_INITIAL` varchar(1) DEFAULT NULL,
-  `EMP_HIREDATE` datetime DEFAULT NULL,
-  `JOB_CODE` varchar(3) DEFAULT NULL,
-  `EMP_YEARS` int DEFAULT NULL
+  `EMP_HIREDATE` date DEFAULT NULL,
+  `JOB_CODE` varchar(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -134,7 +133,7 @@ CREATE TABLE `EMP_2` (
 
 LOCK TABLES `EMP_2` WRITE;
 /*!40000 ALTER TABLE `EMP_2` DISABLE KEYS */;
-INSERT INTO `EMP_2` VALUES ('101','News','John','G','2004-11-08 00:00:00','502',17),('102','Senior','David','H','1993-07-12 00:00:00','501',28),('103','Arbough','June','E','2000-12-01 00:00:00','500',21),('104','Ramoras','Anne','K','1991-11-15 00:00:00','501',30),('105','Johnson','Alice','K','1997-02-01 00:00:00','502',25),('106','Smithfield','William',NULL,'2008-06-22 00:00:00','500',13),('107','Alonzo','Maria','D','1997-10-10 00:00:00','500',24),('108','Washington','Ralph','B','1995-08-22 00:00:00','501',26),('109','Smith','Larry','W','2001-07-18 00:00:00','501',20),('110','Olenko','Gerald','A','1999-12-11 00:00:00','505',22),('111','Wabash','Geoff','B','1995-04-04 00:00:00','506',27),('112','Smithson','Darlene','M','1998-10-23 00:00:00','507',23),('113','Joenbrood','Delbert','K','2000-11-15 00:00:00','508',21),('114','Jones','Annelise',NULL,'1997-08-20 00:00:00','508',24),('115','Bawangi','Travis','B','1996-01-25 00:00:00','501',26),('116','Pratt','Gerald','L','2001-03-05 00:00:00','510',21),('117','Williamson','Angie','H','2000-06-19 00:00:00','509',21),('118','Frommer','James','J','2009-01-04 00:00:00','510',13);
+INSERT INTO `EMP_2` VALUES ('101','News','John','G','2004-11-08','502'),('102','Senior','David','H','1993-07-12','501'),('103','Arbough','June','E','2000-12-01','500'),('104','Ramoras','Anne','K','1991-11-15','501'),('105','Johnson','Alice','K','1997-02-01','502'),('107','Alonzo','Maria','D','1997-10-10','501'),('108','Washington','Ralph','B','1995-08-22','501'),('109','Smith','Larry','W','2001-07-18','501');
 /*!40000 ALTER TABLE `EMP_2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -206,4 +205,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-13  2:55:52
+-- Dump completed on 2025-06-13  2:59:19
