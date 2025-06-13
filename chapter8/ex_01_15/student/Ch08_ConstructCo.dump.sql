@@ -124,6 +124,8 @@ CREATE TABLE `EMP_2` (
   `EMP_INITIAL` varchar(1) DEFAULT NULL,
   `EMP_HIREDATE` date DEFAULT NULL,
   `JOB_CODE` varchar(3) DEFAULT NULL,
+  `EMP_PCT` decimal(4,2) DEFAULT NULL,
+  `PROJ_NUM` varchar(4) DEFAULT NULL,
   PRIMARY KEY (`EMP_NUM`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -134,7 +136,7 @@ CREATE TABLE `EMP_2` (
 
 LOCK TABLES `EMP_2` WRITE;
 /*!40000 ALTER TABLE `EMP_2` DISABLE KEYS */;
-INSERT INTO `EMP_2` VALUES ('101','News','John','G','2000-11-08','502'),('105','Johnson','Alice','K','1997-02-01','502'),('107','Alonzo','Maria','D','1997-10-10','501');
+INSERT INTO `EMP_2` VALUES ('101','News','John','G','2000-11-08','502',5.00,'3.85'),('105','Johnson','Alice','K','1997-02-01','502',5.00,'3.85'),('107','Alonzo','Maria','D','1997-10-10','501',5.00,'3.85');
 /*!40000 ALTER TABLE `EMP_2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -206,4 +208,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-13  3:39:31
+-- Dump completed on 2025-06-13  4:04:40
