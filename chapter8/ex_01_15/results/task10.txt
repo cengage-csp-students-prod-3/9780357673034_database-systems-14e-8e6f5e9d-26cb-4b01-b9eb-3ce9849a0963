@@ -2,6 +2,21 @@
 Status: FAILED!
 Check: 1
 Test: Problem 10
-Reason: The following error is preventing tests from completing: 1054 (42S22): Unknown column 'EMP_PCT' in 'where clause'
-Error : ProgrammingError - 1054 (42S22): Unknown column 'EMP_PCT' in 'where clause'
-Timestamp: 2025-06-13 03:39:59.673453
+Reason: Expected:
++---------+-----------+-----------+-------------+--------------+----------+---------+----------+
+| EMP_NUM | EMP_LNAME | EMP_FNAME | EMP_INITIAL | EMP_HIREDATE | JOB_CODE | EMP_PCT | PROJ_NUM |
++---------+-----------+-----------+-------------+--------------+----------+---------+----------+
+|   101   |   News    |   John    |      G      |  2000-11-08  |   502    |  5.00   |   NULL   |
+|   105   |  Johnson  |   Alice   |      K      |  1997-02-01  |   502    |  5.00   |   NULL   |
+|   107   |  Alonzo   |   Maria   |      D      |  1997-10-10  |   501    |  5.00   |   NULL   |
++---------+-----------+-----------+-------------+--------------+----------+---------+----------+
+Found:
++---------+-----------+-----------+-------------+--------------+----------+---------+----------+
+| EMP_NUM | EMP_LNAME | EMP_FNAME | EMP_INITIAL | EMP_HIREDATE | JOB_CODE | EMP_PCT | PROJ_NUM |
++---------+-----------+-----------+-------------+--------------+----------+---------+----------+
+|   101   |   News    |   John    |      G      |  2000-11-08  |   502    |  5.00   |   3.85   |
+|   105   |  Johnson  |   Alice   |      K      |  1997-02-01  |   502    |  5.00   |   3.85   |
+|   107   |  Alonzo   |   Maria   |      D      |  1997-10-10  |   501    |  5.00   |   3.85   |
++---------+-----------+-----------+-------------+--------------+----------+---------+----------+
+Error : AssertionError - 
+Timestamp: 2025-06-13 04:05:09.349979
