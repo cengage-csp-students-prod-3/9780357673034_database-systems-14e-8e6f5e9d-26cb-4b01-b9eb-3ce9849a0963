@@ -106,7 +106,7 @@ CREATE TABLE `EMP_1` (
 
 LOCK TABLES `EMP_1` WRITE;
 /*!40000 ALTER TABLE `EMP_1` DISABLE KEYS */;
-INSERT INTO `EMP_1` VALUES ('101','News','John','G','2004-11-08','502'),('102','Senior','David','H','1993-07-12','501'),('103','Arbough','June','E','2000-12-01','500'),('104','Ramoras','Anne','K','1991-11-15','501'),('105','Johnson','Alice','K','1997-02-01','502'),('107','Alonzo','Maria','D','1997-10-10','501'),('108','Washington','Ralph','B','1995-08-22','501'),('109','Smith','Larry','W','2001-07-18','501');
+INSERT INTO `EMP_1` VALUES ('101','News','John','G','2004-11-08','502'),('102','Senior','David','H','1993-07-12','501'),('103','Arbough','June','E','2000-12-01','500'),('104','Ramoras','Anne','K','1991-11-15','501'),('105','Johnson','Alice','K','1997-02-01','502'),('107','Alonzo','Maria','D','1997-10-10','500'),('108','Washington','Ralph','B','1995-08-22','501'),('109','Smith','Larry','W','2001-07-18','501'),('110','Olenko','Gerald','A','1999-12-11','505'),('111','Wabash','Geoff','B','1995-04-04','506'),('112','Smithson','Darlene','M','1998-10-23','507'),('113','Joenbrood','Delbert','K','2000-11-15','508'),('114','Jones','Annelise',NULL,'1997-08-20','508'),('115','Bawangi','Travis','B','1996-01-25','501'),('116','Pratt','Gerald','L','2001-03-05','510'),('117','Williamson','Angie','H','2000-06-19','509'),('118','Frommer','James','J','2009-01-04','510');
 /*!40000 ALTER TABLE `EMP_1` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -123,7 +123,8 @@ CREATE TABLE `EMP_2` (
   `EMP_FNAME` varchar(15) NOT NULL,
   `EMP_INITIAL` varchar(1) DEFAULT NULL,
   `EMP_HIREDATE` date DEFAULT NULL,
-  `JOB_CODE` varchar(3) DEFAULT NULL
+  `JOB_CODE` varchar(3) DEFAULT NULL,
+  PRIMARY KEY (`EMP_NUM`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -133,7 +134,7 @@ CREATE TABLE `EMP_2` (
 
 LOCK TABLES `EMP_2` WRITE;
 /*!40000 ALTER TABLE `EMP_2` DISABLE KEYS */;
-INSERT INTO `EMP_2` VALUES ('101','News','John','G','2004-11-08','502'),('102','Senior','David','H','1993-07-12','501'),('103','Arbough','June','E','2000-12-01','500'),('104','Ramoras','Anne','K','1991-11-15','501'),('105','Johnson','Alice','K','1997-02-01','502'),('107','Alonzo','Maria','D','1997-10-10','501'),('108','Washington','Ralph','B','1995-08-22','501'),('109','Smith','Larry','W','2001-07-18','501');
+INSERT INTO `EMP_2` VALUES ('101','News','John','G','2000-11-08','502'),('102','Senior','David','H','1989-07-12','501'),('103','Arbough','June','E','2000-12-01','500'),('104','Ramoras','Anne','K','1991-11-15','501'),('105','Johnson','Alice','K','1997-02-01','502'),('106','Smithfield','William',NULL,'2008-06-22','500'),('107','Alonzo','Maria','D','1997-10-10','501'),('108','Washington','Ralph','B','1995-08-22','501'),('109','Smith','Larry','W','2001-07-18','501');
 /*!40000 ALTER TABLE `EMP_2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -205,4 +206,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-13  3:01:32
+-- Dump completed on 2025-06-13  3:06:43
