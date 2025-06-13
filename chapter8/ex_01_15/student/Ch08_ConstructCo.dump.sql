@@ -136,7 +136,7 @@ CREATE TABLE `EMP_2` (
 
 LOCK TABLES `EMP_2` WRITE;
 /*!40000 ALTER TABLE `EMP_2` DISABLE KEYS */;
-INSERT INTO `EMP_2` VALUES ('101','News','John','G','2000-11-08','502',5.00,NULL),('102','Senior','David','H','1989-07-12','501',5.00,NULL),('103','Arbough','June','E','2000-12-01','500',5.00,NULL),('104','Ramoras','Anne','K','1991-11-15','501',5.00,NULL),('105','Johnson','Alice','K','1997-02-01','502',5.00,NULL),('106','Smithfield','William',NULL,'2008-06-22','500',5.00,NULL),('107','Alonzo','Maria','D','1997-10-10','501',5.00,NULL),('108','Washington','Ralph','B','1995-08-22','501',5.00,NULL),('109','Smith','Larry','W','2001-07-18','501',5.00,NULL);
+INSERT INTO `EMP_2` VALUES ('101','News','John','G','2004-11-08','502',NULL,NULL),('105','Johnson','Alice','K','1997-02-01','502',NULL,NULL),('107','Alonzo','Maria','D','1997-10-10','500',NULL,NULL);
 /*!40000 ALTER TABLE `EMP_2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -208,4 +208,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-13  3:24:58
+-- Dump completed on 2025-06-13  3:32:59
