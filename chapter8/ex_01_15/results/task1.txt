@@ -1,0 +1,7 @@
+
+Status: FAILED!
+Check: 1
+Test: Problem 1
+Reason: The following error is preventing tests from completing: 1146 (42S02): Table 'Ch08_ConstructCo.EMP_1' doesn't exist
+Error : ProgrammingError - 1146 (42S02): Table 'Ch08_ConstructCo.EMP_1' doesn't exist
+Timestamp: 2025-06-13 01:57:09.757805
