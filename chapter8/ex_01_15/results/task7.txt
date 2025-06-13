@@ -1,33 +1,6 @@
 
-Status: FAILED!
+Status: PASSED!
 Check: 1
 Test: Problem 7
-Reason: Expected:
-+---------+------------+-----------+-------------+--------------+----------+
-| EMP_NUM | EMP_LNAME  | EMP_FNAME | EMP_INITIAL | EMP_HIREDATE | JOB_CODE |
-+---------+------------+-----------+-------------+--------------+----------+
-|   101   |    News    |   John    |      G      |  2000-11-08  |   502    |
-|   102   |   Senior   |   David   |      H      |  1989-07-12  |   501    |
-|   103   |  Arbough   |   June    |      E      |  2000-12-01  |   500    |
-|   104   |  Ramoras   |   Anne    |      K      |  1991-11-15  |   501    |
-|   105   |  Johnson   |   Alice   |      K      |  1997-02-01  |   502    |
-|   106   | Smithfield |  William  |    NULL     |  2008-06-22  |   500    |
-|   107   |   Alonzo   |   Maria   |      D      |  1997-10-10  |   501    |
-|   108   | Washington |   Ralph   |      B      |  1995-08-22  |   501    |
-|   109   |   Smith    |   Larry   |      W      |  2001-07-18  |   501    |
-+---------+------------+-----------+-------------+--------------+----------+
-Found:
-+---------+------------+-----------+-------------+--------------+----------+
-| EMP_NUM | EMP_LNAME  | EMP_FNAME | EMP_INITIAL | EMP_HIREDATE | JOB_CODE |
-+---------+------------+-----------+-------------+--------------+----------+
-|   101   |    News    |   John    |      G      |  2004-11-08  |   502    |
-|   102   |   Senior   |   David   |      H      |  1993-07-12  |   501    |
-|   103   |  Arbough   |   June    |      E      |  2000-12-01  |   500    |
-|   104   |  Ramoras   |   Anne    |      K      |  1991-11-15  |   501    |
-|   105   |  Johnson   |   Alice   |      K      |  1997-02-01  |   502    |
-|   107   |   Alonzo   |   Maria   |      D      |  1997-10-10  |   501    |
-|   108   | Washington |   Ralph   |      B      |  1995-08-22  |   501    |
-|   109   |   Smith    |   Larry   |      W      |  2001-07-18  |   501    |
-+---------+------------+-----------+-------------+--------------+----------+
-Error : AssertionError - 
-Timestamp: 2025-06-13 03:01:52.731206
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-13 03:07:13.449156
