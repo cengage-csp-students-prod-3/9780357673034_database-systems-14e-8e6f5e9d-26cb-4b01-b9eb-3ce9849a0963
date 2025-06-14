@@ -41,6 +41,33 @@ LOCK TABLES `CUSTOMER` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `INVOICE`
+--
+
+DROP TABLE IF EXISTS `INVOICE`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `INVOICE` (
+  `INV_NUM` int NOT NULL,
+  `CUST_NUM` int DEFAULT NULL,
+  `INV_DATE` date DEFAULT NULL,
+  `INV_AMOUNT` decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (`INV_NUM`),
+  KEY `CUST_NUM` (`CUST_NUM`),
+  CONSTRAINT `INVOICE_ibfk_1` FOREIGN KEY (`CUST_NUM`) REFERENCES `CUSTOMER` (`CUST_NUM`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `INVOICE`
+--
+
+LOCK TABLES `INVOICE` WRITE;
+/*!40000 ALTER TABLE `INVOICE` DISABLE KEYS */;
+/*!40000 ALTER TABLE `INVOICE` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Dumping routines for database 'Ch08_SimpleCo'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +80,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-14  3:21:13
+-- Dump completed on 2025-06-14  3:26:05
