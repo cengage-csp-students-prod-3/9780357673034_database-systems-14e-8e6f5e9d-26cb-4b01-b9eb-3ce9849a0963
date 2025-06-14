@@ -1,15 +1,6 @@
 
-Status: FAILED!
+Status: PASSED!
 Check: 1
 Test: Problem 18
-Reason: Expected:
-+----------+------------+------------+--------------+
-| CUST_NUM | CUST_LNAME | CUST_FNAME | CUST_BALANCE |
-+----------+------------+------------+--------------+
-|   1000   |   Smith    |   Jeanne   |   1050.11    |
-|   1001   |   Ortega   |    Juan    |    840.92    |
-+----------+------------+------------+--------------+
-Found:
-
-Error : AssertionError - 
-Timestamp: 2025-06-14 04:12:24.381748
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-14 05:51:15.303887
