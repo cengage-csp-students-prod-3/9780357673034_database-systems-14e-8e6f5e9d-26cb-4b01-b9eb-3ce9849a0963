@@ -1,24 +1,6 @@
 
-Status: FAILED!
+Status: PASSED!
 Check: 1
 Test: Problem 16
-Reason: Expected:
-+--------------+---------------+------+-----+---------+-------+
-|    FIELD     |     TYPE      | NULL | KEY | DEFAULT | EXTRA |
-+--------------+---------------+------+-----+---------+-------+
-|   CUST_NUM   |      int      |  NO  | PRI |  NULL   |       |
-|  CUST_LNAME  |  varchar(30)  | YES  |     |  NULL   |       |
-|  CUST_FNAME  |  varchar(30)  | YES  |     |  NULL   |       |
-| CUST_BALANCE | decimal(10,2) | YES  |     |  NULL   |       |
-+--------------+---------------+------+-----+---------+-------+
-Found:
-+--------------+--------------+------+-----+---------+-------+
-|    FIELD     |     TYPE     | NULL | KEY | DEFAULT | EXTRA |
-+--------------+--------------+------+-----+---------+-------+
-|   CUST_NUM   |     int      |  NO  | PRI |  NULL   |       |
-|  CUST_LNAME  | varchar(30)  | YES  |     |  NULL   |       |
-|  CUST_FNAME  | varchar(30)  | YES  |     |  NULL   |       |
-| CUST_BALANCE | decimal(8,2) | YES  |     |  NULL   |       |
-+--------------+--------------+------+-----+---------+-------+
-Error : AssertionError - 
-Timestamp: 2025-06-14 03:20:11.763127
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-14 03:21:33.057782
