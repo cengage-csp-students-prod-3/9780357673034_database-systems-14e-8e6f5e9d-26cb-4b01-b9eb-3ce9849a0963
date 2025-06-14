@@ -21,4 +21,4 @@ Found:
 | CUST_BALANCE | decimal(8,2) | YES  |     |  NULL   |       |
 +--------------+--------------+------+-----+---------+-------+
 Error : AssertionError - 
-Timestamp: 2025-06-14 03:19:29.712062
+Timestamp: 2025-06-14 03:20:11.763127
