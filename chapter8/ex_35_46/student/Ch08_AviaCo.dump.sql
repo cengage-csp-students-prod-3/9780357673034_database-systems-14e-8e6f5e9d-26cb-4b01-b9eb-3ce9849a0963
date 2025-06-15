@@ -150,7 +150,7 @@ CREATE TABLE `CUSTOMER` (
 
 LOCK TABLES `CUSTOMER` WRITE;
 /*!40000 ALTER TABLE `CUSTOMER` DISABLE KEYS */;
-INSERT INTO `CUSTOMER` VALUES (10010,'Ramas','Alfred','A','615','844-2573',0),(10011,'Dunne','Leona','K','713','894-1238',0),(10012,'Smith','Kathy','W','615','894-2285',896.54),(10013,'Olowski','Paul','F','615','894-2180',1285.19),(10014,'Orlando','Myron','','615','222-1672',673.21),(10015,'O\'Brian','Amy','B','713','442-3381',1014.56),(10016,'Brown','James','G','615','297-1228',0),(10017,'Williams','George','','615','290-2556',0),(10018,'Farriss','Anne','G','713','382-7185',0),(10019,'Smith','Olette','K','615','297-3809',453.98);
+INSERT INTO `CUSTOMER` VALUES (10010,'Ramas','Alfred','A','615','844-2573',0),(10011,'Dunne','Leona','K','713','894-1238',0),(10012,'Smith','Kathy','W','615','894-2285',896.54),(10013,'Olowski','Paul','F','615','894-2180',1285.19),(10014,'Orlando','Myron','','615','222-1672',673.21),(10015,'O\'Brian','Amy','B','713','442-3381',1014.56),(10016,'Brown','James','G','615','297-1228',0),(10017,'Williams','George','','615','290-2556',90.75),(10018,'Farriss','Anne','G','713','382-7185',0),(10019,'Smith','Olette','K','615','297-3809',453.98);
 /*!40000 ALTER TABLE `CUSTOMER` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -340,4 +340,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-15 22:34:39
+-- Dump completed on 2025-06-15 22:37:22
