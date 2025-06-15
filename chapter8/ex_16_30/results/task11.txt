@@ -1,18 +1,6 @@
 
-Status: FAILED!
+Status: PASSED!
 Check: 1
 Test: Problem 26
-Reason: Expected:
-+----------+------------+------------+--------------+------------+
-| CUST_NUM | CUST_LNAME | CUST_FNAME | CUST_BALANCE |  CUST_DOB  |
-+----------+------------+------------+--------------+------------+
-|   1001   |   Ortega   |    Juan    |   1066.32    | 1988-12-22 |
-+----------+------------+------------+--------------+------------+
-Found:
-+----------+------------+------------+--------------+------------+
-| CUST_NUM | CUST_LNAME | CUST_FNAME | CUST_BALANCE |  CUST_DOB  |
-+----------+------------+------------+--------------+------------+
-|   1001   |   Ortega   |    Juan    |    840.92    | 1988-12-22 |
-+----------+------------+------------+--------------+------------+
-Error : AssertionError - 
-Timestamp: 2025-06-15 03:34:32.830090
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-15 03:36:46.626793
