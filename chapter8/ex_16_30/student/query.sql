@@ -1,6 +1,26 @@
 -- Create the trigger named trg_updatecustbalance
-INSERT INTO  CUSTOMER(CUST_NUM, CUST_LNAME, CUST_FNAME, CUST_BALANCE)
-VALUES(1002, 'Rauthor', 'Peter', 0.00);
+DELIMITER $$
+CREATE PROCEDURE prc_invoice_add(
+    IN p_cust_num INT,
+    IN p_inv_date DATE,
+    IN p_inv_amount DECIMAL(10, 2)
+)
+BEGIN
+    -- Inserts a new invoice record into the INVOICE table.
+    -- INV_NUM is auto-incremented.
+    INSERT INTO INVOICE (CUST_NUM, INV_DATE, INV_AMOUNT)
+    VALUES (p_cust_num, p_inv_date, p_inv_amount);
+END$$
+DELIMITER ;
+
+-- Test the trigger by inserting a new INVOICE record (using direct insert)
+-- This should add 225.40 to the balance of customer 1001
+INSERT INTO INVOICE (CUST_NUM, INV_DATE, INV_AMOUNT)
+VALUES (1001, '2022/05/07', 225.40);
+
+-- Test the new prc_invoice_add procedure by adding a new invoice record
+-- This will automatically trigger trg_updatecustbalance and update customer 1000's balance
+CALL prc_invoice_add(1000, '2022-04-30', 301.72);
 
 -- -- Write your query below and then click "Run Query" to execute it. To save multiple queries, click the "+" icon on the left.
 -- DROP DATABASE IF EXISTS Ch08_SimpleCo;

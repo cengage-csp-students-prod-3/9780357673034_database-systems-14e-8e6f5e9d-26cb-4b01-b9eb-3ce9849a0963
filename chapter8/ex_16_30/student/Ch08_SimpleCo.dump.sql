@@ -38,7 +38,7 @@ CREATE TABLE `CUSTOMER` (
 
 LOCK TABLES `CUSTOMER` WRITE;
 /*!40000 ALTER TABLE `CUSTOMER` DISABLE KEYS */;
-INSERT INTO `CUSTOMER` VALUES (1000,'Smith','Jeanne',1050.11,'1989-03-15'),(1001,'Ortega','Juan',1066.32,'1988-12-22'),(1002,'Rauthor','Peter',0.00,NULL),(2000,'Powers','Ruth',500.00,NULL);
+INSERT INTO `CUSTOMER` VALUES (1000,'Smith','Jeanne',1351.83,'1989-03-15'),(1001,'Ortega','Juan',1291.72,'1988-12-22'),(1002,'Rauthor','Peter',0.00,NULL),(2000,'Powers','Ruth',500.00,NULL);
 /*!40000 ALTER TABLE `CUSTOMER` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -57,7 +57,7 @@ CREATE TABLE `INVOICE` (
   PRIMARY KEY (`INV_NUM`),
   KEY `CUST_NUM` (`CUST_NUM`),
   CONSTRAINT `INVOICE_ibfk_1` FOREIGN KEY (`CUST_NUM`) REFERENCES `CUSTOMER` (`CUST_NUM`)
-) ENGINE=InnoDB AUTO_INCREMENT=9000 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9002 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +66,7 @@ CREATE TABLE `INVOICE` (
 
 LOCK TABLES `INVOICE` WRITE;
 /*!40000 ALTER TABLE `INVOICE` DISABLE KEYS */;
-INSERT INTO `INVOICE` VALUES (8000,1000,'2022-03-23',235.89),(8001,1001,'2022-03-23',312.82),(8002,1001,'2022-03-30',528.10),(8003,1000,'2022-04-16',194.78),(8004,1000,'2022-04-23',619.44);
+INSERT INTO `INVOICE` VALUES (8000,1000,'2022-03-23',235.89),(8001,1001,'2022-03-23',312.82),(8002,1001,'2022-03-30',528.10),(8003,1000,'2022-04-16',194.78),(8004,1000,'2022-04-23',619.44),(9000,1001,'2022-05-07',225.40),(9001,1000,'2022-04-30',301.72);
 /*!40000 ALTER TABLE `INVOICE` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -116,6 +116,30 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `prc_invoice_add` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = latin1 */ ;
+/*!50003 SET character_set_results = latin1 */ ;
+/*!50003 SET collation_connection  = latin1_swedish_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `prc_invoice_add`(
+    IN p_cust_num INT,
+    IN p_inv_date DATE,
+    IN p_inv_amount DECIMAL(10, 2)
+)
+BEGIN
+              INSERT INTO INVOICE (CUST_NUM, INV_DATE, INV_AMOUNT)
+    VALUES (p_cust_num, p_inv_date, p_inv_amount);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -126,4 +150,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-15  3:42:19
+-- Dump completed on 2025-06-15  3:45:12
