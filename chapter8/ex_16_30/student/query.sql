@@ -1,4 +1,4 @@
---  Write your query below and then click "Run Query" to execute it. To save multiple queries, click the "+" icon on the left.
+-- Write your query below and then click "Run Query" to execute it. To save multiple queries, click the "+" icon on the left.
 DROP DATABASE IF EXISTS Ch08_SimpleCo;
 
 CREATE DATABASE Ch08_SimpleCo;
@@ -83,34 +83,28 @@ SET
 WHERE
     CUST_NUM = NEW.CUST_NUM;
 
-END 
+END -- CREATE PROCEDURE prc_cust_add(
+--     IN p_cust_num INT,        -- Input parameter for CUST_NUM
+--     IN p_cust_lname VARCHAR(30), -- Input parameter for CUST_LNAME
+--     IN p_cust_fname VARCHAR(30), -- Input parameter for CUST_FNAME
+--     IN p_cust_balance DECIMAL(10,2) -- Input parameter for CUST_BALANCE
+-- )
+-- BEGIN
+--     -- Insert a new record into the CUSTOMER table using the provided parameters
+--     INSERT INTO CUSTOMER (CUST_NUM, CUST_LNAME, CUST_FNAME, CUST_BALANCE)
+--     VALUES (p_cust_num, p_cust_lname, p_cust_fname, p_cust_balance);
+END / / 
 
---  CREATE PROCEDURE prc_cust_add(
---      IN p_cust_num INT,         Input parameter for CUST_NUM
---      IN p_cust_lname VARCHAR(30),  Input parameter for CUST_LNAME
---      IN p_cust_fname VARCHAR(30),  Input parameter for CUST_FNAME
---      IN p_cust_balance DECIMAL(10,2)  Input parameter for CUST_BALANCE
---  )
---  BEGIN
---       Insert a new record into the CUSTOMER table using the provided parameters
---      INSERT INTO CUSTOMER (CUST_NUM, CUST_LNAME, CUST_FNAME, CUST_BALANCE)
---      VALUES (p_cust_num, p_cust_lname, p_cust_fname, p_cust_balance);
--- END 
+DELIMITER;
 
-/ / DELIMITER;
-
---  create trigger [trigger_name] 
---  [before | after]  
---  {insert | update | delete}  
---  on [table_name]  
---  FOR EACH ROW
---  BEGIN
---  END;
-
-
-SELECT
-    *
-FROM
-    CUSTOMER;
-
-    COMMIT;
+-- create trigger [trigger_name] 
+-- [before | after]  
+-- {insert | update | delete}  
+-- on [table_name]  
+-- FOR EACH ROW
+-- BEGIN
+-- END;
+-- SELECT
+--     *
+-- FROM
+--     CUSTOMER;
