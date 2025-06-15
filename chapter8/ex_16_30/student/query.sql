@@ -50,6 +50,35 @@ UPDATE CUSTOMER
 SET CUST_DOB = '1989/03/15'
 WHERE CUST_NUM = 1000;
 
+UPDATE CUSTOMER
+SET CUST_DOB = '1988/12/22'
+WHERE CUST_NUM = 1001;
+
+DELIMITER //
+
+CREATE TRIGGER trg_updatecustbalance
+AFTER INSERT ON INVOICE
+FOR EACH ROW
+
+BEGIN
+UPDATE CUSTOMER
+SET CUST_BALANCE = CUST_BALANCE + NEW.INV_AMOUNT
+WHERE CUST_NUM = NEW.CUST_NUM;
+END//
+
+CREATE PROCEDURE prc_cust_add(
+    IN p_cust_num
+)
+
+
+DELIMITER ;
+-- create trigger [trigger_name] 
+-- [before | after]  
+-- {insert | update | delete}  
+-- on [table_name]  
+-- FOR EACH ROW
+-- BEGIN
+-- END;
 
 SELECT *
 FROM CUSTOMER;
