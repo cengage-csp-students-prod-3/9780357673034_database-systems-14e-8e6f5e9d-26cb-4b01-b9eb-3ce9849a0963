@@ -1,0 +1,52 @@
+
+Status: FAILED!
+Check: 1
+Test: Problem 39
+Reason: Expected:
++-----------------+
+| CHAR_FLT_CHG_HR |
++-----------------+
+|      2.67       |
+|      2.35       |
+|      2.35       |
+|      1.93       |
+|      2.67       |
+|      2.35       |
+|      2.35       |
+|      1.93       |
+|      2.67       |
+|      2.35       |
+|      1.93       |
+|      2.35       |
+|      2.35       |
+|      2.35       |
+|      2.67       |
+|      2.35       |
+|      1.93       |
+|      2.35       |
++-----------------+
+Found:
++-----------------+
+| CHAR_FLT_CHG_HR |
++-----------------+
+|      NULL       |
+|      NULL       |
+|      NULL       |
+|      NULL       |
+|      NULL       |
+|      NULL       |
+|      NULL       |
+|      NULL       |
+|      NULL       |
+|      NULL       |
+|      NULL       |
+|      NULL       |
+|      NULL       |
+|      NULL       |
+|      NULL       |
+|      NULL       |
+|      NULL       |
+|      NULL       |
++-----------------+
+Error : AssertionError - 
+Timestamp: 2025-06-15 22:00:19.160100
