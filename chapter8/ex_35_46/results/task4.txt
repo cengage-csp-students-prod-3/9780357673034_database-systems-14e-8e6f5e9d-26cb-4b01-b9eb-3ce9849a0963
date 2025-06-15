@@ -1,52 +1,6 @@
 
-Status: FAILED!
+Status: PASSED!
 Check: 1
 Test: Problem 38
-Reason: Expected:
-+---------------+
-| CHAR_WAIT_CHG |
-+---------------+
-|    100.00     |
-|     75.00     |
-|     75.00     |
-|     50.00     |
-|    100.00     |
-|     75.00     |
-|     75.00     |
-|     50.00     |
-|    100.00     |
-|     75.00     |
-|     50.00     |
-|     75.00     |
-|     75.00     |
-|     75.00     |
-|    100.00     |
-|     75.00     |
-|     50.00     |
-|     75.00     |
-+---------------+
-Found:
-+---------------+
-| CHAR_WAIT_CHG |
-+---------------+
-|     NULL      |
-|     NULL      |
-|     NULL      |
-|     NULL      |
-|     NULL      |
-|     NULL      |
-|     NULL      |
-|     NULL      |
-|     NULL      |
-|     NULL      |
-|     NULL      |
-|     NULL      |
-|     NULL      |
-|     NULL      |
-|     NULL      |
-|     NULL      |
-|     NULL      |
-|     NULL      |
-+---------------+
-Error : AssertionError - 
-Timestamp: 2025-06-15 21:52:01.446692
+Reason: The query returned the expected results.None
+Timestamp: 2025-06-15 21:56:24.034520
