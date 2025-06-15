@@ -1,0 +1,7 @@
+
+Status: FAILED!
+Check: 1
+Test: Problem 25
+Reason: The following error is preventing tests from completing: 1054 (42S22): Unknown column 'CUST_DOB' in 'field list'
+Error : ProgrammingError - 1054 (42S22): Unknown column 'CUST_DOB' in 'field list'
+Timestamp: 2025-06-15 01:22:11.812347
