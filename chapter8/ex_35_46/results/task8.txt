@@ -1,0 +1,52 @@
+
+Status: FAILED!
+Check: 1
+Test: Problem 42
+Reason: Expected:
++--------------+
+| CHAR_TOT_CHG |
++--------------+
+|    14.71     |
+|     4.06     |
+|    19.80     |
+|     6.05     |
+|    16.44     |
+|     6.60     |
+|    20.06     |
+|     8.54     |
+|    19.03     |
+|    15.74     |
+|     3.96     |
+|    12.18     |
+|     9.90     |
+|    15.48     |
+|    19.32     |
+|     3.81     |
+|     6.46     |
+|     9.64     |
++--------------+
+Found:
++--------------+
+| CHAR_TOT_CHG |
++--------------+
+|     NULL     |
+|     NULL     |
+|     NULL     |
+|     NULL     |
+|     NULL     |
+|     NULL     |
+|     NULL     |
+|     NULL     |
+|     NULL     |
+|     NULL     |
+|     NULL     |
+|     NULL     |
+|     NULL     |
+|     NULL     |
+|     NULL     |
+|     NULL     |
+|     NULL     |
+|     NULL     |
++--------------+
+Error : AssertionError - 
+Timestamp: 2025-06-15 22:20:09.370147
