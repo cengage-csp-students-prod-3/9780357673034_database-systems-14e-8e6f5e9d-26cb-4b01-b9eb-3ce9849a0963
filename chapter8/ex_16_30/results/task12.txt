@@ -1,0 +1,14 @@
+
+Status: FAILED!
+Check: 1
+Test: Problem 27
+Reason: Expected:
++----------+------------+------------+--------------+----------+
+| CUST_NUM | CUST_LNAME | CUST_FNAME | CUST_BALANCE | CUST_DOB |
++----------+------------+------------+--------------+----------+
+|   1002   |  Rauthor   |   Peter    |     0.00     |   NULL   |
++----------+------------+------------+--------------+----------+
+Found:
+
+Error : AssertionError - 
+Timestamp: 2025-06-15 03:37:57.048861
