@@ -1,0 +1,52 @@
+
+Status: FAILED!
+Check: 1
+Test: Problem 40
+Reason: Expected:
++--------------+
+| CHAR_FLT_CHG |
++--------------+
+|    13.62     |
+|     3.76     |
+|    18.33     |
+|     5.60     |
+|    15.22     |
+|     6.11     |
+|    18.57     |
+|     7.91     |
+|    17.62     |
+|    14.57     |
+|     3.67     |
+|    11.28     |
+|     9.17     |
+|    14.33     |
+|    17.89     |
+|     3.53     |
+|     5.98     |
+|     8.93     |
++--------------+
+Found:
++--------------+
+| CHAR_FLT_CHG |
++--------------+
+|     NULL     |
+|     NULL     |
+|     NULL     |
+|     NULL     |
+|     NULL     |
+|     NULL     |
+|     NULL     |
+|     NULL     |
+|     NULL     |
+|     NULL     |
+|     NULL     |
+|     NULL     |
+|     NULL     |
+|     NULL     |
+|     NULL     |
+|     NULL     |
+|     NULL     |
+|     NULL     |
++--------------+
+Error : AssertionError - 
+Timestamp: 2025-06-15 22:05:18.208407
