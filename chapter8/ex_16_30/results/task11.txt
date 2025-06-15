@@ -2,17 +2,6 @@
 Status: FAILED!
 Check: 1
 Test: Problem 26
-Reason: Expected:
-+----------+------------+------------+--------------+------------+
-| CUST_NUM | CUST_LNAME | CUST_FNAME | CUST_BALANCE |  CUST_DOB  |
-+----------+------------+------------+--------------+------------+
-|   1001   |   Ortega   |    Juan    |   1066.32    | 1988-12-22 |
-+----------+------------+------------+--------------+------------+
-Found:
-+----------+------------+------------+--------------+
-| CUST_NUM | CUST_LNAME | CUST_FNAME | CUST_BALANCE |
-+----------+------------+------------+--------------+
-|   1001   |   Ortega   |    Juan    |    840.92    |
-+----------+------------+------------+--------------+
-Error : AssertionError - 
-Timestamp: 2025-06-15 00:50:57.937241
+Reason: The following error is preventing tests from completing: 1146 (42S02): Table 'Ch08_SimpleCo.CUSTOMER' doesn't exist
+Error : ProgrammingError - 1146 (42S02): Table 'Ch08_SimpleCo.CUSTOMER' doesn't exist
+Timestamp: 2025-06-15 00:58:44.305726
